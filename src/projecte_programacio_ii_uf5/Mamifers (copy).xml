@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE Mamifers [
+    <!ATTLIST Mamifer id ID #IMPLIED>
+]>
+    
+<Mamifers>
+    <Mamifer id="M01">
+        <nom>Sid</nom>
+        <raça>Primat</raça>
+        <edat>0</edat>
+        <sexe>M</sexe>
+        <pes>8,5 Kg</pes>
+        <esp_vida>20</esp_vida>
+        <vertebrat>SI</vertebrat>
+        <alimentacio>carnívor</alimentacio>
+        <reproduccio>mamífer</reproduccio>
+        <ecosistema>terrestre</ecosistema>
+        <seccio>12</seccio>
+    </Mamifer>
+    <Mamifer id="M02">
+        <nom>Shira</nom>
+        <raça>Felí</raça>
+        <edat>6</edat>
+        <sexe>F</sexe>
+        <pes>10,5 Kg</pes>
+        <esp_vida>25</esp_vida>
+        <vertebrat>SI</vertebrat>
+        <alimentacio>carnívor</alimentacio>
+        <reproduccio>mamífer</reproduccio>
+        <ecosistema>terrestre</ecosistema>
+        <seccio>13</seccio>
+    </Mamifer>
+    <Mamifer id="M03">
+        <nom>Diego</nom>
+        <raça>Felí</raça>
+        <edat>10</edat>
+        <sexe>M</sexe>
+        <pes>20 Kg</pes>
+        <esp_vida>25</esp_vida>
+        <vertebrat>SI</vertebrat>
+        <alimentacio>carnívor</alimentacio>
+        <reproduccio>mamífer</reproduccio>
+        <ecosistema>terrestre</ecosistema>
+        <seccio>5</seccio>
+    </Mamifer>
+</Mamifers>
