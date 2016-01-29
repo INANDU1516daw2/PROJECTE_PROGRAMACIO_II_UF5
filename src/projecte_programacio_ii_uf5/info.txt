@@ -1,0 +1,2 @@
+Crear nou animal genera ID automàtica en col·lecció: ID de animal anterior +1 (P03 -> nou animal ->P04)
+Meidante la ID se puede sacar el numero de animales por tipo (P20 -> 20 Peces; M04 -> 4 Mamiferos)
