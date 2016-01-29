@@ -23,10 +23,8 @@ import org.xml.sax.SAXException;
 public class CrearAnimal {
     
     public static void CrearAnimal(String fitxer, String NodeAnimal, String id, String nom, String raça, String edat,
-            String sexe, String pes) {
-        
-//            String esp_vida, String vertebrat, String alimentacio, 
-//            String reproduccio, String ecosistema
+            String sexe, String pes, String esp_vida, String vertebrat, String alimentacio, 
+            String reproduccio, String ecosistema) {
  
 	  try {
  
