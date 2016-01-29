@@ -25,7 +25,7 @@ public class Modifica_NodeContent {
     public static void Modifica_NodeContent(String fitxer, String id, String TagName, String newTextContent) {
         
         try {
-            String filepath = "/home/inge/NetBeansProjects/"
+            String filepath = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
                 + "PROJECTE_PROGRAMACIO_II_UF5/"
                 + "src/projecte_programacio_ii_uf5/" + fitxer + ".xml";
             

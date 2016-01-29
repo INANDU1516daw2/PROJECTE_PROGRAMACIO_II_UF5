@@ -30,7 +30,7 @@ public class CrearAnimal {
  
 	  try {
  
-                String filepath = "/home/inge/NetBeansProjects/"
+                String filepath = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
                 + "PROJECTE_PROGRAMACIO_II_UF5/"
                 + "src/projecte_programacio_ii_uf5/" + fitxer + ".xml";
                 

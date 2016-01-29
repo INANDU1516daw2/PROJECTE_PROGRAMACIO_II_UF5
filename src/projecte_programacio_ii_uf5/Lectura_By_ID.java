@@ -25,7 +25,8 @@ import org.xml.sax.SAXException;
 public class Lectura_By_ID {
     
     public static void Lectura_By_ID (String fitxer, String id) {
-        File xml = new File("/home/inge/NetBeansProjects/"
+        
+        File xml = new File("/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
                 + "PROJECTE_PROGRAMACIO_II_UF5/"
                 + "src/projecte_programacio_ii_uf5/" + fitxer + ".xml");
         
