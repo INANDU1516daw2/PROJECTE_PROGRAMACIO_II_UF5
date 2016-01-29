@@ -16,9 +16,6 @@ public class Principal {
 //        AfegirNode("Mamifers", "M06", "vacuna", "si");
 //        AfegirNode("Mamifers", "M02", "vacuna", "si");
         
-        CrearAnimal(String fitxer, String NodeAnimal, String id, String nom, String raça, String edat,
-            String sexe, String pes, String esp_vida, String vertebrat, String alimentacio, 
-            String reproduccio, String ecosistema);
 //        CrearAnimal("Mamifers", "Mamifer", "M01", "Pikachu", "rata-electrica", "66", "F", "20");
 //        CrearAnimal("Reptils", "Reptil", "M01", "Pikachu", "rata-electrica", "66", "F", "20");
         

@@ -22,6 +22,8 @@ import org.xml.sax.SAXException;
 
 public class CrearAnimal {
     
+    //MIRAR DE LLEGIR TOTS ARGUMENTS PASSATS, GUARDARLOS EN ARRAY I AMB BUCLE CRAR ELS NODES
+    
     public static void CrearAnimal(String fitxer, String NodeAnimal, String id, String nom, String raça, String edat,
             String sexe, String pes, String esp_vida, String vertebrat, String alimentacio, 
             String reproduccio, String ecosistema) {
@@ -75,6 +77,26 @@ public class CrearAnimal {
                     Element pesTag = doc.createElement("pes");
                     Animal.appendChild(pesTag);
                     pesTag.appendChild(doc.createTextNode(pes));
+                    
+                    Element esp_vidaTag = doc.createElement("esp_vida");
+                    Animal.appendChild(esp_vidaTag);
+                    esp_vidaTag.appendChild(doc.createTextNode(esp_vida));
+                    
+                    Element vertebratTag = doc.createElement("vertebrat");
+                    Animal.appendChild(vertebratTag);
+                    vertebratTag.appendChild(doc.createTextNode(vertebrat));
+                    
+                    Element alimentacioTag = doc.createElement("alimentacio");
+                    Animal.appendChild(alimentacioTag);
+                    alimentacioTag.appendChild(doc.createTextNode(alimentacio));
+                    
+                    Element reproduccioTag = doc.createElement("reproduccio");
+                    Animal.appendChild(reproduccioTag);
+                    reproduccioTag.appendChild(doc.createTextNode(reproduccio));
+                    
+                    Element ecosistemaTag = doc.createElement("ecosistema");
+                    Animal.appendChild(ecosistemaTag);
+                    ecosistemaTag.appendChild(doc.createTextNode(ecosistema));
                     
                 }
                 
