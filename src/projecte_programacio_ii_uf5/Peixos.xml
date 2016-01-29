@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Peixos SYSTEM "Peixos.dtd">
 <Peixos>
-    
+<Peix id="P01">
+    <nom>Gyarados</nom>
+    <raça>rata-electrica</raça>
+    <edat>66</edat>
+    <sexe>F</sexe>
+    <pes>20</pes>
+</Peix>
 </Peixos>

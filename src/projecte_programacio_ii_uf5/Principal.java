@@ -9,17 +9,20 @@ public class Principal {
     
     public static void main(String[] args) {
         
-        Modifica_NodeContent("Mamifers", "M06", "nom", "Manny");
-        Modifica_NodeContent("Mamifers", "M01", "nom", "Manny");
+//        Modifica_NodeContent("Mamifers", "M06", "nom", "Manny");
+        Modifica_NodeContent("Peixos", "P01", "nom", "Gyarados");
+//        Lectura_By_ID("Peixos", "P01");
         
-        AfegirNode("Mamifers", "M06", "vacuna", "si");
-        AfegirNode("Mamifers", "M02", "vacuna", "si");
+//        AfegirNode("Mamifers", "M06", "vacuna", "si");
+//        AfegirNode("Mamifers", "M02", "vacuna", "si");
         
-        CrearAnimal("Mamifers", "Mamifer", "M01", "Pikachu", "rata-electrica", "66", "F", "20");
-        CrearAnimal("Reptils", "Reptil", "M05", "Pikachu", "rata-electrica", "66", "F", "20");
+//        CrearAnimal("Mamifers", "Mamifer", "M01", "Pikachu", "rata-electrica", "66", "F", "20");
+//        CrearAnimal("Reptils", "Reptil", "M01", "Pikachu", "rata-electrica", "66", "F", "20");
         
-        Lectura_By_ID("Mamifers", "M05");
-        Lectura_By_ID("Mamifers", "M02");
+//        CrearAnimal("Peixos", "Peix", "M01", "Mobidyc", "rata-electrica", "66", "F", "20");
+        
+//        Lectura_By_ID("Mamifers", "M05");
+//        Lectura_By_ID("Mamifers", "M02");
         
     }
     

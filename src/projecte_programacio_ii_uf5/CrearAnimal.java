@@ -48,7 +48,7 @@ public class CrearAnimal {
                 try {
                     Element mamifer = doc.getElementById(id);
                     String existeix = mamifer.getNodeValue();
-                    System.err.println("\nJa existeix Mamifer amb ID = " + id + "\ncreació cancelada ... tria altra ID!\n");
+                    System.err.println("\nJa existeix Animal amb ID = " + id + "\ncreació cancelada ... tria altra ID!\n");
                 
                 }catch(NullPointerException e){
                     
@@ -80,18 +80,37 @@ public class CrearAnimal {
                     
                 }
                 
-//                NodeList docNodes = docRoot.getChildNodes();
-//                System.out.println(docNodes.getLength());
-//            
-
-                
             // write the content into xml file
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             
-            //Afegim el DTD extern per usar les ID:
-//          http://stackoverflow.com/questions/6637076/parsing-xml-with-dom-doctype-gets-erased
-            transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "mamifers.dtd");
+            /* Afegim el DTD extern per usar les ID:
+             * Mirem de quin tipus animal es el fitxer XML i afegim el DTD de la seva especie
+             * Documentacio: http://stackoverflow.com/questions/6637076/parsing-xml-with-dom-doctype-gets-erased
+            */
+            
+            switch (fitxer) {
+            case "Mamifers":
+                    transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Mamifers.dtd");
+                    break;
+            case "Reptils":
+                    transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Reptils.dtd");
+                    break;
+            case "Peixos":
+                    transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Peixos.dtd");
+                    break;
+            case "Amfibis":
+                    transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Amfibis.dtd");
+                    break;
+            case "Aus":
+                    transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Aus.dtd");
+                    break;
+            case "Artropodes":
+                    transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Artropodes.dtd");
+                    break;
+            }
+            
+            
             
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(new File(filepath));
