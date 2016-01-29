@@ -22,7 +22,7 @@ import org.xml.sax.SAXException;
 
 public class CrearAnimal {
     
-    public static void CrearAnimal(String fitxer, String id, String nom, String raça, String edat,
+    public static void CrearAnimal(String fitxer, String NodeAnimal, String id, String nom, String raça, String edat,
             String sexe, String pes) {
         
 //            String esp_vida, String vertebrat, String alimentacio, 
@@ -54,28 +54,28 @@ public class CrearAnimal {
                     
                     System.out.println("Efectuant creació ...\n");
                     
-                    Element mamifer = doc.createElement("Mamifer");
-                    docRoot.appendChild(mamifer);
-                    mamifer.setAttribute("id", id);
+                    Element Animal = doc.createElement(NodeAnimal);
+                    docRoot.appendChild(Animal);
+                    Animal.setAttribute("id", id);
 
                     Element nomTag = doc.createElement("nom");
-                    mamifer.appendChild(nomTag);
+                    Animal.appendChild(nomTag);
                     nomTag.appendChild(doc.createTextNode(nom));
 
                     Element raçaTag = doc.createElement("raça");
-                    mamifer.appendChild(raçaTag);
+                    Animal.appendChild(raçaTag);
                     raçaTag.appendChild(doc.createTextNode(raça));
 
                     Element edatTag = doc.createElement("edat");
-                    mamifer.appendChild(edatTag);
+                    Animal.appendChild(edatTag);
                     edatTag.appendChild(doc.createTextNode(edat));
 
                     Element sexeTag = doc.createElement("sexe");
-                    mamifer.appendChild(sexeTag);
+                    Animal.appendChild(sexeTag);
                     sexeTag.appendChild(doc.createTextNode(sexe));
 
                     Element pesTag = doc.createElement("pes");
-                    mamifer.appendChild(pesTag);
+                    Animal.appendChild(pesTag);
                     pesTag.appendChild(doc.createTextNode(pes));
                     
                 }

@@ -15,8 +15,8 @@ public class Principal {
         AfegirNode("Mamifers", "M06", "vacuna", "si");
         AfegirNode("Mamifers", "M02", "vacuna", "si");
         
-        CrearAnimal("Mamifers", "M01", "Pikachu", "rata-electrica", "66", "F", "20");
-        CrearAnimal("Mamifers", "M05", "Pikachu", "rata-electrica", "66", "F", "20");
+        CrearAnimal("Mamifers", "Mamifer", "M01", "Pikachu", "rata-electrica", "66", "F", "20");
+        CrearAnimal("Reptils", "Reptil", "M05", "Pikachu", "rata-electrica", "66", "F", "20");
         
         Lectura_By_ID("Mamifers", "M05");
         Lectura_By_ID("Mamifers", "M02");
