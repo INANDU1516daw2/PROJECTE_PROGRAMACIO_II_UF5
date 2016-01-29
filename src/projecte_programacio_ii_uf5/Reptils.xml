@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Reptils SYSTEM "mamifers.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Reptils SYSTEM "Reptils.dtd">
 <Reptils>
-    <Reptil id="M05">
-        <nom>Pikachu</nom>
-        <raça>rata-electrica</raça>
-        <edat>66</edat>
-        <sexe>F</sexe>
-        <pes>20</pes>
-    </Reptil>
+    
 </Reptils>

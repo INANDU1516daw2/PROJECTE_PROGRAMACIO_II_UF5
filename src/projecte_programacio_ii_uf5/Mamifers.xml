@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Mamifers SYSTEM "mamifers.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Mamifers SYSTEM "Mamifers.dtd">
 <Mamifers>
     <Mamifer id="M01">
         <nom>Manny</nom>
@@ -25,7 +25,7 @@
         <reproduccio>mamífer</reproduccio>
         <ecosistema>terrestre</ecosistema>
         <seccio>13</seccio>
-    <vacuna>si</vacuna><vacuna>si</vacuna></Mamifer>
+    <vacuna>si</vacuna><vacuna>si</vacuna><vacuna>si</vacuna></Mamifer>
     <Mamifer id="M03">
         <nom>Diego</nom>
         <raça>Felí</raça>
@@ -39,11 +39,6 @@
         <ecosistema>terrestre</ecosistema>
         <seccio>5</seccio>
     </Mamifer>
-    <Mamifer id="M05">
-        <nom>Pikachu</nom>
-        <raça>rata-electrica</raça>
-        <edat>66</edat>
-        <sexe>F</sexe>
-        <pes>20</pes>
-    </Mamifer>
+   
+
 </Mamifers>
