@@ -1,10 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Peixos SYSTEM "Peixos.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Peixos SYSTEM "Reptils.dtd">
 <Peixos>
 <Peix id="P01">
-    <nom>Gyarados</nom>
-    <raça>rata-electrica</raça>
-    <edat>66</edat>
-    <sexe>F</sexe>
-    <pes>20</pes>
-</Peix>
-</Peixos>
+        <nom>Gyarados</nom>
+        <raça>Platy</raça>
+        <edat>1</edat>
+        <sexe>M</sexe>
+        <pes>100 g</pes>
+        <esp_vida>2</esp_vida>
+        <vertebrat>SI</vertebrat>
+        <alimentacio>hervivor</alimentacio>
+        <reproduccio>vivipar</reproduccio>
+        <ecosistema>aquatic</ecosistema>
+        <seccio>1</seccio>
+    </Peix>
+    
+    <Peix id="P02">
+        <nom>Dory</nom>
+        <raça>Colisa</raça>
+        <edat>3</edat>
+        <sexe>F</sexe>
+        <pes>180 g</pes>
+        <esp_vida>4</esp_vida>
+        <vertebrat>SI</vertebrat>
+        <alimentacio>hervivor</alimentacio>
+        <reproduccio>vivipar</reproduccio>
+        <ecosistema>aquatic</ecosistema>
+        <seccio>2</seccio>
+    </Peix>
+   </Peixos>

@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Reptils SYSTEM "Reptils.dtd">
 <Reptils>
     
+<Reptil id="R01">
+    <nom>Draco</nom>
+    <raça>Pogona</raça>
+    <edat>4</edat>
+    <sexe>M</sexe>
+    <pes>1 Kg</pes>
+    <esp_vida>18</esp_vida>
+    <vertebrat>SI</vertebrat>
+    <alimentacio>Omnívor</alimentacio>
+    <reproduccio>Ovípar</reproduccio>
+    <ecosistema>Terrestre</ecosistema>
+</Reptil>
+<Reptil id="R02">
+    <nom>Serp</nom>
+    <raça>Serpiente</raça>
+    <edat>4</edat>
+    <sexe>F</sexe>
+    <pes>1 Kg</pes>
+    <esp_vida>15</esp_vida>
+    <vertebrat>SI</vertebrat>
+    <alimentacio>Carnívor</alimentacio>
+    <reproduccio>Ovípar</reproduccio>
+    <ecosistema>Terrestre</ecosistema>
+</Reptil>
 </Reptils>

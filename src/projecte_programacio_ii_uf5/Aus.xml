@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Aus SYSTEM "Aus.dtd">
 <Aus>
-    
+    <Au id="AU01">
+        <nom>Eagle</nom>
+        <raça>Àguila</raça>
+        <edat>5</edat>
+        <sexe>F</sexe>
+        <pes>4 Kg</pes>
+        <esp_vida>14</esp_vida>
+        <vertebrat>SI</vertebrat>
+        <alimentacio>Carnívor</alimentacio>
+        <reproduccio>Ovípar</reproduccio>
+        <ecosistema>Aeri</ecosistema>
+        <seccio>19</seccio>
+    </Au>
+    <Au id="AU02">
+        <nom>Lorito</nom>
+        <raça>Lloro</raça>
+        <edat>3</edat>
+        <sexe>M</sexe>
+        <pes>2 Kg</pes>
+        <esp_vida>10</esp_vida>
+        <vertebrat>SI</vertebrat>
+        <alimentacio>Herbívor</alimentacio>
+        <reproduccio>Ovípar</reproduccio>
+        <ecosistema>Aeri</ecosistema>
+        <seccio>20</seccio>
+    </Au>
 </Aus>

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Mamifers SYSTEM "Mamifers.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Mamifers SYSTEM "mamifers.dtd">
 <Mamifers>
-    <Mamifer id="M01">
+    <Mamifer id="MA01">
         <nom>Manny</nom>
         <raça>Primat</raça>
         <edat>0</edat>
@@ -8,12 +8,12 @@
         <pes>8,5 Kg</pes>
         <esp_vida>20</esp_vida>
         <vertebrat>SI</vertebrat>
-        <alimentacio>carnívor</alimentacio>
-        <reproduccio>mamífer</reproduccio>
-        <ecosistema>terrestre</ecosistema>
+        <alimentacio>Carnívor</alimentacio>
+        <reproduccio>Vivípar</reproduccio>
+        <ecosistema>Terrestre</ecosistema>
         <seccio>12</seccio>
     </Mamifer>
-    <Mamifer id="M02">
+    <Mamifer id="MA02">
         <nom>Shira</nom>
         <raça>Felí</raça>
         <edat>8</edat>
@@ -21,12 +21,12 @@
         <pes>10,5 Kg</pes>
         <esp_vida>25</esp_vida>
         <vertebrat>SI</vertebrat>
-        <alimentacio>carnívor</alimentacio>
-        <reproduccio>mamífer</reproduccio>
-        <ecosistema>terrestre</ecosistema>
+        <alimentacio>Carnívor</alimentacio>
+        <reproduccio>Vivípar</reproduccio>
+        <ecosistema>Terrestre</ecosistema>
         <seccio>13</seccio>
-    <vacuna>si</vacuna><vacuna>si</vacuna><vacuna>si</vacuna></Mamifer>
-    <Mamifer id="M03">
+   </Mamifer>
+    <Mamifer id="MA03">
         <nom>Diego</nom>
         <raça>Felí</raça>
         <edat>666</edat>
@@ -34,9 +34,9 @@
         <pes>20 Kg</pes>
         <esp_vida>25</esp_vida>
         <vertebrat>SI</vertebrat>
-        <alimentacio>carnívor</alimentacio>
-        <reproduccio>mamífer</reproduccio>
-        <ecosistema>terrestre</ecosistema>
+        <alimentacio>Carnívor</alimentacio>
+        <reproduccio>Vivípar</reproduccio>
+        <ecosistema>Terrestre</ecosistema>
         <seccio>5</seccio>
     </Mamifer>
    

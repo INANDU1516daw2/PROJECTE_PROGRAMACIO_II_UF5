@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Artropodes SYSTEM "Artropodes.dtd">
 <Artropodes>
-    
+    <Artropode id="AR01">
+        <nom>Spiderman</nom>
+        <raça>Aràcnid</raça>
+        <edat>3</edat>
+        <sexe>M</sexe>
+        <pes>0.3 Kg</pes>
+        <esp_vida>2</esp_vida>
+        <vertebrat>NO</vertebrat>
+        <alimentacio>Carnívor</alimentacio>
+        <reproduccio>Ovípar</reproduccio>
+        <ecosistema>Terrestre</ecosistema>
+        <seccio>15</seccio>
+    </Artropode>
+    <Artropode id="AR02">
+        <nom>Spiderwoman</nom>
+        <raça>Aràcnid</raça>
+        <edat>2</edat>
+        <sexe>F</sexe>
+        <pes>0.3 Kg</pes>
+        <esp_vida>2</esp_vida>
+        <vertebrat>NO</vertebrat>
+        <alimentacio>Carnívor</alimentacio>
+        <reproduccio>Ovípar</reproduccio>
+        <ecosistema>Terrestre</ecosistema>
+        <seccio>16</seccio>
+    </Artropode>
 </Artropodes>
