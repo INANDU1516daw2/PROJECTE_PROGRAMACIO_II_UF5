@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Reptils SYSTEM "Reptils.dtd">
 <Reptils>
     
-<Reptil id="R01">
+<Reptil id="RE01">
     <nom>Draco</nom>
     <raça>Pogona</raça>
     <edat>4</edat>
@@ -13,7 +13,7 @@
     <reproduccio>Ovípar</reproduccio>
     <ecosistema>Terrestre</ecosistema>
 </Reptil>
-<Reptil id="R02">
+<Reptil id="RE02">
     <nom>Serp</nom>
     <raça>Serpiente</raça>
     <edat>4</edat>

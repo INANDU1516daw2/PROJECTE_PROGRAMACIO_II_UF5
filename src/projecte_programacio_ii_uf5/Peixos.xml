@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Peixos SYSTEM "Reptils.dtd">
 <Peixos>
-<Peix id="P01">
+<Peix id="PE01">
         <nom>Gyarados</nom>
         <raça>Platy</raça>
         <edat>1</edat>
@@ -14,7 +14,7 @@
         <seccio>1</seccio>
     </Peix>
     
-    <Peix id="P02">
+    <Peix id="PE02">
         <nom>Dory</nom>
         <raça>Colisa</raça>
         <edat>3</edat>
