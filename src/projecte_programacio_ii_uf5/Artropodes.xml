@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Artropodes SYSTEM "Artropodes.dtd">
 <Artropodes>
-    <Artropode id="AR01">
+    <Artropode id="0">
         <nom>Spiderman</nom>
         <raça>Aràcnid</raça>
         <edat>3</edat>
@@ -13,7 +13,7 @@
         <ecosistema>Terrestre</ecosistema>
         <seccio>15</seccio>
     </Artropode>
-    <Artropode id="AR02">
+    <Artropode id="1">
         <nom>Spiderwoman</nom>
         <raça>Aràcnid</raça>
         <edat>2</edat>

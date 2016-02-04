@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Amfibis SYSTEM "Amfibis.dtd">
 <Amfibis>
     
-    <Amfibi id="AM01">
+    <Amfibi id="0">
         <nom>Croac</nom>
         <raça>Granota</raça>
         <edat>3</edat>
@@ -15,7 +15,7 @@
         <seccio>10</seccio>
     </Amfibi>
     
-    <Amfibi id="AM02">
+    <Amfibi id="1">
         <nom>SeñorSapo</nom>
         <raça>Gripau</raça>
         <edat>6</edat>

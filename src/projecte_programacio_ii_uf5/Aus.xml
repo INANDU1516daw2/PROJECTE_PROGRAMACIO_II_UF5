@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Aus SYSTEM "Aus.dtd">
 <Aus>
-    <Au id="AU01">
+    <Au id="0">
         <nom>Eagle</nom>
         <raça>Àguila</raça>
         <edat>5</edat>
@@ -13,7 +13,7 @@
         <ecosistema>Aeri</ecosistema>
         <seccio>19</seccio>
     </Au>
-    <Au id="AU02">
+    <Au id="1">
         <nom>Lorito</nom>
         <raça>Lloro</raça>
         <edat>3</edat>

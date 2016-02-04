@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Mamifers SYSTEM "mamifers.dtd">
 <Mamifers>
-    <Mamifer id="MA01">
+    <Mamifer id="0">
         <nom>Manny</nom>
         <raça>Primat</raça>
         <edat>0</edat>
@@ -13,7 +13,7 @@
         <ecosistema>Terrestre</ecosistema>
         <seccio>12</seccio>
     </Mamifer>
-    <Mamifer id="MA02">
+    <Mamifer id="1">
         <nom>Shira</nom>
         <raça>Felí</raça>
         <edat>8</edat>
@@ -26,7 +26,7 @@
         <ecosistema>Terrestre</ecosistema>
         <seccio>13</seccio>
    </Mamifer>
-    <Mamifer id="MA03">
+    <Mamifer id="2">
         <nom>Diego</nom>
         <raça>Felí</raça>
         <edat>666</edat>
