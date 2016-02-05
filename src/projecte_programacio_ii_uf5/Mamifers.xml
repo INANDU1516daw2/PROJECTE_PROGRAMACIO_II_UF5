@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Mamifers SYSTEM "Mamifers.dtd">
 <Mamifers>
-    <Mamifer id="M01">
+    <Mamifer id="0">
         <nom>Manny</nom>
         <raça>Primat</raça>
         <edat>0</edat>
@@ -11,9 +11,10 @@
         <alimentacio>carnívor</alimentacio>
         <reproduccio>mamífer</reproduccio>
         <ecosistema>terrestre</ecosistema>
+        <vacuna>si</vacuna>
         <seccio>12</seccio>
     </Mamifer>
-    <Mamifer id="M02">
+    <Mamifer id="1">
         <nom>Shira</nom>
         <raça>Felí</raça>
         <edat>8</edat>
@@ -24,9 +25,10 @@
         <alimentacio>carnívor</alimentacio>
         <reproduccio>mamífer</reproduccio>
         <ecosistema>terrestre</ecosistema>
+        <vacuna>si</vacuna>
         <seccio>13</seccio>
-    <vacuna>si</vacuna><vacuna>si</vacuna><vacuna>si</vacuna></Mamifer>
-    <Mamifer id="M03">
+    </Mamifer>
+    <Mamifer id="2">
         <nom>Diego</nom>
         <raça>Felí</raça>
         <edat>666</edat>
@@ -37,8 +39,7 @@
         <alimentacio>carnívor</alimentacio>
         <reproduccio>mamífer</reproduccio>
         <ecosistema>terrestre</ecosistema>
+        <vacuna>si</vacuna>
         <seccio>5</seccio>
     </Mamifer>
-   
-
 </Mamifers>

@@ -1,16 +1,33 @@
 package projecte_programacio_ii_uf5;
 
-import static projecte_programacio_ii_uf5.AfegirNode.AfegirNode;
-import static projecte_programacio_ii_uf5.CrearAnimal.CrearAnimal;
+import java.util.ArrayList;
 import static projecte_programacio_ii_uf5.Lectura_By_ID.Lectura_By_ID;
-import static projecte_programacio_ii_uf5.Modifica_NodeContent.Modifica_NodeContent;
 
 public class Principal {
     
     public static void main(String[] args) {
         
+        ArrayList <Animal> llistaMamifers = new ArrayList <>();
+        
+        XML_a_Objetos.XML_a_Objeto("Mamifers", llistaMamifers);
+        
+//        Lectura_By_ID_ALL.Lectura_By_ID("Mamifers");
+        
+//        printArrayList(llistaMamifers);
+        
+//        Iterator <Mamifer> mi_iterador = llistaMamifers.iterator();
+//        
+//        while(mi_iterador.hasNext()){
+//            System.out.println(mi_iterador.next());
+//        }
+        
+//        System.out.println(llistaMamifers.get(0));
+        
+        
+
+        
 //        Modifica_NodeContent("Mamifers", "M06", "nom", "Manny");
-        Modifica_NodeContent("Peixos", "P01", "nom", "Gyarados");
+//        Modifica_NodeContent("Peixos", "P01", "nom", "Gyarados");
 //        Lectura_By_ID("Peixos", "P01");
         
 //        AfegirNode("Mamifers", "M06", "vacuna", "si");
