@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Mamifers SYSTEM "Mamifers.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Mamifers SYSTEM "mamifers.dtd">
 <Mamifers>
     <Mamifer id="0">
         <nom>Manny</nom>
@@ -26,8 +26,10 @@
         <reproduccio>mamífer</reproduccio>
         <ecosistema>terrestre</ecosistema>
         <vacuna>si</vacuna>
+        <alimentacio>Carnívor</alimentacio>
+        <reproduccio>Vivípar</reproduccio>
+        <ecosistema>Terrestre</ecosistema>
         <seccio>13</seccio>
-    </Mamifer>
     <Mamifer id="2">
         <nom>Diego</nom>
         <raça>Felí</raça>
@@ -36,10 +38,15 @@
         <pes>20 Kg</pes>
         <esp_vida>25</esp_vida>
         <vertebrat>SI</vertebrat>
+    </Mamifer>
+   </Mamifer>
+        <seccio>5</seccio>
+    </Mamifer>
+</Mamifers>
         <alimentacio>carnívor</alimentacio>
         <reproduccio>mamífer</reproduccio>
         <ecosistema>terrestre</ecosistema>
         <vacuna>si</vacuna>
-        <seccio>5</seccio>
-    </Mamifer>
-</Mamifers>
+        <alimentacio>Carnívor</alimentacio>
+        <reproduccio>Vivípar</reproduccio>
+        <ecosistema>Terrestre</ecosistema>

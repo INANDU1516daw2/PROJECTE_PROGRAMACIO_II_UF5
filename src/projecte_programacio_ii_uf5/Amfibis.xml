@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Amfibis SYSTEM "Amfibis.dtd">
 <Amfibis>
     
+    <Amfibi id="0">
+        <nom>Croac</nom>
+        <raça>Granota</raça>
+        <edat>3</edat>
+        <sexe>M</sexe>
+        <pes>0.5 Kg</pes>
+        <esp_vida>10</esp_vida>
+        <vertebrat>SI</vertebrat>
+        <alimentacio>Omnívor</alimentacio>
+        <reproduccio>Ovípar</reproduccio>
+        <ecosistema>Acuatic/Terrestre</ecosistema>
+        <seccio>10</seccio>
+    </Amfibi>
+    
+    <Amfibi id="1">
+        <nom>SeñorSapo</nom>
+        <raça>Gripau</raça>
+        <edat>6</edat>
+        <sexe>M</sexe>
+        <pes>2 Kg</pes>
+        <esp_vida>15</esp_vida>
+        <vertebrat>SI</vertebrat>
+        <alimentacio>Omnívor</alimentacio>
+        <reproduccio>Ovípar</reproduccio>
+        <ecosistema>Acuatic/Terrestre</ecosistema>
+        <seccio>12</seccio>
+    </Amfibi>
 </Amfibis>
