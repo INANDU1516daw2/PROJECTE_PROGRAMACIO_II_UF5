@@ -1,6 +1,7 @@
 package projecte_programacio_ii_uf5;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import static projecte_programacio_ii_uf5.Lectura_By_ID.Lectura_By_ID;
 
 public class Principal {
@@ -15,11 +16,13 @@ public class Principal {
         
 //        printArrayList(llistaMamifers);
         
-//        Iterator <Mamifer> mi_iterador = llistaMamifers.iterator();
+//        llistaMamifers.add(new Mamifer());
 //        
-//        while(mi_iterador.hasNext()){
-//            System.out.println(mi_iterador.next());
-//        }
+        Iterator <Animal> mi_iterador = llistaMamifers.iterator();
+        
+        while(mi_iterador.hasNext()){
+            System.out.println(mi_iterador.next());
+        }
         
 //        System.out.println(llistaMamifers.get(0));
         

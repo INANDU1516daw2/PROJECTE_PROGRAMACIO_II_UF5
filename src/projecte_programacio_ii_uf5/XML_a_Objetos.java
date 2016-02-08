@@ -33,13 +33,11 @@ public class XML_a_Objetos {
 
             //nom arrel fitxer
             String docRoot = doc.getDocumentElement().getNodeName();
-            System.out.println(docRoot + "\n=================");
+            System.out.println("\n\n" + docRoot + "\n=================");
 
             //busca tots nodes amb TagName <Mamifer> i els guarda a la llista
             NodeList Mamifers = doc.getElementsByTagName("Mamifer");
             System.out.println("Total mamifers: " + Mamifers.getLength());
-
-            System.out.println("\nContingut node\n==============");
 
             for(int i = 0; i < Mamifers.getLength(); i++){
                   
@@ -63,12 +61,12 @@ public class XML_a_Objetos {
                         valors.add(camp_valor); //afegim el TextContent al array
                     }
                 }
-                
+       
                 llistaMamifers.add(
                     new Mamifer(
-                            valors.get(0) , valors.get(1), valors.get(2), valors.get(3),
-                            valors.get(4), valors.get(5), valors.get(6), valors.get(7), valors.get(8), valors.get(9),
-                            valors.get(10), valors.get(11), valors.get(12)
+                            valors.get(0), valors.get(1), valors.get(2), valors.get(3),
+                            valors.get(4), valors.get(5), valors.get(6), valors.get(7), 
+                            valors.get(8), valors.get(9), valors.get(10), valors.get(11)
                     )
                 );
                 
@@ -84,6 +82,7 @@ public class XML_a_Objetos {
                 System.out.println("======================\n");
             }   
 
+            
 
         }catch (ParserConfigurationException | SAXException | IOException ex) {
             Logger.getLogger(Lectura_By_ID_ALL.class.getName()).log(Level.SEVERE, null, ex);
@@ -98,11 +97,11 @@ public class XML_a_Objetos {
     //        llistaMamifers.add(new Mamifer());
     //    
         
-            Iterator <Animal> mi_iterador = llistaMamifers.iterator();
-            
-            while(mi_iterador.hasNext()){
-                System.out.println(mi_iterador.next());
-            }
+//            Iterator <Animal> mi_iterador = llistaMamifers.iterator();
+//            
+//            while(mi_iterador.hasNext()){
+//                System.out.println(mi_iterador.next().toString());
+//            }
 
 
 
