@@ -2,7 +2,6 @@ package projecte_programacio_ii_uf5;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import static projecte_programacio_ii_uf5.CrearAnimal.CrearAnimal;
 
 public class Principal {
     
@@ -10,6 +9,7 @@ public class Principal {
         
         
         //Creacio Coleccio objectes mamifers de la lectura Mamifers.xml ........
+        
         ArrayList <Animal> llistaMamifers = new ArrayList <>();
         XML_a_Objetos.XML_a_Objeto("Mamifer", llistaMamifers);
         
@@ -24,8 +24,6 @@ public class Principal {
         );
         
         llistaMamifers.get(1).reproduir(llistaMamifers.get(1), llistaMamifers.get(0), llistaMamifers);
-//        llistaMamifers.get(1).reproduir(llistaMamifers.get(1), llistaMamifers.get(0), llistaMamifers);
-//        llistaMamifers.get(1).reproduir(llistaMamifers.get(0), llistaMamifers.get(2), llistaMamifers);
         
         mamifer_iterador = llistaMamifers.iterator();
         

@@ -1,5 +1,7 @@
 package projecte_programacio_ii_uf5;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -13,12 +15,19 @@ public class PROJECTE_PROGRAMACIO_II_UF5 extends Application {
     @Override
     public void start(Stage primaryStage) {
         Button btn = new Button();
-        btn.setText("Say 'Hello World'");
+        btn.setText("Mostra llistat Mamifers per consola");
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                ArrayList <Animal> llistaMamifers = new ArrayList <>();
+                XML_a_Objetos.XML_a_Objeto("Mamifer", llistaMamifers);
+
+                Iterator <Animal> mamifer_iterador = llistaMamifers.iterator();
+
+                while(mamifer_iterador.hasNext()){
+                    System.out.println(mamifer_iterador.next());
+                }
             }
         });
         
