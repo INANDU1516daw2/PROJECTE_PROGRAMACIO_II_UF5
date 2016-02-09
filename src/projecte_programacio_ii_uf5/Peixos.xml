@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Peixos SYSTEM "Reptils.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Peixos SYSTEM "Peixos.dtd">
 <Peixos>
-<Peix id="0">
+    <Peix id="0">
         <nom>Gyarados</nom>
         <raça>Platy</raça>
         <edat>1</edat>
@@ -11,9 +12,9 @@
         <alimentacio>hervivor</alimentacio>
         <reproduccio>vivipar</reproduccio>
         <ecosistema>aquatic</ecosistema>
+        <vacuna>no</vacuna>
         <seccio>1</seccio>
     </Peix>
-    
     <Peix id="1">
         <nom>Dory</nom>
         <raça>Colisa</raça>
@@ -25,6 +26,7 @@
         <alimentacio>hervivor</alimentacio>
         <reproduccio>vivipar</reproduccio>
         <ecosistema>aquatic</ecosistema>
+        <vacuna>si</vacuna>
         <seccio>2</seccio>
     </Peix>
-   </Peixos>
+</Peixos>

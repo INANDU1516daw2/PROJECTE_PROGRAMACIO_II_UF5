@@ -3,7 +3,6 @@ package projecte_programacio_ii_uf5;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
@@ -17,13 +16,18 @@ import org.xml.sax.SAXException;
 
 public class XML_a_Objetos {
     
-    public static void XML_a_Objeto(String fitxer, ArrayList <Animal> llistaMamifers){
-
+    public static void XML_a_Objeto(String animal, ArrayList <Animal> llista){
+        
+        String animals = animal + "s";
+        String TagNameAnimal = animal;
+        if ("Peixo".equals(animal)){
+            TagNameAnimal = "Peix";
+        }
+        
         try {
 
             File xml = new File("/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
-                    + "PROJECTE_PROGRAMACIO_II_UF5/"
-                    + "src/projecte_programacio_ii_uf5/" + fitxer + ".xml");
+                    + "PROJECTE_PROGRAMACIO_II_UF5/" + "src/projecte_programacio_ii_uf5/" + animals + ".xml");
 
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 
@@ -33,79 +37,62 @@ public class XML_a_Objetos {
 
             //nom arrel fitxer
             String docRoot = doc.getDocumentElement().getNodeName();
-            System.out.println("\n\n" + docRoot + "\n=================");
+            System.out.println("\n\nLLEGINT NODES => " + docRoot + ".xml" + "\n=============================");
 
             //busca tots nodes amb TagName <Mamifer> i els guarda a la llista
-            NodeList Mamifers = doc.getElementsByTagName("Mamifer");
-            System.out.println("Total mamifers: " + Mamifers.getLength());
+            NodeList nodeAnimal = doc.getElementsByTagName(TagNameAnimal);
+            System.out.println("Total " + docRoot + ": " + nodeAnimal.getLength());
 
-            for(int i = 0; i < Mamifers.getLength(); i++){
-                  
-                ArrayList <String> valors = new ArrayList <>();
-                
-                Element mamiferNode = doc.getElementById(String.valueOf(i));
-                if(mamiferNode.getNodeType() == Node.ELEMENT_NODE){
-                    System.out.println("\nInformació node\n======================");
-                    String nomNode = mamiferNode.getNodeName();
-                    String valAttr = mamiferNode.getAttribute("id");
-                    System.out.println("Tipus: " + nomNode + "\nid: " + valAttr);
-                }
-                NodeList MamiferContent = mamiferNode.getChildNodes();
-                for(int j = 0; j < MamiferContent.getLength(); j++){
-                    Node node = MamiferContent.item(j);
-                    if(node.getNodeType() == Node.ELEMENT_NODE){
-                        String camp = node.getNodeName();
-                        String camp_valor = node.getFirstChild().getTextContent();
-                        System.out.println(camp + ": " + camp_valor);
-                        
-                        valors.add(camp_valor); //afegim el TextContent al array
+                for(int i = 0; i < nodeAnimal.getLength(); i++){
+
+                    ArrayList <String> valors = new ArrayList <>();
+
+                    Element animalNode = doc.getElementById(String.valueOf(i));
+                    if(animalNode.getNodeType() == Node.ELEMENT_NODE){
+                        System.out.println("\n\nInformació node\n===============");
+                        String nomNode = animalNode.getNodeName();
+                        String valAttr = animalNode.getAttribute("id");
+                        System.out.println("Tipus: " + nomNode + "\nid: " + valAttr);
                     }
-                }
-       
-                llistaMamifers.add(
-                    new Mamifer(
-                            valors.get(0), valors.get(1), valors.get(2), valors.get(3),
-                            valors.get(4), valors.get(5), valors.get(6), valors.get(7), 
-                            valors.get(8), valors.get(9), valors.get(10), valors.get(11)
-                    )
-                );
-                
-//                Iterator <String> mi_iterador = valors.iterator();
-//
-//                while(mi_iterador.hasNext()){
-//                    
-//                }
-                
-//                llistaMamifers.add(new Mamifer(nom, raça, ID, ID_pare, ID_mare, edat,
-//                        femeni, pes, esp_vida, vertebrat, alimentacio, reproduccio, ecosistema, vacunacio));
-                
-                System.out.println("======================\n");
-            }   
+                    NodeList animalContent = animalNode.getChildNodes();
+                    for(int j = 0; j < animalContent.getLength(); j++){
+                        Node node = animalContent.item(j);
+                        if(node.getNodeType() == Node.ELEMENT_NODE){
+                            String camp = node.getNodeName();
+                            String camp_valor = node.getFirstChild().getTextContent();
+                            System.out.println(camp + ": " + camp_valor);
 
-            
+                            valors.add(camp_valor); //afegim el TextContent al array
+                        }
+                    }
 
-        }catch (ParserConfigurationException | SAXException | IOException ex) {
-            Logger.getLogger(Lectura_By_ID_ALL.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                    switch (animals) {
+                        case "Mamifers" : 
+                            llista.add(
+                                new Mamifer(
+                                        valors.get(0), valors.get(1), valors.get(2), valors.get(3),
+                                        valors.get(4), valors.get(5), valors.get(6), valors.get(7), 
+                                        valors.get(8), valors.get(9), valors.get(10), valors.get(11)
+                                )
+                            );
+                            break;
+                        case "Peixos" : 
+                            llista.add(
+                                new Peix(
+                                        valors.get(0), valors.get(1), valors.get(2), valors.get(3),
+                                        valors.get(4), valors.get(5), valors.get(6), valors.get(7), 
+                                        valors.get(8), valors.get(9), valors.get(10), valors.get(11)
+                                )
+                            );
+                            break;
+                    }
+                    
 
+                }   
 
-
-
-
-
-
-    //        llistaMamifers.add(new Mamifer());
-    //    
-        
-//            Iterator <Animal> mi_iterador = llistaMamifers.iterator();
-//            
-//            while(mi_iterador.hasNext()){
-//                System.out.println(mi_iterador.next().toString());
-//            }
-
-
-
+            }catch (ParserConfigurationException | SAXException | IOException ex) {
+                Logger.getLogger(Lectura_By_ID_ALL.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
         }
-
 }

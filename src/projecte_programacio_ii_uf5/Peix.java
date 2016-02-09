@@ -1,8 +1,8 @@
 package projecte_programacio_ii_uf5;
 
-public class Mamifer extends Animal {
+public class Peix extends Animal {
     
-    public Mamifer(String nom,
+    public Peix(String nom,
                    String raça,
                    String edat, 
                    String femeni, 
@@ -30,7 +30,7 @@ public class Mamifer extends Animal {
     }
     
     //constructor buit amb camps per defecte
-    public Mamifer(){
+    public Peix(){
         this.nom = "no-catalogat";
         this.raça = "no-catalogat";
         this.edat = 0;
@@ -47,7 +47,7 @@ public class Mamifer extends Animal {
 
     @Override
     public String toString() {
-        return "\nMamifer:{ Nom: " + getNom() + " | Raça: "+ getRaça() + " | Edat: "+ getEdat() +" | Femeni: "+ getFemeni() +
+        return "\nPeixos:{ Nom: " + getNom() + " | Raça: "+ getRaça() + " | Edat: "+ getEdat() +" | Femeni: "+ getFemeni() +
                 " | Pes: "+ getPes() +" | Esp_Vida: "+ getEsp_vida() +" | Alimentació: "+ getAlimentacio() +
                 " \n\t | Reproducció: "+ getReproduccio() +" | Ecosistema: "+ getEcosistema() +" | Vacunació: "
                 + getVacunacio() +" | Secció: "+ getSeccio() +" }\n";
