@@ -23,6 +23,7 @@ public class XML_a_Objetos {
         if ("Peixo".equals(animal)){
             TagNameAnimal = "Peix";
         }
+        String valAttr = null;
         
         try {
 
@@ -51,7 +52,7 @@ public class XML_a_Objetos {
                     if(animalNode.getNodeType() == Node.ELEMENT_NODE){
                         System.out.println("\n\nInformació node\n===============");
                         String nomNode = animalNode.getNodeName();
-                        String valAttr = animalNode.getAttribute("id");
+                        valAttr = animalNode.getAttribute("id");
                         System.out.println("Tipus: " + nomNode + "\nid: " + valAttr);
                     }
                     NodeList animalContent = animalNode.getChildNodes();
@@ -70,15 +71,7 @@ public class XML_a_Objetos {
                         case "Mamifers" : 
                             llista.add(
                                 new Mamifer(
-                                        valors.get(0), valors.get(1), valors.get(2), valors.get(3),
-                                        valors.get(4), valors.get(5), valors.get(6), valors.get(7), 
-                                        valors.get(8), valors.get(9), valors.get(10), valors.get(11)
-                                )
-                            );
-                            break;
-                        case "Peixos" : 
-                            llista.add(
-                                new Peix(
+                                        valAttr,
                                         valors.get(0), valors.get(1), valors.get(2), valors.get(3),
                                         valors.get(4), valors.get(5), valors.get(6), valors.get(7), 
                                         valors.get(8), valors.get(9), valors.get(10), valors.get(11)
@@ -86,7 +79,6 @@ public class XML_a_Objetos {
                             );
                             break;
                     }
-                    
 
                 }   
 

@@ -1,15 +1,18 @@
 package projecte_programacio_ii_uf5;
 
+import java.util.ArrayList;
+
 /**
  * Creació de la classe diferida Animal
  */
 public abstract class Animal {
-
+    
+    protected int id;
     protected String nom;
     protected String raça;
     protected int edat;
     protected String femeni;
-    protected String pes;
+    protected int pes;
     protected int esp_vida;
     protected String vertebrat;
     protected String alimentacio;
@@ -17,6 +20,8 @@ public abstract class Animal {
     protected String ecosistema;
     protected String vacunacio;
     protected int seccio;
+    
+    public abstract void reproduir(Animal pare, Animal mare, ArrayList <Animal> llista);
 
     public String getNom() {
         return nom;
@@ -28,6 +33,14 @@ public abstract class Animal {
 
     public String getRaça() {
         return raça;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setRaça(String raça) {
@@ -50,11 +63,11 @@ public abstract class Animal {
         this.femeni = femeni;
     }
 
-    public String getPes() {
+    public int getPes() {
         return pes;
     }
 
-    public void setPes(String pes) {
+    public void setPes(int pes) {
         this.pes = pes;
     }
 

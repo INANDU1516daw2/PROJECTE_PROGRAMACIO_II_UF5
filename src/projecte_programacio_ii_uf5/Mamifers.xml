@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE Mamifers SYSTEM "mamifers.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Mamifers SYSTEM "Mamifers.dtd">
 <Mamifers>
     <Mamifer id="0">
         <nom>Manny</nom>
         <raça>Primat</raça>
         <edat>0</edat>
         <sexe>M</sexe>
-        <pes>8,5 Kg</pes>
+        <pes>8</pes>
         <esp_vida>20</esp_vida>
         <vertebrat>SI</vertebrat>
         <alimentacio>carnívor</alimentacio>
@@ -20,7 +19,7 @@
         <raça>Felí</raça>
         <edat>8</edat>
         <sexe>F</sexe>
-        <pes>10,5 Kg</pes>
+        <pes>10</pes>
         <esp_vida>25</esp_vida>
         <vertebrat>SI</vertebrat>
         <alimentacio>carnívor</alimentacio>
@@ -34,7 +33,7 @@
         <raça>Cani</raça>
         <edat>666</edat>
         <sexe>M</sexe>
-        <pes>20 Kg</pes>
+        <pes>20</pes>
         <esp_vida>25</esp_vida>
         <vertebrat>SI</vertebrat>
         <alimentacio>carnívor</alimentacio>

@@ -26,7 +26,7 @@ public class CrearAnimal {
     
     public static void CrearAnimal(String fitxer, String NodeAnimal, String id, String nom, String raça, String edat,
             String sexe, String pes, String esp_vida, String vertebrat, String alimentacio, 
-            String reproduccio, String ecosistema) {
+            String reproduccio, String ecosistema, String vacuna, String seccio) {
  
 	  try {
  
@@ -98,6 +98,14 @@ public class CrearAnimal {
                     Animal.appendChild(ecosistemaTag);
                     ecosistemaTag.appendChild(doc.createTextNode(ecosistema));
                     
+                    Element vacunaTag = doc.createElement("vacuna");
+                    Animal.appendChild(vacunaTag);
+                    vacunaTag.appendChild(doc.createTextNode(vacuna));
+                    
+                    Element seccioTag = doc.createElement("seccio");
+                    Animal.appendChild(seccioTag);
+                    seccioTag.appendChild(doc.createTextNode(seccio));
+                    
                 }
                 
             // write the content into xml file
@@ -136,7 +144,7 @@ public class CrearAnimal {
             StreamResult result = new StreamResult(new File(filepath));
             transformer.transform(source, result);
             
-//            System.out.println("Nou Mamifer["+id+"] creat ....... [OK]");
+            System.out.println("Nou Mamifer["+id+"] creat ....... [OK]");
  
 	  } catch (ParserConfigurationException | TransformerException pce) {
 	  } catch (SAXException | IOException ex) {
