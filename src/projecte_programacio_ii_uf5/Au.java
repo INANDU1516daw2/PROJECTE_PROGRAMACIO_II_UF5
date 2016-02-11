@@ -20,7 +20,7 @@ public class Au extends Animal {
                    String alimentacio,
                    String reproduccio,
                    String ecosistema,
-                   String vacunacio,
+                   String vacuna_id,
                    String seccio) {
         
         this.id = Integer.parseInt(id);
@@ -34,7 +34,7 @@ public class Au extends Animal {
         this.alimentacio = alimentacio;
         this.reproduccio = reproduccio;
         this.ecosistema = ecosistema;
-        this.vacunacio = vacunacio;
+        this.vacuna_id = vacuna_id;
         this.seccio = Integer.parseInt(seccio);
     }
     
@@ -51,7 +51,7 @@ public class Au extends Animal {
         this.alimentacio = "no-catalogat";
         this.reproduccio = "no-catalogat";
         this.ecosistema = "Terrestre";
-        this.vacunacio = "no-catalogat";
+        this.vacuna_id = "no-catalogat";
         this.seccio = 00;
     }
 
@@ -60,7 +60,7 @@ public class Au extends Animal {
         return "\nAu:{ ID: " + getId() + " | Nom: " + getNom() + " | Raça: "+ getRaça() + " | Edat: "+ getEdat() +" | Femeni: "+ getFemeni() +
                 " | Pes: "+ getPes() +" | Esp_Vida: "+ getEsp_vida() +" | Alimentació: "+ getAlimentacio() +
                 " \n\t | Reproducció: "+ getReproduccio() +" | Ecosistema: "+ getEcosistema() +" | Vacunació: "
-                + getVacunacio() +" | Secció: "+ getSeccio() +" }\n";
+                + getVacuna_id() +" | Secció: "+ getSeccio() +" }\n";
     }
 
     @Override
@@ -88,72 +88,5 @@ public class Au extends Animal {
         return hash;
     }
     
-    
-    @Override
-    public void reproduir(Animal pare, Animal mare, ArrayList <Animal> llista) {
-        if(!pare.femeni.equals(mare.femeni)){
-            System.out.println("\n\nReproduint " + pare.getNom() + " amb " + mare.getNom());
-            System.out.println("Diferent sexe, podem avançar");
-            int ID_fill = llista.size();
-            String Nom_fill = "Fill-test";
-            String genere = null;
-            Random rand = new Random();
-            int randomGenere = rand.nextInt((1 - 0) + 1) + 0;
-            if(randomGenere == 1){
-                genere = "M";
-            }else{
-                genere = "F";
-            }
-            int randomPes = rand.nextInt((10 - 0) + 10) + 0;
-            
-            System.out.println("\nNova ID: " + ID_fill + "\nnom: "
-                                + Nom_fill + "\ngenere: " + genere
-                                + "\npes: " + randomPes
-                            );
-            
-            /* 
-             * Afegim nou animal creat a la colecció
-            */
-            llista.add( new Au(
-                                    String.valueOf(ID_fill),
-                                    Nom_fill,
-                                    mare.getRaça(),
-                                    String.valueOf(0), 
-                                    genere, 
-                                    String.valueOf(randomPes),
-                                    String.valueOf(pare.getEsp_vida()),
-                                    pare.getVertebrat(),
-                                    pare.getAlimentacio(),
-                                    pare.getReproduccio(),
-                                    pare.getEcosistema(),
-                                    "no",
-                                    String.valueOf(mare.getSeccio())
-                                ) 
-                   );
-            
-        /* 
-        * Afegim nou animal creat al fitxer XML
-        */
-            CrearAnimal( "Aus",
-                        "Au",
-                        String.valueOf(ID_fill),
-                        Nom_fill,
-                        mare.getRaça(),
-                        String.valueOf(0), 
-                        genere, 
-                        String.valueOf(randomPes),
-                        String.valueOf(pare.getEsp_vida()),
-                        pare.getVertebrat(),
-                        pare.getAlimentacio(),
-                        pare.getReproduccio(),
-                        pare.getEcosistema(),
-                        "no",
-                        String.valueOf(mare.getSeccio())
-                    );
-            
-        }else{
-            System.out.println("Mateix sexe, no poden avançar");
-        }
-    }
-    
+      
 }

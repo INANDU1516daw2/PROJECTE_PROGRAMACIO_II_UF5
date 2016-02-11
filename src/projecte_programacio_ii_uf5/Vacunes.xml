@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?
-<!DOCTYPE Vacunes SYSTEM "Vacunes.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Vacunes SYSTEM "Vacunes.dtd">
 <Vacunes>
     <Vacuna id="M0">
         <nom>Rabia</nom>
@@ -9,4 +8,14 @@
         <nom>Colera</nom>
         <data>2016/02/11 15:00:56</data>
     </Vacuna>
+<Vacuna id="M0"><nom>sifigils</nom><data>2016/02/11 20:40:01</data>
+</Vacuna>
+<Vacuna id="M0">
+    <nom>diarrea</nom>
+    <data>2016/02/11 20:40:01</data>
+</Vacuna>
+<Vacuna id="M1">
+    <nom>parkinson</nom>
+    <data>2016/02/11 20:40:01</data>
+</Vacuna>
 </Vacunes>

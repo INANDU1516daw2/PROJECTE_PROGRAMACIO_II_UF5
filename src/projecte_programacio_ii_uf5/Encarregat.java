@@ -132,74 +132,6 @@ public class Encarregat extends Empleat implements Cuidador {
     }
 
     
-    /**
-     * El objecte encarregat vacuna al objecte mamífer si la vacuna pasada com argument està continguda en la llista vacunes
-     * @param encarregat
-     * @param mamifer
-     * @param vacunacio 
-     */
-    
-    public void vacunar_mamifer (Encarregat encarregat, Mamifer mamifer, String vacunacio) {
-//        ArrayList <String> vacunas_mamifer = new ArrayList <>();
-//        vacunas_mamifer.add("rabia");
-//        vacunas_mamifer.add("mixomatosis");
-//        vacunas_mamifer.add("hepatitis");
-//        
-//        Date data = new Date();
-//        GregorianCalendar gc = new GregorianCalendar();
-//        gc.setTime(data);
-//        
-//        boolean vacuna_permesa = false;
-//        
-//        for(String vacuna : vacunas_mamifer){
-//            if(vacunacio.equals(vacuna)){
-//                vacuna_permesa = true;
-//                System.out.println("Encarregat "+encarregat.getID()+" de nom "+encarregat.getNom()+
-//                        " ha vacunat a " +mamifer.getID()+" de nom "+mamifer.getNom()+" amb anti-"+vacunacio+
-//                        " en el dia "+gc.get(Calendar.DAY_OF_MONTH) +" en mes "+gc.get(Calendar.MONTH)+
-//                        " de "+gc.get(Calendar.YEAR) + " a las "+gc.get(Calendar.HOUR_OF_DAY)+":"+gc.get(Calendar.MINUTE)+":"
-//                        +gc.get(Calendar.SECOND));
-//                break;
-//            }              
-//        }
-//        if(vacuna_permesa == false){
-//            System.out.println("Vacuna " + vacunacio + " no permesa en mamifers");
-//        }
-    }
-    
-    
-    /**
-     * El objecte encarregat vacuna al objecte au si la vacuna pasada com argument està continguda en la llista vacunes
-     * @param encargat
-     * @param au
-     * @param vacunacio 
-     */
-//    public void vacunar_au (Encarregat encarregat, Au au, String vacunacio) {
-////        ArrayList <String> llista_vacunas_aus = new ArrayList <>();
-////        llista_vacunas_aus.add("eimerias");
-////        llista_vacunas_aus.add("salmonela");
-////        
-////        Date data = new Date();
-////        GregorianCalendar gc = new GregorianCalendar();
-////        gc.setTime(data);
-////        
-////        boolean vacuna_permesa = false;
-////        for(String e : llista_vacunas_aus){
-////            if(vacunacio.equals(e)){
-////                vacuna_permesa = true;
-////                System.out.println("Encarregat "+encarregat.getID()+" de nom "+encarregat.getNom()+
-////                        " ha vacunat a " +au.getID()+" de nom "+au.getNom()+" amb anti-"+vacunacio+
-////                        " en el dia "+gc.get(Calendar.DAY_OF_MONTH) +" en mes "+gc.get(Calendar.MONTH)+
-////                        " de "+gc.get(Calendar.YEAR) + " a las "+gc.get(Calendar.HOUR_OF_DAY)+":"+gc.get(Calendar.MINUTE)+":"
-////                        +gc.get(Calendar.SECOND));
-////                break;
-////            }
-////            if(vacuna_permesa == false){
-////                 System.out.println("Vacuna " + vacunacio + " no permesa en aus");
-////            }
-////        }
-//    }
-    
         public static void Vacunar(String fitxer, String NodeVacuna, String vacuna_id, String nom) {
  
 	  try {
@@ -262,7 +194,7 @@ public class Encarregat extends Empleat implements Cuidador {
 	  } catch (SAXException | IOException ex) {
             Logger.getLogger(CrearAnimal.class.getName()).log(Level.SEVERE, null, ex);
         }
-	}
+    }
 
     
     @Override

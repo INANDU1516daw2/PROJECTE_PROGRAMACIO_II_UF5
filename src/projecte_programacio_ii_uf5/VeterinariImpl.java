@@ -8,21 +8,11 @@ public class VeterinariImpl implements Veterinari {
      * @see Veterinari
      */
     @Override
-    public void vacunar_mamifer (Encarregat encarregat, Mamifer mamifer, String vacunacio) {
-    }
-    
-    /**
-     * @see Veterinari
-     */
-    @Override
-    public void vacunar_au (Encarregat encarregat, Au au, String vacunacio){
-    }
-    
-    /**
-     * @see Veterinari
-     */
-    @Override
     public void tractar(String ID_encarregat, String nom_encarregat, String ID_animal, String nom_animal) {
     }
     
+    
+    
+    public void Vacunar(String fitxer, String NodeVacuna, String vacuna_id, String nom){
+    }
 }
