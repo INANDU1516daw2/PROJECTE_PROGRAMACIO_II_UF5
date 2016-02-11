@@ -14,10 +14,26 @@ public class PROJECTE_PROGRAMACIO_II_UF5 extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Mostra llistat Mamifers per consola");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
+        
+        Button btn1 = new Button();
+        btn1.setText("Mostra llistat Mamifers per consola");
+        btn1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ArrayList <Animal> llistaMamifers = new ArrayList <>();
+                XML_a_Objetos.XML_a_Objeto("Mamifer", llistaMamifers);
+
+                Iterator <Animal> mamifer_iterador = llistaMamifers.iterator();
+
+                while(mamifer_iterador.hasNext()){
+                    System.out.println(mamifer_iterador.next());
+                }
+            }
+        });
+        
+        Button btn2 = new Button();
+        btn2.setText("Mostra llistat Mamifers per consola");
+        btn2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 ArrayList <Animal> llistaMamifers = new ArrayList <>();
@@ -32,7 +48,8 @@ public class PROJECTE_PROGRAMACIO_II_UF5 extends Application {
         });
         
         StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        root.getChildren().add(btn1);
+        root.getChildren().add(btn2);
         
         Scene scene = new Scene(root, 300, 250);
         

@@ -18,7 +18,7 @@ public abstract class Animal {
     protected String alimentacio;
     protected String reproduccio;
     protected String ecosistema;
-    protected String vacunacio;
+    protected String vacuna_id;
     protected int seccio;
     
     public abstract void reproduir(Animal pare, Animal mare, ArrayList <Animal> llista);
@@ -111,12 +111,12 @@ public abstract class Animal {
         this.ecosistema = ecosistema;
     }
 
-    public String getVacunacio() {
-        return vacunacio;
+    public String getVacuna_id() {
+        return vacuna_id;
     }
 
-    public void setVacunacio(String vacunacio) {
-        this.vacunacio = vacunacio;
+    public void getVacuna_id(String vacuna_id) {
+        this.vacuna_id = vacuna_id;
     }
 
     public int getSeccio() {

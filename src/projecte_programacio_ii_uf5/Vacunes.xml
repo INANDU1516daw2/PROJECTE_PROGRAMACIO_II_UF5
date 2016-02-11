@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Mamifers SYSTEM "Vacunes.dtd">
+<Vacunes>
+    <Vacuna id="M0">
+        <nom>
+            Rabia
+        </nom>
+    </Vacuna>
+    <Vacuna id="M1">
+        <nom>
+            Colera
+        </nom>
+    </Vacuna>
+</Vacunes>

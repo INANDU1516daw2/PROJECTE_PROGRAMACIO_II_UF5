@@ -20,7 +20,7 @@ public class Mamifer extends Animal {
                    String alimentacio,
                    String reproduccio,
                    String ecosistema,
-                   String vacunacio,
+                   String vacuna_id,
                    String seccio) {
         
         this.id = Integer.parseInt(id);
@@ -34,7 +34,7 @@ public class Mamifer extends Animal {
         this.alimentacio = alimentacio;
         this.reproduccio = reproduccio;
         this.ecosistema = ecosistema;
-        this.vacunacio = vacunacio;
+        this.vacuna_id = vacuna_id;
         this.seccio = Integer.parseInt(seccio);
     }
     
@@ -51,7 +51,7 @@ public class Mamifer extends Animal {
         this.alimentacio = "no-catalogat";
         this.reproduccio = "no-catalogat";
         this.ecosistema = "Terrestre";
-        this.vacunacio = "no-catalogat";
+        this.vacuna_id = "no-catalogat";
         this.seccio = 00;
     }
 
@@ -59,8 +59,8 @@ public class Mamifer extends Animal {
     public String toString() {
         return "\nMamifer:{ ID: " + getId() + " | Nom: " + getNom() + " | Raça: "+ getRaça() + " | Edat: "+ getEdat() +" | Femeni: "+ getFemeni() +
                 " | Pes: "+ getPes() +" | Esp_Vida: "+ getEsp_vida() +" | Alimentació: "+ getAlimentacio() +
-                " \n\t | Reproducció: "+ getReproduccio() +" | Ecosistema: "+ getEcosistema() +" | Vacunació: "
-                + getVacunacio() +" | Secció: "+ getSeccio() +" }\n";
+                " \n\t | Reproducció: "+ getReproduccio() +" | Ecosistema: "+ getEcosistema() +" | Vacuna-id: "
+                + getVacuna_id() +" | Secció: "+ getSeccio() +" }\n";
     }
 
     @Override
@@ -126,7 +126,7 @@ public class Mamifer extends Animal {
                                     pare.getAlimentacio(),
                                     pare.getReproduccio(),
                                     pare.getEcosistema(),
-                                    "no",
+                                    "M".concat(String.valueOf(ID_fill)),
                                     String.valueOf(mare.getSeccio())
                                 ) 
                    );
@@ -147,7 +147,7 @@ public class Mamifer extends Animal {
                         pare.getAlimentacio(),
                         pare.getReproduccio(),
                         pare.getEcosistema(),
-                        "no",
+                        "M".concat(String.valueOf(ID_fill)),
                         String.valueOf(mare.getSeccio())
                     );
             
