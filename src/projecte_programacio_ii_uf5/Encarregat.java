@@ -1,15 +1,31 @@
 package projecte_programacio_ii_uf5;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
 import static projecte_programacio_ii_uf5.CrearAnimal.CrearAnimal;
 /**
  * Creció de la classe Encarregat que hereta de Empleat i implementa les interfícies Cuidador i Veterinari
  */
-public class Encarregat extends Empleat implements Veterinari, Cuidador {
+public class Encarregat extends Empleat implements Cuidador {
     /**
      * Constructor amb paràmetres
      * @param nom
@@ -123,7 +139,6 @@ public class Encarregat extends Empleat implements Veterinari, Cuidador {
      * @param vacunacio 
      */
     
-    @Override
     public void vacunar_mamifer (Encarregat encarregat, Mamifer mamifer, String vacunacio) {
 //        ArrayList <String> vacunas_mamifer = new ArrayList <>();
 //        vacunas_mamifer.add("rabia");
@@ -159,32 +174,96 @@ public class Encarregat extends Empleat implements Veterinari, Cuidador {
      * @param au
      * @param vacunacio 
      */
-    @Override
-    public void vacunar_au (Encarregat encarregat, Au au, String vacunacio) {
-//        ArrayList <String> llista_vacunas_aus = new ArrayList <>();
-//        llista_vacunas_aus.add("eimerias");
-//        llista_vacunas_aus.add("salmonela");
-//        
-//        Date data = new Date();
-//        GregorianCalendar gc = new GregorianCalendar();
-//        gc.setTime(data);
-//        
-//        boolean vacuna_permesa = false;
-//        for(String e : llista_vacunas_aus){
-//            if(vacunacio.equals(e)){
-//                vacuna_permesa = true;
-//                System.out.println("Encarregat "+encarregat.getID()+" de nom "+encarregat.getNom()+
-//                        " ha vacunat a " +au.getID()+" de nom "+au.getNom()+" amb anti-"+vacunacio+
-//                        " en el dia "+gc.get(Calendar.DAY_OF_MONTH) +" en mes "+gc.get(Calendar.MONTH)+
-//                        " de "+gc.get(Calendar.YEAR) + " a las "+gc.get(Calendar.HOUR_OF_DAY)+":"+gc.get(Calendar.MINUTE)+":"
-//                        +gc.get(Calendar.SECOND));
-//                break;
-//            }
-//            if(vacuna_permesa == false){
-//                 System.out.println("Vacuna " + vacunacio + " no permesa en aus");
-//            }
-//        }
-    }
+//    public void vacunar_au (Encarregat encarregat, Au au, String vacunacio) {
+////        ArrayList <String> llista_vacunas_aus = new ArrayList <>();
+////        llista_vacunas_aus.add("eimerias");
+////        llista_vacunas_aus.add("salmonela");
+////        
+////        Date data = new Date();
+////        GregorianCalendar gc = new GregorianCalendar();
+////        gc.setTime(data);
+////        
+////        boolean vacuna_permesa = false;
+////        for(String e : llista_vacunas_aus){
+////            if(vacunacio.equals(e)){
+////                vacuna_permesa = true;
+////                System.out.println("Encarregat "+encarregat.getID()+" de nom "+encarregat.getNom()+
+////                        " ha vacunat a " +au.getID()+" de nom "+au.getNom()+" amb anti-"+vacunacio+
+////                        " en el dia "+gc.get(Calendar.DAY_OF_MONTH) +" en mes "+gc.get(Calendar.MONTH)+
+////                        " de "+gc.get(Calendar.YEAR) + " a las "+gc.get(Calendar.HOUR_OF_DAY)+":"+gc.get(Calendar.MINUTE)+":"
+////                        +gc.get(Calendar.SECOND));
+////                break;
+////            }
+////            if(vacuna_permesa == false){
+////                 System.out.println("Vacuna " + vacunacio + " no permesa en aus");
+////            }
+////        }
+//    }
+    
+        public static void Vacunar(String fitxer, String NodeVacuna, String vacuna_id, String nom) {
+ 
+	  try {
+ 
+                String filepath = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
+                + "PROJECTE_PROGRAMACIO_II_UF5/"
+                + "src/projecte_programacio_ii_uf5/" + fitxer + ".xml";
+                
+                DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+                Document doc = docBuilder.parse(filepath);
+
+                docFactory.setValidating(true);
+
+                Element docRoot = doc.getDocumentElement();
+                
+                    System.out.println("Efectuant creació vacuna ...\n");
+                    
+                    Element Vacuna = doc.createElement(NodeVacuna);
+                    docRoot.appendChild(Vacuna);
+                    Vacuna.setAttribute("id", vacuna_id);
+
+                    Element nomTag = doc.createElement("nom");
+                    Vacuna.appendChild(nomTag);
+                    nomTag.appendChild(doc.createTextNode(nom));
+                    
+                    
+                    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                    Calendar cal = Calendar.getInstance();
+                    String data = dateFormat.format(cal.getTime()); //2014/08/06 16:00:22
+
+                    Element dataTag = doc.createElement("data");
+                    Vacuna.appendChild(dataTag);
+                    dataTag.appendChild(doc.createTextNode(data));
+                    
+                    
+//                }
+                
+            // write the content into xml file
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            
+            /* Afegim el DTD extern per usar les ID:
+             * Mirem de quin tipus animal es el fitxer XML i afegim el DTD de la seva especie
+             * Documentacio: http://stackoverflow.com/questions/6637076/parsing-xml-with-dom-doctype-gets-erased
+            */
+            
+      
+            transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Vacunes.dtd");
+            
+            
+            
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File(filepath));
+            transformer.transform(source, result);
+            
+            System.out.println("Nova vacuna["+vacuna_id+"] creada ....... [OK]");
+ 
+	  } catch (ParserConfigurationException | TransformerException pce) {
+	  } catch (SAXException | IOException ex) {
+            Logger.getLogger(CrearAnimal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+	}
+
     
     @Override
     public void reproduir(Animal pare, Animal mare, ArrayList <Animal> llista, String nouNom){
@@ -243,7 +322,7 @@ public class Encarregat extends Empleat implements Veterinari, Cuidador {
                         pare.getAlimentacio(),
                         pare.getReproduccio(),
                         pare.getEcosistema(),
-                        "no",
+                        "M".concat(String.valueOf(ID_fill)),
                         String.valueOf(mare.getSeccio())
                     );
             
@@ -255,7 +334,6 @@ public class Encarregat extends Empleat implements Veterinari, Cuidador {
      * @see Veterinari
      */
     
-    @Override
     public void tractar(String ID_encarregat, String nom_encarregat, String ID_animal, String nom_animal) {
         System.out.println("Encarregat "+ID_encarregat+" de nom "+nom_encarregat+" ha tractat a " + ID_animal+" de nom "+nom_animal);
     }

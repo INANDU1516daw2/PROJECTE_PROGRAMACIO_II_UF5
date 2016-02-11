@@ -8,29 +8,40 @@ public class Principal {
     public static void main(String[] args) {
         
         
-        //Creacio Coleccio objectes mamifers de la lectura Mamifers.xml ........
-        
+        //Creacio ArrayList buit
         ArrayList <Animal> llistaMamifers = new ArrayList <>();
+        
+        //Creacio coleccio objectes mamifers a partir de la lectura Mamifers.xml
         XML_a_Objetos.XML_a_Objeto("Mamifer", llistaMamifers);
         
+        //Iterador per poder recorrer l'ArrayList
         Iterator <Animal> mamifer_iterador = llistaMamifers.iterator();
 
+        //Bucle per llegir el ArrayList
         while(mamifer_iterador.hasNext()){
             System.out.println(mamifer_iterador.next());
         }
         
+        //Comparcio Mamifesrs (true / false)
         System.out.println(
                 llistaMamifers.get(1).equals(llistaMamifers.get(0))
         );
         
-        llistaMamifers.get(1).reproduir(llistaMamifers.get(1), llistaMamifers.get(0), llistaMamifers);
+        //Creacio Empleat Encarregat
+        Encarregat Morote = new Encarregat();
+        //Encarregat crida metode per repdroduir 2 mamifers de la collecio => llista.get(posicio)
+        Morote.reproduir(llistaMamifers.get(1), llistaMamifers.get(0), llistaMamifers, "Inge");
+        //VACUNA
+        Morote.Vacunar("Vacunes", "Vacuna", "M0", "sifigils");
+        Morote.Vacunar("Vacunes", "Vacuna", "M0", "diarrea");
+        Morote.Vacunar("Vacunes", "Vacuna", "M1", "parkinson");
         
+        //Creem un nou iterador
         mamifer_iterador = llistaMamifers.iterator();
         
         while(mamifer_iterador.hasNext()){
             System.out.println(mamifer_iterador.next());
         }
-        
         
         
         /* Podem accedir directament a cualsevol objecte animal de la coleccio amb el seu index
