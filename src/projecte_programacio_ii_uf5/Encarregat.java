@@ -170,9 +170,10 @@ public class Encarregat extends Empleat implements Cuidador {
     
     /**
      * El objecte encarregat vacuna al objecte au si la vacuna pasada com argument està continguda en la llista vacunes
-     * @param encargat
-     * @param au
-     * @param vacunacio 
+     * @param fitxer
+     * @param NodeVacuna
+     * @param vacuna_id
+     * @param nom 
      */
 //    public void vacunar_au (Encarregat encarregat, Au au, String vacunacio) {
 ////        ArrayList <String> llista_vacunas_aus = new ArrayList <>();

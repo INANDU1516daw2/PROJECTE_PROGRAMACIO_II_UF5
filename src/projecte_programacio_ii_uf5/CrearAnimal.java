@@ -26,7 +26,7 @@ public class CrearAnimal {
     
     public static void CrearAnimal(String fitxer, String NodeAnimal, String id, String nom, String raça, String edat,
             String sexe, String pes, String esp_vida, String vertebrat, String alimentacio, 
-            String reproduccio, String ecosistema, String vacuna, String seccio) {
+            String reproduccio, String ecosistema, String vacuna_id, String seccio) {
  
 	  try {
  
@@ -98,9 +98,9 @@ public class CrearAnimal {
                     Animal.appendChild(ecosistemaTag);
                     ecosistemaTag.appendChild(doc.createTextNode(ecosistema));
                     
-                    Element vacunaTag = doc.createElement("vacuna");
+                    Element vacunaTag = doc.createElement("vacuna_id");
                     Animal.appendChild(vacunaTag);
-                    vacunaTag.appendChild(doc.createTextNode(vacuna));
+                    vacunaTag.appendChild(doc.createTextNode(vacuna_id));
                     
                     Element seccioTag = doc.createElement("seccio");
                     Animal.appendChild(seccioTag);

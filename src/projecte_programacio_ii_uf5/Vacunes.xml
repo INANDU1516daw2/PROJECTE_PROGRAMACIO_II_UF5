@@ -1,12 +1,27 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?
-<!DOCTYPE Vacunes SYSTEM "Vacunes.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Vacunes SYSTEM "Vacunes.dtd">
 <Vacunes>
     <Vacuna id="M0">
-        <nom>Rabia</nom>
+        <nom>barkinson</nom>
         <data>2016/02/11 20:00:56</data>
     </Vacuna>
     <Vacuna id="M1">
-        <nom>Colera</nom>
-        <data>2016/02/11 15:00:56</data>
+        <nom>abia</nom>
+        <data>2016/02/18 19:55:04</data>
+    </Vacuna>
+    <Vacuna id="M7">
+        <nom>zarkinson</nom>
+        <data>2016/02/18 19:55:04</data>
+    </Vacuna>
+    <Vacuna id="M0">
+        <nom>sifigils</nom>
+        <data>2016/02/18 20:24:41</data>
+    </Vacuna>
+    <Vacuna id="M0">
+        <nom>diarrea</nom>
+        <data>2016/02/18 20:24:41</data>
+    </Vacuna>
+    <Vacuna id="M8">
+        <nom>abia</nom>
+        <data>2016/02/18 20:24:41</data>
     </Vacuna>
 </Vacunes>
