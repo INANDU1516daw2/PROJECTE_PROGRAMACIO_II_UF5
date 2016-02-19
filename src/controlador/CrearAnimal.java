@@ -1,8 +1,7 @@
-package projecte_programacio_ii_uf5;
+package controlador;
 
 import java.io.File;
 import java.io.IOException;
-import static java.sql.Types.NULL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
@@ -16,8 +15,6 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class CrearAnimal {
@@ -32,7 +29,11 @@ public class CrearAnimal {
  
                 String filepath = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
                 + "PROJECTE_PROGRAMACIO_II_UF5/"
-                + "src/projecte_programacio_ii_uf5/" + fitxer + ".xml";
+                + "src/dades/" + fitxer + ".xml";
+                
+                String dtd = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
+                + "PROJECTE_PROGRAMACIO_II_UF5/"
+                + "src/dades/" + fitxer + ".dtd";
                 
                 DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -42,17 +43,19 @@ public class CrearAnimal {
 
                 Element docRoot = doc.getDocumentElement();
                 
-                
                 //COMPROVEM MAMIFER AM MATEIX ID NO EXISTEIX ABANS CREARLO
                 
-                try {
-                    Element mamifer = doc.getElementById(id);
-                    String existeix = mamifer.getNodeValue();
-                    System.err.println("\nJa existeix Animal amb ID = " + id + "\ncreació cancelada ... tria altra ID!\n");
-                
-                }catch(NullPointerException e){
+//                try {
+//                    Element mamifer = doc.getElementById(id);
+//                    String existeix = mamifer.getNodeValue();
+//                    System.err.println("\nJa existeix Animal amb ID = " + id + "\ncreació cancelada ... tria altra ID!\n");
+//                
+//                }catch(NullPointerException e){
                     
-                    System.out.println("Efectuant creació ...\n");
+//                    Element mamifer = doc.getElementById(id);
+//                    String existeix = mamifer.getNodeValue();
+                
+                    System.out.println("Efectuant creació ....");
                     
                     Element Animal = doc.createElement(NodeAnimal);
                     docRoot.appendChild(Animal);
@@ -106,7 +109,7 @@ public class CrearAnimal {
                     Animal.appendChild(seccioTag);
                     seccioTag.appendChild(doc.createTextNode(seccio));
                     
-                }
+//                }
                 
             // write the content into xml file
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -137,8 +140,6 @@ public class CrearAnimal {
                     transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Artropodes.dtd");
                     break;
             }
-            
-            
             
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(new File(filepath));

@@ -1,4 +1,4 @@
-package projecte_programacio_ii_uf5;
+package model;
 /**
  * Creació de la classe Empleat
  */

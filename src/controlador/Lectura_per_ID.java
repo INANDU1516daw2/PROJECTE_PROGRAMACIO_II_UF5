@@ -1,4 +1,4 @@
-package projecte_programacio_ii_uf5;
+package controlador;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,13 +22,14 @@ import org.xml.sax.SAXException;
 * be of the XML ID type, getElementById() will never find it.
 */
 
-public class Lectura_By_ID {
+public class Lectura_per_ID {
     
-    public static void Lectura_By_ID (String fitxer, String id) {
+    public static void Lectura(String fitxer, int id) {
+        
+        String ID = String.valueOf(id);
         
         File xml = new File("/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
-                + "PROJECTE_PROGRAMACIO_II_UF5/"
-                + "src/projecte_programacio_ii_uf5/" + fitxer + ".xml");
+                    + "PROJECTE_PROGRAMACIO_II_UF5/" + "src/dades/" + fitxer + ".xml");
         
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         
@@ -37,9 +38,8 @@ public class Lectura_By_ID {
             Document doc = dBuilder.parse(xml);
             doc.getDocumentElement().normalize();
             
-//            Element mamifer = doc.getElementById(id);
             try {
-                Element mamifer = doc.getElementById(id);
+                Element mamifer = doc.getElementById(ID);
                 String existeix = mamifer.getNodeValue();
                 
                 System.out.println("\nInformació node\n======================");
@@ -66,9 +66,8 @@ public class Lectura_By_ID {
                 System.err.println("\nNo existeix Mamifer amb ID = " + id + "\nlectura no posible ... tria altra ID!\n");
             }
             
-            
         } catch (ParserConfigurationException | SAXException | IOException ex) {
-            Logger.getLogger(Lectura_By_ID.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Lectura_per_ID.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

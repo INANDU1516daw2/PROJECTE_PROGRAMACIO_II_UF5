@@ -1,4 +1,4 @@
-package projecte_programacio_ii_uf5;
+package unused;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,9 +16,9 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+//AfegirNode("Mamifers", "M06", "vacuna", "si");
 
 public class AfegirNode {
     
@@ -61,14 +61,14 @@ public class AfegirNode {
                 
                 }catch(NullPointerException e){
                     System.err.println("No existeix Mamifer amb ID = " + id + "\nno posible afegir node ... tria altra ID!\n");
-                }
+                } catch (TransformerConfigurationException ex) {
+                Logger.getLogger(AfegirNode.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (TransformerException ex) {
+                Logger.getLogger(AfegirNode.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
-        } catch (ParserConfigurationException | SAXException | IOException ex) {
-            Logger.getLogger(ModifyXMLFile.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (TransformerConfigurationException ex) {
-            Logger.getLogger(ModifyXMLFile.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (TransformerException ex) {
-            Logger.getLogger(ModifyXMLFile.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException | IOException | ParserConfigurationException ex) {
+            Logger.getLogger(AfegirNode.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }

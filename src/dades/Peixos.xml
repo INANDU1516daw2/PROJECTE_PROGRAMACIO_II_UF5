@@ -6,13 +6,13 @@
         <raça>Platy</raça>
         <edat>1</edat>
         <sexe>M</sexe>
-        <pes>100 g</pes>
+        <pes>100</pes>
         <esp_vida>2</esp_vida>
         <vertebrat>SI</vertebrat>
         <alimentacio>hervivor</alimentacio>
         <reproduccio>vivipar</reproduccio>
         <ecosistema>aquatic</ecosistema>
-        <vacuna>no</vacuna>
+        <vacuna-id>P0</vacuna-id>
         <seccio>1</seccio>
     </Peix>
     <Peix id="1">
@@ -20,13 +20,13 @@
         <raça>Colisa</raça>
         <edat>3</edat>
         <sexe>F</sexe>
-        <pes>180 g</pes>
+        <pes>180</pes>
         <esp_vida>4</esp_vida>
         <vertebrat>SI</vertebrat>
         <alimentacio>hervivor</alimentacio>
         <reproduccio>vivipar</reproduccio>
         <ecosistema>aquatic</ecosistema>
-        <vacuna>si</vacuna>
+        <vacuna-id>P1</vacuna-id>
         <seccio>2</seccio>
     </Peix>
 </Peixos>

@@ -1,7 +1,8 @@
-package projecte_programacio_ii_uf5;
+package controlador;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
@@ -14,21 +15,26 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import model.Animal;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class Modifica_NodeContent {
+public class NodeContent {
     
-    public static void Modifica_NodeContent(String fitxer, String id, String TagName, String newTextContent) {
+    public static void Modifica(String fitxer, ArrayList <Animal> llista, int id, String TagName, String newContent) {
         
-        try {
-            String filepath = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
-                + "PROJECTE_PROGRAMACIO_II_UF5/"
-                + "src/projecte_programacio_ii_uf5/" + fitxer + ".xml";
+        String ID = String.valueOf(id);
+        
+        llista.get(id).setNom(newContent);
             
+        try {
+            
+            String filepath = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
+                    + "PROJECTE_PROGRAMACIO_II_UF5/" + "src/dades/" + fitxer + ".xml";
+        
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
             Document doc = docBuilder.parse(filepath);
@@ -36,7 +42,7 @@ public class Modifica_NodeContent {
             docFactory.setValidating(true);
             
             try {
-                Element Animal = doc.getElementById(id);
+                Element Animal = doc.getElementById(String.valueOf(ID));
                 String existeix = Animal.getNodeValue();
                 
 //                    if(id.equals(TagName)){
@@ -45,14 +51,7 @@ public class Modifica_NodeContent {
 //                        System.out.println("ATTRIBUTE_NODE ");
 //                    }
                 
-                System.out.println("\nInformació node\n======================");
-                String nomNode = Animal.getTagName();
-                String valAttr = Animal.getAttribute("id");
-                System.out.println("Tipus: " + nomNode + "\nid: " + valAttr);
-
                 NodeList AnimalNodes = Animal.getChildNodes();
-
-                System.out.println("\nContingut node\n==============");
 
                 for(int i = 0; i < AnimalNodes.getLength(); i++){
                     Node node = AnimalNodes.item(i);
@@ -61,8 +60,8 @@ public class Modifica_NodeContent {
                         
                         String camp = node.getNodeName();
                         String camp_valor = node.getFirstChild().getTextContent();
-                        System.out.println(camp + ": " + camp_valor + " ==> new value: " + newTextContent);
-                        node.getFirstChild().setTextContent(newTextContent);
+                        System.out.println("old " + camp + ": " + camp_valor + " ==> new " + camp + ": " + newContent);
+                        node.getFirstChild().setTextContent(newContent);
                         System.out.println("ELEMENT_NODE ");
                         
                     }
@@ -72,31 +71,31 @@ public class Modifica_NodeContent {
                 TransformerFactory transformerFactory = TransformerFactory.newInstance();
                 Transformer transformer = transformerFactory.newTransformer();
 
-            /* Afegim el DTD extern per usar les ID:
-             * Mirem de quin tipus animal es el fitxer XML i afegim el DTD de la seva especie
-             * Documentacio: http://stackoverflow.com/questions/6637076/parsing-xml-with-dom-doctype-gets-erased
-            */
-            
-            switch (fitxer) {
-            case "Mamifers":
-                    transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Mamifers.dtd");
-                    break;
-            case "Reptils":
-                    transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Reptils.dtd");
-                    break;
-            case "Peixos":
-                    transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Peixos.dtd");
-                    break;
-            case "Amfibis":
-                    transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Amfibis.dtd");
-                    break;
-            case "Aus":
-                    transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Aus.dtd");
-                    break;
-            case "Artropodes":
-                    transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Artropodes.dtd");
-                    break;
-            }
+                /* Afegim el DTD extern per usar les ID:
+                 * Mirem de quin tipus animal es el fitxer XML i afegim el DTD de la seva especie
+                 * Documentacio: http://stackoverflow.com/questions/6637076/parsing-xml-with-dom-doctype-gets-erased
+                */
+
+                switch (fitxer) {
+                    case "Mamifers":
+                            transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Mamifers.dtd");
+                            break;
+                    case "Reptils":
+                            transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Reptils.dtd");
+                            break;
+                    case "Peixos":
+                            transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Peixos.dtd");
+                            break;
+                    case "Amfibis":
+                            transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Amfibis.dtd");
+                            break;
+                    case "Aus":
+                            transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Aus.dtd");
+                            break;
+                    case "Artropodes":
+                            transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Artropodes.dtd");
+                            break;
+                }
 
                 DOMSource source = new DOMSource(doc);
                 StreamResult result = new StreamResult(new File(filepath));
@@ -109,11 +108,11 @@ public class Modifica_NodeContent {
                 }
             
         } catch (ParserConfigurationException | SAXException | IOException ex) {
-            Logger.getLogger(Modifica_NodeContent.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NodeContent.class.getName()).log(Level.SEVERE, null, ex);
         } catch (TransformerConfigurationException ex) {
-            Logger.getLogger(Modifica_NodeContent.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NodeContent.class.getName()).log(Level.SEVERE, null, ex);
         } catch (TransformerException ex) {
-            Logger.getLogger(Modifica_NodeContent.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NodeContent.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }

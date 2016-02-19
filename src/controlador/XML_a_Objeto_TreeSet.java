@@ -1,5 +1,6 @@
-package projecte_programacio_ii_uf5;
+package controlador;
 
+import model.Vacuna;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class XML_a_Objeto_TreeSet {
         try {
 
             File xml = new File("/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
-                    + "PROJECTE_PROGRAMACIO_II_UF5/" + "src/projecte_programacio_ii_uf5/" + vacuna + ".xml");
+                    + "PROJECTE_PROGRAMACIO_II_UF5/" + "src/dades/" + vacuna + ".xml");
 
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 
@@ -32,16 +33,8 @@ public class XML_a_Objeto_TreeSet {
             Document doc = dBuilder.parse(xml);
             doc.getDocumentElement().normalize();
 
-            //nom arrel fitxer
-            String docRoot = doc.getDocumentElement().getNodeName();
-            System.out.println("\n\nLLEGINT NODES => " + docRoot + ".xml" + "\n=============================");
-
-            //busca tots nodes amb TagName <Vacuna> i els guarda a la llista
             NodeList nodeVacunes = doc.getElementsByTagName("Vacuna");
-            System.out.println("Total " + docRoot + ": " + nodeVacunes.getLength());
             
-            
-
                 for(int i = 0; i < nodeVacunes.getLength(); i++){
                     
                 ArrayList <String> valors = new ArrayList <>();
@@ -50,10 +43,8 @@ public class XML_a_Objeto_TreeSet {
                     
                     if(animalNode.getNodeType() == Node.ELEMENT_NODE){
                         Element element = (Element) animalNode;
-                        System.out.println("\n\nInformació node\n===============");
                         String nomNode = element.getNodeName();
                         valAttr = element.getAttribute("id");
-                        System.out.println("Tipus: " + nomNode + "\nid: " + valAttr);
                     }
                     
                     NodeList animalContent = animalNode.getChildNodes();
@@ -63,19 +54,16 @@ public class XML_a_Objeto_TreeSet {
                         if(node.getNodeType() == Node.ELEMENT_NODE){
                             String camp = node.getNodeName();
                             String camp_valor = node.getFirstChild().getTextContent();
-                            System.out.println(camp + ": " + camp_valor);
-
                             valors.add(camp_valor); //afegim el TextContent al array
                         }
                     }
 
                     llista.add( new Vacuna( valors.get(0), valors.get(1) ) );
-                    System.out.println(valors.get(0) + "\n" + valors.get(1));
 
                 }   
 
             }catch (ParserConfigurationException | SAXException | IOException ex) {
-                Logger.getLogger(Lectura_By_ID_ALL.class.getName()).log(Level.SEVERE, null, ex);
+                System.err.println(ex);
             }
 
         }

@@ -1,4 +1,4 @@
-package projecte_programacio_ii_uf5;
+package model;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,18 +21,13 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
-import static projecte_programacio_ii_uf5.CrearAnimal.CrearAnimal;
+import controlador.CrearAnimal;
+import static controlador.CrearAnimal.CrearAnimal;
 /**
  * Creció de la classe Encarregat que hereta de Empleat i implementa les interfícies Cuidador i Veterinari
  */
 public class Encarregat extends Empleat implements Cuidador {
-    /**
-     * Constructor amb paràmetres
-     * @param nom
-     * @param ID
-     * @param seccio
-     * @param sou 
-     */
+
     public Encarregat(String nom, String ID, int seccio, double sou) {
         this.nom = nom;
         this.ID = ID;
@@ -40,9 +35,6 @@ public class Encarregat extends Empleat implements Cuidador {
         this.sou = sou;
     }
     
-    /**
-     * Constructor per defecte, amb valors per defecte
-     */
     public Encarregat() {
         nom = "desconegut";
         ID = "desconeguda";
@@ -50,6 +42,7 @@ public class Encarregat extends Empleat implements Cuidador {
         sou = 648.99;
     }
     
+    @Override
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
@@ -67,78 +60,39 @@ public class Encarregat extends Empleat implements Cuidador {
             return false;
         }
     }
-    /**
-     * Agafa nom
-     * @return nom 
-     */
+    
     public String getNom() {
         return nom;
     }
 
-    /**
-     * Defineix nom
-     * @param nom 
-     */
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    /**
-     * Agafa ID
-     * @return ID 
-     */
     public String getID() {
         return ID;
     }
 
-    /**
-     * Defineix ID
-     * @param ID 
-     */
     public void setID(String ID) {
         this.ID = ID;
     }
 
-    /**
-     * Agafa seccio
-     * @return seccio 
-     */
     public int getSeccio() {
         return seccio;
     }
 
-    /**
-     * Defineix seccio
-     * @param seccio 
-     */
     public void setSeccio(int seccio) {
         this.seccio = seccio;
     }
 
-    /**
-     * Agafa sou
-     * @return sou 
-     */
     public double getSou() {
         return sou;
     }
 
-    /**
-     * Defineix sou
-     * @param sou 
-     */
     public void setSou(double sou) {
         this.sou = sou;
     }
 
-    
-    /**
-     * El objecte encarregat vacuna al objecte mamífer si la vacuna pasada com argument està continguda en la llista vacunes
-     * @param encarregat
-     * @param mamifer
-     * @param vacunacio 
-     */
-    
     public void vacunar_mamifer (Encarregat encarregat, Mamifer mamifer, String vacunacio) {
 //        ArrayList <String> vacunas_mamifer = new ArrayList <>();
 //        vacunas_mamifer.add("rabia");
@@ -166,48 +120,14 @@ public class Encarregat extends Empleat implements Cuidador {
 //            System.out.println("Vacuna " + vacunacio + " no permesa en mamifers");
 //        }
     }
-    
-    
-    /**
-     * El objecte encarregat vacuna al objecte au si la vacuna pasada com argument està continguda en la llista vacunes
-     * @param fitxer
-     * @param NodeVacuna
-     * @param vacuna_id
-     * @param nom 
-     */
-//    public void vacunar_au (Encarregat encarregat, Au au, String vacunacio) {
-////        ArrayList <String> llista_vacunas_aus = new ArrayList <>();
-////        llista_vacunas_aus.add("eimerias");
-////        llista_vacunas_aus.add("salmonela");
-////        
-////        Date data = new Date();
-////        GregorianCalendar gc = new GregorianCalendar();
-////        gc.setTime(data);
-////        
-////        boolean vacuna_permesa = false;
-////        for(String e : llista_vacunas_aus){
-////            if(vacunacio.equals(e)){
-////                vacuna_permesa = true;
-////                System.out.println("Encarregat "+encarregat.getID()+" de nom "+encarregat.getNom()+
-////                        " ha vacunat a " +au.getID()+" de nom "+au.getNom()+" amb anti-"+vacunacio+
-////                        " en el dia "+gc.get(Calendar.DAY_OF_MONTH) +" en mes "+gc.get(Calendar.MONTH)+
-////                        " de "+gc.get(Calendar.YEAR) + " a las "+gc.get(Calendar.HOUR_OF_DAY)+":"+gc.get(Calendar.MINUTE)+":"
-////                        +gc.get(Calendar.SECOND));
-////                break;
-////            }
-////            if(vacuna_permesa == false){
-////                 System.out.println("Vacuna " + vacunacio + " no permesa en aus");
-////            }
-////        }
-//    }
-    
-        public static void Vacunar(String fitxer, String NodeVacuna, String vacuna_id, String nom) {
+
+    public static void Vacunar(String fitxer, String NodeVacuna, String vacuna_id, String nom) {
  
 	  try {
  
                 String filepath = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
                 + "PROJECTE_PROGRAMACIO_II_UF5/"
-                + "src/projecte_programacio_ii_uf5/" + fitxer + ".xml";
+                + "src/projecte_programacio_ii_uf5/" + "src/dades/" + fitxer + ".xml";
                 
                 DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -265,7 +185,6 @@ public class Encarregat extends Empleat implements Cuidador {
         }
 	}
 
-    
     @Override
     public void reproduir(Animal pare, Animal mare, ArrayList <Animal> llista, String nouNom){
         if(!pare.femeni.equals(mare.femeni)){

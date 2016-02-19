@@ -1,4 +1,4 @@
-package projecte_programacio_ii_uf5;
+package model;
 
 public class Vacuna implements Comparable <Vacuna> {
     
@@ -6,16 +6,18 @@ public class Vacuna implements Comparable <Vacuna> {
     protected String data;
     
     @Override
- public int compareTo(Vacuna s){
-    int result = this.nom.compareTo(s.getNom());
-    if (result > 0) { 
-        return 1; 
+    public int compareTo(Vacuna s){
+        int result = this.data.compareTo(s.getData());
+        if (result > 0) { 
+            return 1; 
+        }
+        else if (result < 0){ 
+            return -1; 
+        }
+        else { 
+            return 0; 
+        }
     }
-    else if (result < 0){ 
-        return -1; 
-    }
-    else { return 0; }
-}
 
     public Vacuna(String nom, String data) {
         this.nom = nom;

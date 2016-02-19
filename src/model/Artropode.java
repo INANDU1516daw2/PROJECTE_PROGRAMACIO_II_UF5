@@ -1,14 +1,12 @@
-package projecte_programacio_ii_uf5;
+package model;
 
 import java.util.ArrayList;
 import java.util.Random;
-import static projecte_programacio_ii_uf5.CrearAnimal.CrearAnimal;
+import static controlador.CrearAnimal.CrearAnimal;
 
-
-
-public class Mamifer extends Animal {
+public class Artropode extends Animal {
     
-    public Mamifer(
+    public Artropode(
                    String id,
                    String nom,
                    String raça,
@@ -39,7 +37,7 @@ public class Mamifer extends Animal {
     }
     
     //constructor buit amb camps per defecte
-    public Mamifer(){
+    public Artropode(){
         this.id = 999;
         this.nom = "no-catalogat";
         this.raça = "no-catalogat";
@@ -57,7 +55,7 @@ public class Mamifer extends Animal {
 
     @Override
     public String toString() {
-        return "\nMamifer:{ ID: " + getId() + " | Nom: " + getNom() + " | Raça: "+ getRaça() + " | Edat: "+ getEdat() +" | Femeni: "+ getFemeni() +
+        return "\nArtropode: { ID: " + getId() + " | Nom: " + getNom() + " | Raça: "+ getRaça() + " | Edat: "+ getEdat() +" | Femeni: "+ getFemeni() +
                 " | Pes: "+ getPes() +" | Esp_Vida: "+ getEsp_vida() +" | Alimentació: "+ getAlimentacio() +
                 " \n\t | Reproducció: "+ getReproduccio() +" | Ecosistema: "+ getEcosistema() +" | Vacuna-id: "
                 + getVacuna_id() +" | Secció: "+ getSeccio() +" }\n";
@@ -114,7 +112,7 @@ public class Mamifer extends Animal {
             /* 
              * Afegim nou animal creat a la colecció
             */
-            llista.add( new Mamifer(
+            llista.add( new Artropode(
                                     String.valueOf(ID_fill),
                                     Nom_fill,
                                     mare.getRaça(),
@@ -134,8 +132,8 @@ public class Mamifer extends Animal {
         /* 
         * Afegim nou animal creat al fitxer XML
         */
-            CrearAnimal( "Mamifers",
-                        "Mamifer",
+            CrearAnimal( "Artropodes",
+                        "Artropode",
                         String.valueOf(ID_fill),
                         Nom_fill,
                         mare.getRaça(),
