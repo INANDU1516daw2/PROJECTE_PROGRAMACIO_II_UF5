@@ -185,8 +185,16 @@ public class Encarregat extends Empleat implements Cuidador {
         }
 	}
 
-    @Override
-    public void reproduir(Animal pare, Animal mare, ArrayList <Animal> llista, String nouNom){
+    public void reproduir(String animal, Animal pare, Animal mare, ArrayList <Animal> llista, String nouNom){
+        
+         String Tag = animal;
+         String Tipus = animal.concat("s");
+         
+         if ("Peixo".equals(animal)){
+            Tipus = "Peixos";
+            Tag = "Peix";
+         }
+        
         if(!pare.femeni.equals(mare.femeni)){
             System.out.println("\n\nReproduint " + pare.getNom() + " amb " + mare.getNom());
             System.out.println("Diferent sexe, podem avançar");
@@ -206,44 +214,62 @@ public class Encarregat extends Empleat implements Cuidador {
                                 + "\npes: " + randomPes
                             );
             
-            /* 
-             * Afegim nou animal creat a la colecció
-            */
-            llista.add( new Mamifer(
-                                    String.valueOf(ID_fill),
-                                    nouNom,
-                                    mare.getRaça(),
-                                    String.valueOf(0), 
-                                    genere, 
-                                    String.valueOf(randomPes),
-                                    String.valueOf(pare.getEsp_vida()),
-                                    pare.getVertebrat(),
-                                    pare.getAlimentacio(),
-                                    pare.getReproduccio(),
-                                    pare.getEcosistema(),
-                                    "M".concat(String.valueOf(ID_fill)),
-                                    String.valueOf(mare.getSeccio())
-                                ) 
-                   );
             
-        /* 
-        * Afegim nou animal creat al fitxer XML
-        */
-            CrearAnimal( "Mamifers",
-                        "Mamifer",
-                        String.valueOf(ID_fill),
-                        nouNom,
-                        mare.getRaça(),
-                        String.valueOf(0), 
-                        genere, 
-                        String.valueOf(randomPes),
-                        String.valueOf(pare.getEsp_vida()),
-                        pare.getVertebrat(),
-                        pare.getAlimentacio(),
-                        pare.getReproduccio(),
-                        pare.getEcosistema(),
-                        "M".concat(String.valueOf(ID_fill)),
-                        String.valueOf(mare.getSeccio())
+            /* 
+            * Afegim nou animal creat a la colecció
+            */
+            switch (Tag) {
+                case "Mamifer" : 
+                   llista.add( new Mamifer( String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                                String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                                pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                                pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio()) ) 
+                          );
+                    break;
+                case "Peix" : 
+                   llista.add( new Peix( String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                                String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                                pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                                pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio()) ) 
+                          );
+                    break;
+                case "Reptils" : 
+                   llista.add( new Reptil( String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                                String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                                pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                                pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio()) ) 
+                          );
+                    break;
+                case "Amfibis" : 
+                   llista.add( new Amfibi( String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                                String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                                pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                                pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio()) ) 
+                          );
+                    break;
+                case "Aus" : 
+                   llista.add( new Au( String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                                String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                                pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                                pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio()) ) 
+                          );
+                    break;
+                case "Artropodes" : 
+                   llista.add( new Artropode( String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                                String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                                pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                                pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio()) ) 
+                          );
+                    break;
+            }
+            
+                /* 
+                * Afegim nou animal creat al fitxer XML
+                */
+                 CrearAnimal( Tipus, Tag, String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                        String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                        pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                        pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio())
                     );
             
         }else{
@@ -295,6 +321,5 @@ public class Encarregat extends Empleat implements Cuidador {
     public String toString() {
         return "Encarregat{" + "nom: " + nom + '}';
     }
-    
 
 }

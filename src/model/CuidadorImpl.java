@@ -23,7 +23,7 @@ public class CuidadorImpl implements Cuidador {
     }
     
     @Override
-    public void reproduir(Animal pare, Animal mare, ArrayList <Animal> llista, String nouNom){
+    public void reproduir(String tipus, Animal pare, Animal mare, ArrayList <Animal> llista, String nouNom){
     }
     
 }
