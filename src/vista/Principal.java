@@ -3,6 +3,7 @@ package vista;
 import controlador.Lectura_per_ID;
 import controlador.NodeContent;
 import controlador.XML_a_ArrayList;
+import controlador.XML_a_Objeto_TreeSet;
 import model.Animal;
 import model.Mamifer;
 import model.Reptil;
@@ -12,7 +13,9 @@ import model.Artropode;
 import model.Amfibi;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.TreeSet;
 import model.Encarregat;
+import model.Vacuna;
 
 public class Principal {
     
@@ -90,33 +93,23 @@ public class Principal {
         System.out.println("\n\nNouPeix " + llistaPeixos.get(llistaPeixos.size() - 1).toString());
         
         
-        
-        
-        
-        //VACUNA
-//        Morote.Vacunar("Vacunes", "Vacuna", "M0", "sifigils");
-//        Morote.Vacunar("Vacunes", "Vacuna", "M0", "diarrea");
-//        Morote.Vacunar("Vacunes", "Vacuna", "M1", "parkinson");
-//        
-        //Creem un nou iterador
-//        mamifer_iterador = llistaMamifers.iterator();
-        
-//        while(mamifer_iterador.hasNext()){
-//            System.out.println(mamifer_iterador.next());
-//        }
+        /* ----------------------------- EMPLEATS ------------------------------*/
+        Morote.Vacunar("Vacunes", "Vacuna", "M0", "sifigils");
+        Morote.Vacunar("Vacunes", "Vacuna", "M0", "diarrea");
+        Morote.Vacunar("Vacunes", "Vacuna", "M1", "parkinson");
         
         //Creacio Collecció Vacunes ==> TreeSet és ordenat alfabeticament per defecte
-//        TreeSet <Vacuna> llistaVacunes = new TreeSet <>();
-//        
-//        //Creacio coleccio objectes vacunes a partir de la lectura Vacunes.xml
-//        XML_a_Objeto_TreeSet.XML_a_Objeto_TreeSet("Vacunes", llistaVacunes);
-//        System.out.println("");
+        TreeSet <Vacuna> llistaVacunes = new TreeSet <>();
         
-//        int v = 0;
-//        for(Vacuna p : llistaVacunes){
-//            System.out.println("llistaVacunes[" + v + "] = " + p.toString());
-//            v++;
-//        }
+        //Creacio coleccio objectes vacunes a partir de la lectura Vacunes.xml
+        XML_a_Objeto_TreeSet.XML_a_Objeto_TreeSet("Vacunes", llistaVacunes);
+        System.out.println("");
+        
+        int v = 0;
+        for(Vacuna p : llistaVacunes){
+            System.out.println("llistaVacunes[" + v + "] = " + p.toString());
+            v++;
+        }
         
     }
     

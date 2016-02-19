@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE Vacunes SYSTEM "Vacunes.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Vacunes SYSTEM "Vacunes.dtd">
 <Vacunes>
     <Vacuna id="M0">
         <nom>barkinson</nom>
@@ -15,14 +14,14 @@
     </Vacuna>
     <Vacuna id="M0">
         <nom>sifigils</nom>
-        <data>2016/07/20 22:24:41</data>
+        <data>2016/02/19 17:50:57</data>
     </Vacuna>
     <Vacuna id="M0">
         <nom>diarrea</nom>
-        <data>2016/09/31 12:24:41</data>
+        <data>2016/02/19 17:50:57</data>
     </Vacuna>
-    <Vacuna id="M8">
-        <nom>abia</nom>
-        <data>2016/12/01 8:24:41</data>
+    <Vacuna id="M1">
+        <nom>parkinson</nom>
+        <data>2016/02/19 17:50:57</data>
     </Vacuna>
 </Vacunes>

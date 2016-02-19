@@ -93,41 +93,13 @@ public class Encarregat extends Empleat implements Cuidador {
         this.sou = sou;
     }
 
-    public void vacunar_mamifer (Encarregat encarregat, Mamifer mamifer, String vacunacio) {
-//        ArrayList <String> vacunas_mamifer = new ArrayList <>();
-//        vacunas_mamifer.add("rabia");
-//        vacunas_mamifer.add("mixomatosis");
-//        vacunas_mamifer.add("hepatitis");
-//        
-//        Date data = new Date();
-//        GregorianCalendar gc = new GregorianCalendar();
-//        gc.setTime(data);
-//        
-//        boolean vacuna_permesa = false;
-//        
-//        for(String vacuna : vacunas_mamifer){
-//            if(vacunacio.equals(vacuna)){
-//                vacuna_permesa = true;
-//                System.out.println("Encarregat "+encarregat.getID()+" de nom "+encarregat.getNom()+
-//                        " ha vacunat a " +mamifer.getID()+" de nom "+mamifer.getNom()+" amb anti-"+vacunacio+
-//                        " en el dia "+gc.get(Calendar.DAY_OF_MONTH) +" en mes "+gc.get(Calendar.MONTH)+
-//                        " de "+gc.get(Calendar.YEAR) + " a las "+gc.get(Calendar.HOUR_OF_DAY)+":"+gc.get(Calendar.MINUTE)+":"
-//                        +gc.get(Calendar.SECOND));
-//                break;
-//            }              
-//        }
-//        if(vacuna_permesa == false){
-//            System.out.println("Vacuna " + vacunacio + " no permesa en mamifers");
-//        }
-    }
-
     public static void Vacunar(String fitxer, String NodeVacuna, String vacuna_id, String nom) {
  
 	  try {
  
                 String filepath = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
                 + "PROJECTE_PROGRAMACIO_II_UF5/"
-                + "src/projecte_programacio_ii_uf5/" + "src/dades/" + fitxer + ".xml";
+                + "src/dades/" + fitxer + ".xml";
                 
                 DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder docBuilder = docFactory.newDocumentBuilder();

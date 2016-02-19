@@ -28,4 +28,32 @@
         <vacuna-id>P1</vacuna-id>
         <seccio>2</seccio>
     </Peix>
-</Peixos>
+    <Peix id="2">
+        <nom>NouPeix</nom>
+        <raça>Platy</raça>
+        <edat>0</edat>
+        <sexe>F</sexe>
+        <pes>17</pes>
+        <esp_vida>4</esp_vida>
+        <vertebrat>SI</vertebrat>
+        <alimentacio>hervivor</alimentacio>
+        <reproduccio>vivipar</reproduccio>
+        <ecosistema>aquatic</ecosistema>
+        <vacuna_id>M2</vacuna_id>
+        <seccio>1</seccio>
+    </Peix>
+    <Peix id="3">
+        <nom>NouPeix</nom>
+        <raça>Platy</raça>
+        <edat>0</edat>
+        <sexe>M</sexe>
+        <pes>19</pes>
+        <esp_vida>4</esp_vida>
+        <vertebrat>SI</vertebrat>
+        <alimentacio>hervivor</alimentacio>
+        <reproduccio>vivipar</reproduccio>
+        <ecosistema>aquatic</ecosistema>
+        <vacuna_id>M3</vacuna_id>
+        <seccio>1</seccio>
+    </Peix>
+<Peix id="4"><nom>NouPeix</nom><raça>Platy</raça><edat>0</edat><sexe>F</sexe><pes>16</pes><esp_vida>4</esp_vida><vertebrat>SI</vertebrat><alimentacio>hervivor</alimentacio><reproduccio>vivipar</reproduccio><ecosistema>aquatic</ecosistema><vacuna_id>M4</vacuna_id><seccio>1</seccio></Peix><Peix id="5"><nom>NouPeix</nom><raça>Platy</raça><edat>0</edat><sexe>F</sexe><pes>2</pes><esp_vida>4</esp_vida><vertebrat>SI</vertebrat><alimentacio>hervivor</alimentacio><reproduccio>vivipar</reproduccio><ecosistema>aquatic</ecosistema><vacuna_id>M5</vacuna_id><seccio>1</seccio></Peix></Peixos>
