@@ -83,9 +83,11 @@ public class Principal {
          * Encarregat utilitza metode propi x repdroduir 2 mamifers de la colleció
          * Li pasem el nou nom, tot lo demés ho genera autom.
         */
-        Morote.reproduir(llistaMamifers.get(1), llistaMamifers.get(0), llistaMamifers, "NouAnimal");
+        Morote.reproduir("Mamifer", llistaMamifers.get(1), llistaMamifers.get(0), llistaMamifers, "NouMamifer");
+        Morote.reproduir("Peixo", llistaPeixos.get(1), llistaPeixos.get(0), llistaPeixos, "NouPeix");
         
-        System.out.println("\n\nllistaMamifers["+ 4 +"]: " + llistaMamifers.get(4).toString());
+        System.out.println("\n\nNouMamifer " + llistaMamifers.get(llistaMamifers.size() - 1).toString());
+        System.out.println("\n\nNouPeix " + llistaPeixos.get(llistaPeixos.size() - 1).toString());
         
         
         
