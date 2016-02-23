@@ -5,14 +5,10 @@ import controlador.NodeContent;
 import controlador.XML_a_ArrayList;
 import controlador.XML_a_Objeto_TreeSet;
 import model.Animal;
-import model.Mamifer;
-import model.Reptil;
-import model.Peix;
-import model.Au;
-import model.Artropode;
-import model.Amfibi;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.TreeSet;
 import model.Encarregat;
 import model.Vacuna;
@@ -25,6 +21,7 @@ public class Principal {
             System.out.println(itr.next());
         }
     }
+   
     
     public static void main(String[] args) {
         
@@ -80,26 +77,50 @@ public class Principal {
          * Creem els empleats només en memoria
          */
         
-        Encarregat Morote = new Encarregat();
+        Encarregat encargat_1 = new Encarregat("Morote", "E1", 1, 1700);
+        Encarregat encargat_2 = new Encarregat("Ingemar", "E2", 2, 1600);
+        Encarregat encargat_3 = new Encarregat("Marta", "E3", 3, 1900);
+        Encarregat encargat_4 = new Encarregat("Yolo", "E4", 4, 1200);
+
+        LinkedList <Encarregat> empleats = new LinkedList<>();
+        
+        empleats.add(encargat_1);   //sou: 1700
+        empleats.add(encargat_2);   //sou: 1600
+        empleats.add(encargat_3);   //sou: 1900
+        empleats.add(encargat_4);   //sou: 1200
+        
+        System.out.println("LinkedList <Encarregat> sorted");
+        
+        //ordenem la llista per sou amb metode compareTo implementat a la classe Encarregat
+        Collections.sort(empleats);
+        
+        Iterator <Encarregat> itr = empleats.iterator();
+        while(itr.hasNext()){
+            System.out.println(itr.next().getSou());
+        }
+        
+        
         
         /*
          * Encarregat utilitza metode propi x repdroduir 2 mamifers de la colleció
          * Li pasem el nou nom, tot lo demés ho genera autom.
         */
-        Morote.reproduir("Mamifer", llistaMamifers.get(1), llistaMamifers.get(0), llistaMamifers, "NouMamifer");
-        Morote.reproduir("Peixo", llistaPeixos.get(1), llistaPeixos.get(0), llistaPeixos, "NouPeix");
-        
-        System.out.println("\n\nNouMamifer " + llistaMamifers.get(llistaMamifers.size() - 1).toString());
-        System.out.println("\n\nNouPeix " + llistaPeixos.get(llistaPeixos.size() - 1).toString());
+//        encargat_1.reproduir("Mamifer", llistaMamifers.get(1), llistaMamifers.get(0), llistaMamifers, "NouMamifer");
+//          encargat_1.reproduir("Reptil", llistaReptils.get(1), llistaReptils.get(0), llistaReptils, "NouReptil");
+//        encargat_1.reproduir("Peixo", llistaPeixos.get(1), llistaPeixos.get(0), llistaPeixos, "NouPeix");
+//        
+//        System.out.println("\n\nNouMamifer " + llistaMamifers.get(llistaMamifers.size() - 1).toString());
+//        System.out.println("\n\nNouPeix " + llistaPeixos.get(llistaPeixos.size() - 1).toString());
         
         
         /* ----------------------------- EMPLEATS ------------------------------*/
-        Morote.Vacunar("Vacunes", "Vacuna", "M0", "sifigils");
-        Morote.Vacunar("Vacunes", "Vacuna", "M0", "diarrea");
-        Morote.Vacunar("Vacunes", "Vacuna", "M1", "parkinson");
+//        encargat_1.Vacunar("Vacunes", "Vacuna", "M0", "sifigils");
+//        encargat_1.Vacunar("Vacunes", "Vacuna", "M0", "diarrea");
+//        encargat_1.Vacunar("Vacunes", "Vacuna", "M1", "parkinson");
         
-        //Creacio Collecció Vacunes ==> TreeSet és ordenat alfabeticament per defecte
-        TreeSet <Vacuna> llistaVacunes = new TreeSet <>();
+        /* Al crear el set li pasem el cobjecte que implementa Comparator que ordena per cuantitat vacuna
+        */
+        TreeSet <Vacuna> llistaVacunes = new TreeSet <>(new CuantitatVacunaComparator());
         
         //Creacio coleccio objectes vacunes a partir de la lectura Vacunes.xml
         XML_a_Objeto_TreeSet.XML_a_Objeto_TreeSet("Vacunes", llistaVacunes);
@@ -110,6 +131,8 @@ public class Principal {
             System.out.println("llistaVacunes[" + v + "] = " + p.toString());
             v++;
         }
+        
+
         
     }
     

@@ -54,7 +54,7 @@ public class Reptil extends Animal {
         this.vacuna_id = "no-catalogat";
         this.seccio = 00;
     }
-
+    
     @Override
     public String toString() {
         return "\nReptil: { ID: " + getId() + " | Nom: " + getNom() + " | Raça: "+ getRaça() + " | Edat: "+ getEdat() +" | Femeni: "+ getFemeni() +

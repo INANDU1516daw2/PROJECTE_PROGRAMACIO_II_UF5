@@ -23,10 +23,12 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 import controlador.CrearAnimal;
 import static controlador.CrearAnimal.CrearAnimal;
+import java.util.Comparator;
 /**
  * Creció de la classe Encarregat que hereta de Empleat i implementa les interfícies Cuidador i Veterinari
  */
-public class Encarregat extends Empleat implements Cuidador {
+
+public class Encarregat extends Empleat implements Cuidador, Comparable <Encarregat> {
 
     public Encarregat(String nom, String ID, int seccio, double sou) {
         this.nom = nom;
@@ -42,6 +44,23 @@ public class Encarregat extends Empleat implements Cuidador {
         sou = 648.99;
     }
     
+    
+    @Override
+    public int compareTo(Encarregat e) {
+        int compare = (int) (this.sou - e.getSou());
+        if (compare > 0) {
+            return 1;
+        }
+        else if (compare < 0) {
+            return -1;
+        }
+        else {
+            return 0;
+        }
+    }
+    
+    
+    
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -54,7 +73,7 @@ public class Encarregat extends Empleat implements Cuidador {
         //LOWCASTING
         final Encarregat other = (Encarregat) obj;
         //tenen el mateix nom ?
-        if(ID == other.ID) {
+        if(ID == null ? other.ID == null : ID.equals(other.ID)) {
             return true;
         }else{
             return false;
@@ -291,7 +310,15 @@ public class Encarregat extends Empleat implements Cuidador {
 
     @Override
     public String toString() {
-        return "Encarregat{" + "nom: " + nom + '}';
+        return "Encarregat{" + "nom: " + nom + "ID: " + ID + " seccio: " + seccio + " sou: " + sou + "}";
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    
 
 }

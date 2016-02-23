@@ -42,46 +42,4 @@
         <vacuna-id>M2</vacuna-id>
         <seccio>5</seccio>
     </Mamifer>
-    <Mamifer id="3">
-        <nom>NouMamifer</nom>
-        <raça>Primat</raça>
-        <edat>0</edat>
-        <sexe>M</sexe>
-        <pes>8</pes>
-        <esp_vida>25</esp_vida>
-        <vertebrat>SI</vertebrat>
-        <alimentacio>carnívor</alimentacio>
-        <reproduccio>mamífer</reproduccio>
-        <ecosistema>terrestre</ecosistema>
-        <vacuna_id>M3</vacuna_id>
-        <seccio>12</seccio>
-    </Mamifer>
-    <Mamifer id="4">
-        <nom>NouMamifer</nom>
-        <raça>Primat</raça>
-        <edat>0</edat>
-        <sexe>F</sexe>
-        <pes>18</pes>
-        <esp_vida>25</esp_vida>
-        <vertebrat>SI</vertebrat>
-        <alimentacio>carnívor</alimentacio>
-        <reproduccio>mamífer</reproduccio>
-        <ecosistema>terrestre</ecosistema>
-        <vacuna_id>M4</vacuna_id>
-        <seccio>12</seccio>
-    </Mamifer>
-    <Mamifer id="5">
-        <nom>NouMamifer</nom>
-        <raça>Primat</raça>
-        <edat>0</edat>
-        <sexe>M</sexe>
-        <pes>6</pes>
-        <esp_vida>25</esp_vida>
-        <vertebrat>SI</vertebrat>
-        <alimentacio>carnívor</alimentacio>
-        <reproduccio>mamífer</reproduccio>
-        <ecosistema>terrestre</ecosistema>
-        <vacuna_id>M5</vacuna_id>
-        <seccio>12</seccio>
-    </Mamifer>
-<Mamifer id="6"><nom>NouMamifer</nom><raça>Primat</raça><edat>0</edat><sexe>F</sexe><pes>9</pes><esp_vida>25</esp_vida><vertebrat>SI</vertebrat><alimentacio>carnívor</alimentacio><reproduccio>mamífer</reproduccio><ecosistema>terrestre</ecosistema><vacuna_id>M6</vacuna_id><seccio>12</seccio></Mamifer><Mamifer id="7"><nom>NouMamifer</nom><raça>Primat</raça><edat>0</edat><sexe>M</sexe><pes>0</pes><esp_vida>25</esp_vida><vertebrat>SI</vertebrat><alimentacio>carnívor</alimentacio><reproduccio>mamífer</reproduccio><ecosistema>terrestre</ecosistema><vacuna_id>M7</vacuna_id><seccio>12</seccio></Mamifer></Mamifers>
+</Mamifers>

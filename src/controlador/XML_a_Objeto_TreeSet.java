@@ -58,7 +58,7 @@ public class XML_a_Objeto_TreeSet {
                         }
                     }
 
-                    llista.add( new Vacuna( valors.get(0), valors.get(1) ) );
+                    llista.add( new Vacuna( valors.get(0), valors.get(1), valors.get(2) ) );
 
                 }   
 
