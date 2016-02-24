@@ -23,14 +23,25 @@ public class Login_Excepcions extends Application {
         launch(args);
     }
 
+    //******************* Clases Excepcions Personalitzades ******************/
     
-    public static String retornaNom(TextField campTextUsuari) throws ExcepcioCampTextUsuari {
-        String nom = campTextUsuari.getText();
+    public static boolean validacioLogin(TextField user, PasswordField password) throws ExcepcioCampTextUsuari, ExcepcioCampTextPassword {
+        boolean valid = true;
+        String nom = user.getText();
+        String pass = password.getText();
+        
         if (nom.length() == 0) {
+            valid = false;
             throw new ExcepcioCampTextUsuari();
         }
-        return nom;
+        if (pass.length() == 0) {
+            valid = false;
+            throw new ExcepcioCampTextPassword();
+        }
+        
+        return valid;
     }
+    
     
      private static class ExcepcioCampTextUsuari extends Exception {
         String missatge = "El camp Usuari no pot estar buit!";
@@ -39,6 +50,15 @@ public class Login_Excepcions extends Application {
         }
     }
     
+    private static class ExcepcioCampTextPassword extends Exception {
+        String missatge = "El camp Password no pot estar buit!";
+        public String getMissatge() {
+            return missatge;
+        }
+   }
+     
+    //********************************* FX *************************************/
+
     @Override
     public void start(Stage stage) {
         stage.setTitle("Login");
@@ -77,13 +97,21 @@ public class Login_Excepcions extends Application {
             @Override
             public void handle(ActionEvent e) {
                 
-                String nom = null;
-                
                 try {
-                    nom = retornaNom(campTextUsuari);
-                    textMissatge.setText("nom: " + nom);
-                    System.out.println("\nnom: " + nom);
+
+                    boolean loginValid = validacioLogin(campTextUsuari, campPassword);
+                    if (loginValid){
+                        System.out.println("Validacio correcte !");
+                        textMissatge.setText("Validacio correcte !");
+                    }else{
+                        System.out.println("Validacio incorrecte !");
+                        textMissatge.setText("Validacio incorrecte !");
+                    }
+
                 } catch (ExcepcioCampTextUsuari ex) {
+                    textMissatge.setText(ex.getMissatge());
+                    System.err.println(ex.getMissatge());
+                } catch (ExcepcioCampTextPassword ex) {
                     textMissatge.setText(ex.getMissatge());
                     System.err.println(ex.getMissatge());
                 }
@@ -92,11 +120,10 @@ public class Login_Excepcions extends Application {
 
         });
 
-        Scene escena = new Scene(graella, 300, 275);
+        Scene escena = new Scene(graella, 500, 275);
         stage.setScene(escena);
         stage.show();
     }
-
    
     
 }
