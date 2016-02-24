@@ -1,21 +1,23 @@
-FET  | Requisits
- S   | Cal utilitzar el paradigma de la POO.
- S   | Diagrama UML amb el diagrama estàtic de classes.
- S   | Definiu una jerarquia d'herència.
- S   | Creació de diverses classes abstractes i diferides.
- N   | Utilització de classes internes
- N   | Creació i utilització de classes genèriques.
-        - Mirar classe generica per printar collecions
- S   | Utilització com a mínim de 3 tipus diferents de estructures de dades dinàmiques.
+ FET  | Requisits
+-----------------------------------------------------------------------------------------
+ OK   | Cal utilitzar el paradigma de la POO.
+ OK   | Diagrama UML amb el diagrama estàtic de classes.
+ OK   | Definiu una jerarquia d'herència.
+ OK   | Creació de diverses classes abstractes i diferides.
+ --   | Utilització de classes internes
+ --   | Creació i utilització de classes genèriques. (212 Java SE7 vol_1)
+        - les List són arrays generics
+ OK   | Utilització com a mínim de 3 tipus diferents de estructures de dades dinàmiques.
         - ArrayList <Animal>
         - LinkedList <Encarregat>
         - TreeSet <Vacuna>
- S   | Utilització de les interfícies Comparable i Comparator.
+ OK   | Utilització de les interfícies Comparable i Comparator.
         - Encarregat implementa interface Comparable i ordena LinkedList per sou
         - TreeSet Vacunes li pasem el metode Comparator que ordena les vacunes per cuantitat
- S   | Per a la persistència de les dades cal utilització de fitxers per a desar i recuperar dades.
- S   | Utilització de XML per a desar i recuperar dades.
- N   | Creació d'excepcions personalitzades.
- N   | Interfícies gràfica d'usuari amb JavaFX
- N   | Documentació de totes les classes amb Javadoc
- S   | Creació i utilització de paquets.
+ OK   | Per a la persistència de les dades cal utilització de fitxers per a desar i recuperar dades.
+ OK   | Utilització de XML per a desar i recuperar dades.
+ OK   | Creació d'excepcions personalitzades.
+        - excepcions al fer el Login FX incorrecte
+ --   | Interfícies gràfica d'usuari amb JavaFX
+ --   | Documentació de totes les classes amb Javadoc
+ OK   | Creació i utilització de paquets.

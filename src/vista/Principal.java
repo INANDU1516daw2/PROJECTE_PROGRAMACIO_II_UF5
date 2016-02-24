@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.TreeSet;
+import static javafx.scene.input.KeyCode.T;
 import model.Encarregat;
 import model.Vacuna;
 
@@ -22,7 +24,6 @@ public class Principal {
         }
     }
    
-    
     public static void main(String[] args) {
         
         /* ----------------------------- ANIMALS -------------------------------
@@ -82,7 +83,7 @@ public class Principal {
         Encarregat encargat_3 = new Encarregat("Marta", "E3", 3, 1900);
         Encarregat encargat_4 = new Encarregat("Yolo", "E4", 4, 1200);
 
-        LinkedList <Encarregat> empleats = new LinkedList<>();
+        List <Encarregat> empleats = new LinkedList<>();
         
         empleats.add(encargat_1);   //sou: 1700
         empleats.add(encargat_2);   //sou: 1600

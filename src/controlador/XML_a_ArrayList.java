@@ -31,12 +31,16 @@ public class XML_a_ArrayList {
         if ("Peixo".equals(animal)){
             TagNameAnimal = "Peix";
         }
+        
         String valAttr = null;
+        
+        
+        String ruta = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
+                + "PROJECTE_PROGRAMACIO_II_UF5/" + "src/dades/" + animals + ".xml";
         
         try {
 
-            File xml = new File("/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
-                    + "PROJECTE_PROGRAMACIO_II_UF5/" + "src/dades/" + animals + ".xml");
+            File xml = new File(ruta);
 
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 
@@ -144,9 +148,15 @@ public class XML_a_ArrayList {
 
                 }
                 
-            }catch (ParserConfigurationException | SAXException | IOException ex) {
-                System.err.println(ex);
-            }
-
+        } catch (ParserConfigurationException ex) {
+            System.err.println("error ParserConfigurationException");
+        } catch (SAXException ex) {
+            System.err.println("EL FITXER XML CONTÉ ERRORS DE SINTAXIS");
+        } catch (IOException ex) {
+            System.err.println("\nL'ARXIU XML NO S'HA TROBAT A LA RUTA ESPECIFICADA: " + ruta +
+                    "\n(Comprobar que la ruta es correcte o que l'arxiu no s'ha mogut de lloc o eliminat)");
         }
+        
+
+    }
 }
