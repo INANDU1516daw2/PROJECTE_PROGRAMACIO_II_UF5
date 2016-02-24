@@ -20,4 +20,4 @@
         - excepcions al fer el Login FX incorrecte
  --   | Interfícies gràfica d'usuari amb JavaFX
  --   | Documentació de totes les classes amb Javadoc
- OK   | Creació i utilització de paquets.
+ OK   | Creació i utilització de paquets (paquets model MVC).
