@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
@@ -24,7 +25,7 @@ import org.xml.sax.SAXException;
 
 public class XML_a_ArrayList {
     
-    public static void RecuperaDades(String animal, ArrayList <Animal> llista){
+    public static void RecuperaDades(String animal, List <Animal> llista){
         
         String animals = animal + "s";
         String TagNameAnimal = animal;

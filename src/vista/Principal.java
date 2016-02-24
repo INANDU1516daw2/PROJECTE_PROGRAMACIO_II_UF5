@@ -17,8 +17,8 @@ import model.Vacuna;
 
 public class Principal {
     
-    public static void lecturaArrayList (ArrayList <Animal> llista){
-        Iterator <Animal> itr = llista.iterator();
+    public static <T> void lecturaList (List <T> llista){
+        Iterator <T> itr = llista.iterator();
         while(itr.hasNext()){
             System.out.println(itr.next());
         }
@@ -30,34 +30,34 @@ public class Principal {
          * Cargem en memoria tots els animals existents inicialment dins els XML
          */
         
-        ArrayList <Animal> llistaMamifers = new ArrayList <>();
+        List <Animal> llistaMamifers = new ArrayList <>();
         XML_a_ArrayList.RecuperaDades("Mamifer", llistaMamifers);
         
-        ArrayList <Animal> llistaReptils = new ArrayList <>();
+        List <Animal> llistaReptils = new ArrayList <>();
         XML_a_ArrayList.RecuperaDades("Reptil", llistaReptils);
         
-        ArrayList <Animal> llistaAmfibis = new ArrayList <>();
+        List <Animal> llistaAmfibis = new ArrayList <>();
         XML_a_ArrayList.RecuperaDades("Amfibi", llistaAmfibis);
         
-        ArrayList <Animal> llistaPeixos = new ArrayList <>();
+        List <Animal> llistaPeixos = new ArrayList <>();
         XML_a_ArrayList.RecuperaDades("Peixo", llistaPeixos);
         
-        ArrayList <Animal> llistaAus = new ArrayList <>();
+        List <Animal> llistaAus = new ArrayList <>();
         XML_a_ArrayList.RecuperaDades("Au", llistaAus);
         
-        ArrayList <Animal> llistaArtropodes = new ArrayList <>();
+        List <Animal> llistaArtropodes = new ArrayList <>();
         XML_a_ArrayList.RecuperaDades("Artropode", llistaArtropodes);
         
         /*
          * ToString de cada objecte de la colecció d'animal creada
          */
-        lecturaArrayList(llistaAmfibis);
+        lecturaList(llistaReptils);
         
         /* Podem accedir directament a cualsevol objecte animal de la coleccio amb el seu index
          * ja que el valor posicio del arraylist correspon amb la id del node xml:
          * llistaReptils[1] => llistaReptils.get(1) = <Reptil id="1">
         */
-        System.out.println("\n\nllistaReptils["+ 1 +"]: " + llistaReptils.get(1).toString());
+//        System.out.println("\n\nllistaReptils["+ 1 +"]: " + llistaReptils.get(1).toString());
         
         /*
          * Podem llegir del XML un animal en concret segons la seva id
@@ -71,7 +71,7 @@ public class Principal {
         NodeContent.Modifica("Mamifers", llistaMamifers, 2, "nom", "PuesOks");
         
         //Comprovem el cambi...
-        Lectura_per_ID.Lectura("Mamifers", 2);
+//        Lectura_per_ID.Lectura("Mamifers", 2);
         
         
         /* ----------------------------- EMPLEATS ------------------------------
@@ -90,10 +90,13 @@ public class Principal {
         empleats.add(encargat_3);   //sou: 1900
         empleats.add(encargat_4);   //sou: 1200
         
-        System.out.println("LinkedList <Encarregat> sorted");
+        
+        lecturaList(empleats);
         
         //ordenem la llista per sou amb metode compareTo implementat a la classe Encarregat
         Collections.sort(empleats);
+        
+        System.out.println("LinkedList <Encarregat> sorted");
         
         Iterator <Encarregat> itr = empleats.iterator();
         while(itr.hasNext()){

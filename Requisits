@@ -1,12 +1,15 @@
- FET  | Requisits
+Creació d'una aplicació d'escriptori amb interfície gràfica i persistència de dades per a gestionar les dades d'un Zoològic. 
+
+FET  | Requisits (7 punts)
 -----------------------------------------------------------------------------------------
  OK   | Cal utilitzar el paradigma de la POO.
  OK   | Diagrama UML amb el diagrama estàtic de classes.
  OK   | Definiu una jerarquia d'herència.
  OK   | Creació de diverses classes abstractes i diferides.
- --   | Utilització de classes internes
+ OK   | Utilització de classes internes
+        -- clases excepcions login son internes
  --   | Creació i utilització de classes genèriques. (212 Java SE7 vol_1)
-        - les List són arrays generics
+        - metode <T> lecturaList
  OK   | Utilització com a mínim de 3 tipus diferents de estructures de dades dinàmiques.
         - ArrayList <Animal>
         - LinkedList <Encarregat>

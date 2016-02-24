@@ -3,6 +3,7 @@ package controlador;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
@@ -24,7 +25,7 @@ import org.xml.sax.SAXException;
 
 public class NodeContent {
     
-    public static void Modifica(String fitxer, ArrayList <Animal> llista, int id, String TagName, String newContent) {
+    public static void Modifica(String fitxer, List <Animal> llista, int id, String TagName, String newContent) {
         
         String ID = String.valueOf(id);
         
