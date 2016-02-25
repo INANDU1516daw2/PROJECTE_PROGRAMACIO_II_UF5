@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Encarregats SYSTEM "Encarregats.dtd">
+<Encarregats>
+    <Encarregat id="0">
+        <nom>Ingemar</nom>
+        <seccio>5</seccio>
+        <sou>1300</sou>
+    </Encarregat>
+    <Encarregat id="1">
+       <nom>Marta</nom>
+        <seccio>6</seccio>
+        <sou>1299</sou>
+    </Encarregat>
+</Encarregats>

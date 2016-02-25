@@ -1,0 +1,26 @@
+Creació d'una aplicació d'escriptori amb interfície gràfica i persistència de dades per a gestionar les dades d'un Zoològic. 
+
+FET  | Requisits (7 punts)
+-----------------------------------------------------------------------------------------
+ OK   | Cal utilitzar el paradigma de la POO.
+ OK   | Diagrama UML amb el diagrama estàtic de classes.
+ OK   | Definiu una jerarquia d'herència.
+ OK   | Creació de diverses classes abstractes i diferides.
+ OK   | Utilització de classes internes
+        -- clases excepcions login son internes
+ --   | Creació i utilització de classes genèriques. (212 Java SE7 vol_1)
+        - metode <T> lecturaList
+ OK   | Utilització com a mínim de 3 tipus diferents de estructures de dades dinàmiques.
+        - ArrayList <Animal>
+        - LinkedList <Encarregat>
+        - TreeSet <Vacuna>
+ OK   | Utilització de les interfícies Comparable i Comparator.
+        - Encarregat implementa interface Comparable i ordena LinkedList per sou
+        - TreeSet Vacunes li pasem el metode Comparator que ordena les vacunes per cuantitat
+ OK   | Per a la persistència de les dades cal utilització de fitxers per a desar i recuperar dades.
+ OK   | Utilització de XML per a desar i recuperar dades.
+ OK   | Creació d'excepcions personalitzades.
+        - excepcions al fer el Login FX incorrecte
+ --   | Interfícies gràfica d'usuari amb JavaFX
+ --   | Documentació de totes les classes amb Javadoc
+ OK   | Creació i utilització de paquets (paquets model MVC).

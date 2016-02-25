@@ -29,6 +29,6 @@ public interface Cuidador {
     public void alimentar(String ID_encarregat, String nom_encarregat, String ID_animal, String nom_animal, String tipus_aliment);
     
     
-    public void reproduir(Animal pare, Animal mare, ArrayList <Animal> llista, String nouNom);
+    public void reproduir(String tipus, Animal pare, Animal mare, ArrayList <Animal> llista, String nouNom);
     
 }

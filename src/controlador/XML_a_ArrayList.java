@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
@@ -24,19 +25,23 @@ import org.xml.sax.SAXException;
 
 public class XML_a_ArrayList {
     
-    public static void RecuperaDades(String animal, ArrayList <Animal> llista){
+    public static void RecuperaDades(String animal, List <Animal> llista){
         
         String animals = animal + "s";
         String TagNameAnimal = animal;
         if ("Peixo".equals(animal)){
             TagNameAnimal = "Peix";
         }
+        
         String valAttr = null;
+        
+        
+        String ruta = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
+                + "PROJECTE_PROGRAMACIO_II_UF5/" + "src/dades/" + animals + ".xml";
         
         try {
 
-            File xml = new File("/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
-                    + "PROJECTE_PROGRAMACIO_II_UF5/" + "src/dades/" + animals + ".xml");
+            File xml = new File(ruta);
 
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 
@@ -144,9 +149,15 @@ public class XML_a_ArrayList {
 
                 }
                 
-            }catch (ParserConfigurationException | SAXException | IOException ex) {
-                System.err.println(ex);
-            }
-
+        } catch (ParserConfigurationException ex) {
+            System.err.println("error ParserConfigurationException");
+        } catch (SAXException ex) {
+            System.err.println("EL FITXER XML CONTÉ ERRORS DE SINTAXIS");
+        } catch (IOException ex) {
+            System.err.println("\nL'ARXIU XML NO S'HA TROBAT A LA RUTA ESPECIFICADA: " + ruta +
+                    "\n(Comprobar que la ruta es correcte o que l'arxiu no s'ha mogut de lloc o eliminat)");
         }
+        
+
+    }
 }

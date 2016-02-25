@@ -2,6 +2,7 @@ package controlador;
 
 import model.Vacuna;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.TreeSet;
@@ -22,15 +23,24 @@ public class XML_a_Objeto_TreeSet {
 
         String valAttr = null;
         
+        String ruta = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
+                + "PROJECTE_PROGRAMACIO_II_UF5/" + "src/dades/" + vacuna + ".xml";
+        
         try {
-
-            File xml = new File("/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
-                    + "PROJECTE_PROGRAMACIO_II_UF5/" + "src/dades/" + vacuna + ".xml");
+            
+            File xml = new File(ruta);
 
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            DocumentBuilder dBuilder;
+            
+            //ParserConfigurationException
+            dBuilder = dbFactory.newDocumentBuilder();
+            
+            //SAXException
+            //IOException
             Document doc = dBuilder.parse(xml);
+            
             doc.getDocumentElement().normalize();
 
             NodeList nodeVacunes = doc.getElementsByTagName("Vacuna");
@@ -57,15 +67,19 @@ public class XML_a_Objeto_TreeSet {
                             valors.add(camp_valor); //afegim el TextContent al array
                         }
                     }
-
-                    llista.add( new Vacuna( valors.get(0), valors.get(1) ) );
-
+                    llista.add( new Vacuna( valors.get(0), valors.get(1), valors.get(2) ) );
                 }   
 
-            }catch (ParserConfigurationException | SAXException | IOException ex) {
-                System.err.println(ex);
-            }
 
+        } catch (ParserConfigurationException ex) {
+            System.err.println("error ParserConfigurationException");
+        } catch (SAXException ex) {
+            System.err.println("EL FITXER XML CONTÉ ERRORS DE SINTAXIS");
+        } catch (IOException ex) {
+            System.err.println("\nL'ARXIU XML NO S'HA TROBAT A LA RUTA ESPECIFICADA: " + ruta +
+                    "\n(Comprobar que la ruta es correcte o que l'arxiu no s'ha mogut de lloc o eliminat)");
         }
+        
     
+    }
 }

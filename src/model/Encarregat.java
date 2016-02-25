@@ -23,10 +23,12 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 import controlador.CrearAnimal;
 import static controlador.CrearAnimal.CrearAnimal;
+import java.util.Comparator;
 /**
  * Creció de la classe Encarregat que hereta de Empleat i implementa les interfícies Cuidador i Veterinari
  */
-public class Encarregat extends Empleat implements Cuidador {
+
+public class Encarregat extends Empleat implements Cuidador, Comparable <Encarregat> {
 
     public Encarregat(String nom, String ID, int seccio, double sou) {
         this.nom = nom;
@@ -42,6 +44,23 @@ public class Encarregat extends Empleat implements Cuidador {
         sou = 648.99;
     }
     
+    
+    @Override
+    public int compareTo(Encarregat e) {
+        int compare = (int) (this.sou - e.getSou());
+        if (compare > 0) {
+            return 1;
+        }
+        else if (compare < 0) {
+            return -1;
+        }
+        else {
+            return 0;
+        }
+    }
+    
+    
+    
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -54,7 +73,7 @@ public class Encarregat extends Empleat implements Cuidador {
         //LOWCASTING
         final Encarregat other = (Encarregat) obj;
         //tenen el mateix nom ?
-        if(ID == other.ID) {
+        if(ID == null ? other.ID == null : ID.equals(other.ID)) {
             return true;
         }else{
             return false;
@@ -93,41 +112,13 @@ public class Encarregat extends Empleat implements Cuidador {
         this.sou = sou;
     }
 
-    public void vacunar_mamifer (Encarregat encarregat, Mamifer mamifer, String vacunacio) {
-//        ArrayList <String> vacunas_mamifer = new ArrayList <>();
-//        vacunas_mamifer.add("rabia");
-//        vacunas_mamifer.add("mixomatosis");
-//        vacunas_mamifer.add("hepatitis");
-//        
-//        Date data = new Date();
-//        GregorianCalendar gc = new GregorianCalendar();
-//        gc.setTime(data);
-//        
-//        boolean vacuna_permesa = false;
-//        
-//        for(String vacuna : vacunas_mamifer){
-//            if(vacunacio.equals(vacuna)){
-//                vacuna_permesa = true;
-//                System.out.println("Encarregat "+encarregat.getID()+" de nom "+encarregat.getNom()+
-//                        " ha vacunat a " +mamifer.getID()+" de nom "+mamifer.getNom()+" amb anti-"+vacunacio+
-//                        " en el dia "+gc.get(Calendar.DAY_OF_MONTH) +" en mes "+gc.get(Calendar.MONTH)+
-//                        " de "+gc.get(Calendar.YEAR) + " a las "+gc.get(Calendar.HOUR_OF_DAY)+":"+gc.get(Calendar.MINUTE)+":"
-//                        +gc.get(Calendar.SECOND));
-//                break;
-//            }              
-//        }
-//        if(vacuna_permesa == false){
-//            System.out.println("Vacuna " + vacunacio + " no permesa en mamifers");
-//        }
-    }
-
     public static void Vacunar(String fitxer, String NodeVacuna, String vacuna_id, String nom) {
  
 	  try {
  
                 String filepath = "/home/"+System.getProperty("user.name")+"/NetBeansProjects/"
                 + "PROJECTE_PROGRAMACIO_II_UF5/"
-                + "src/projecte_programacio_ii_uf5/" + "src/dades/" + fitxer + ".xml";
+                + "src/dades/" + fitxer + ".xml";
                 
                 DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -185,8 +176,16 @@ public class Encarregat extends Empleat implements Cuidador {
         }
 	}
 
-    @Override
-    public void reproduir(Animal pare, Animal mare, ArrayList <Animal> llista, String nouNom){
+    public void reproduir(String animal, Animal pare, Animal mare, ArrayList <Animal> llista, String nouNom){
+        
+         String Tag = animal;
+         String Tipus = animal.concat("s");
+         
+         if ("Peixo".equals(animal)){
+            Tipus = "Peixos";
+            Tag = "Peix";
+         }
+        
         if(!pare.femeni.equals(mare.femeni)){
             System.out.println("\n\nReproduint " + pare.getNom() + " amb " + mare.getNom());
             System.out.println("Diferent sexe, podem avançar");
@@ -206,44 +205,62 @@ public class Encarregat extends Empleat implements Cuidador {
                                 + "\npes: " + randomPes
                             );
             
-            /* 
-             * Afegim nou animal creat a la colecció
-            */
-            llista.add( new Mamifer(
-                                    String.valueOf(ID_fill),
-                                    nouNom,
-                                    mare.getRaça(),
-                                    String.valueOf(0), 
-                                    genere, 
-                                    String.valueOf(randomPes),
-                                    String.valueOf(pare.getEsp_vida()),
-                                    pare.getVertebrat(),
-                                    pare.getAlimentacio(),
-                                    pare.getReproduccio(),
-                                    pare.getEcosistema(),
-                                    "M".concat(String.valueOf(ID_fill)),
-                                    String.valueOf(mare.getSeccio())
-                                ) 
-                   );
             
-        /* 
-        * Afegim nou animal creat al fitxer XML
-        */
-            CrearAnimal( "Mamifers",
-                        "Mamifer",
-                        String.valueOf(ID_fill),
-                        nouNom,
-                        mare.getRaça(),
-                        String.valueOf(0), 
-                        genere, 
-                        String.valueOf(randomPes),
-                        String.valueOf(pare.getEsp_vida()),
-                        pare.getVertebrat(),
-                        pare.getAlimentacio(),
-                        pare.getReproduccio(),
-                        pare.getEcosistema(),
-                        "M".concat(String.valueOf(ID_fill)),
-                        String.valueOf(mare.getSeccio())
+            /* 
+            * Afegim nou animal creat a la colecció
+            */
+            switch (Tag) {
+                case "Mamifer" : 
+                   llista.add( new Mamifer( String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                                String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                                pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                                pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio()) ) 
+                          );
+                    break;
+                case "Peix" : 
+                   llista.add( new Peix( String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                                String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                                pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                                pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio()) ) 
+                          );
+                    break;
+                case "Reptils" : 
+                   llista.add( new Reptil( String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                                String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                                pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                                pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio()) ) 
+                          );
+                    break;
+                case "Amfibis" : 
+                   llista.add( new Amfibi( String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                                String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                                pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                                pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio()) ) 
+                          );
+                    break;
+                case "Aus" : 
+                   llista.add( new Au( String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                                String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                                pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                                pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio()) ) 
+                          );
+                    break;
+                case "Artropodes" : 
+                   llista.add( new Artropode( String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                                String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                                pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                                pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio()) ) 
+                          );
+                    break;
+            }
+            
+                /* 
+                * Afegim nou animal creat al fitxer XML
+                */
+                 CrearAnimal( Tipus, Tag, String.valueOf(ID_fill), nouNom, mare.getRaça(),
+                        String.valueOf(0), genere, String.valueOf(randomPes), String.valueOf(pare.getEsp_vida()),
+                        pare.getVertebrat(), pare.getAlimentacio(), pare.getReproduccio(),
+                        pare.getEcosistema(), "M".concat(String.valueOf(ID_fill)), String.valueOf(mare.getSeccio())
                     );
             
         }else{
@@ -293,8 +310,15 @@ public class Encarregat extends Empleat implements Cuidador {
 
     @Override
     public String toString() {
-        return "Encarregat{" + "nom: " + nom + '}';
+        return "Encarregat{" + "nom: " + nom + "ID: " + ID + " seccio: " + seccio + " sou: " + sou + "}";
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
     
 
 }
