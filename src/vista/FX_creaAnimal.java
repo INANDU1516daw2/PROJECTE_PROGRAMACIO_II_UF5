@@ -383,8 +383,8 @@ public class  FX_creaAnimal extends Application {
     
 
 
-                GridPane.setConstraints(guardar, 1, 16);
-                GridPane.setConstraints(esborrar, 2, 16);
+                GridPane.setConstraints(guardar, 1, 17);
+                GridPane.setConstraints(esborrar, 2, 17);
                 dadesEditar.getChildren().addAll(guardar,esborrar);
 //final contingut tab1
                 
