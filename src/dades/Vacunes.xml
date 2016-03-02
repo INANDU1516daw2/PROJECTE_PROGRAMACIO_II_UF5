@@ -11,7 +11,7 @@
         <cuantitat>30</cuantitat>
     </Vacuna>
     <Vacuna id="M7">
-        <nom>zarkinson</nom>
+        <nom>parkinson</nom>
         <data>2016/02/10 15:55:04</data>
         <cuantitat>90</cuantitat>
     </Vacuna>
@@ -35,5 +35,3 @@
     <nom>sifilis</nom>
     <data>2016/03/02 16:21:29</data>
     <cuantitat>50</cuantitat>
-</Vacuna>
-</Vacunes>

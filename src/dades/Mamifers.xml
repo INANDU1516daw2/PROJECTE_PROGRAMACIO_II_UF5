@@ -43,18 +43,6 @@
         <seccio>5</seccio>
     </Mamifer>
 
-<Mamifer id="3">
-    <nom>Manel</nom>
-    <raça>pex</raça>
-    <edat>12</edat>
-    <sexe>Femeni</sexe>
-    <pes>312</pes>
-    <esp_vida>213</esp_vida>
-    <vertebrat>invertebrat</vertebrat>
-    <alimentacio>Omnívor</alimentacio>
-    <reproduccio>Vivíper</reproduccio>
-    <ecosistema>Terrestre</ecosistema>
-    <vacuna_id>M3</vacuna_id>
-    <seccio>weq</seccio>
-</Mamifer>
+
+
 </Mamifers>

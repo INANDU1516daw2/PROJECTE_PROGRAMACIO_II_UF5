@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE Artropodes SYSTEM "Artropodes.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Artropodes SYSTEM "Artropodes.dtd">
 <Artropodes>
     <Artropode id="0">
         <nom>Spiderman</nom>
@@ -29,4 +28,5 @@
         <vacuna-id>AR1</vacuna-id>
         <seccio>16</seccio>
     </Artropode>
+
 </Artropodes>
