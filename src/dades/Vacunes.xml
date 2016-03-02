@@ -20,4 +20,20 @@
         <data>2012/02/10 15:55:04</data>
         <cuantitat>40</cuantitat>
     </Vacuna>
+    
+<Vacuna id="M3">
+    <nom>rabia</nom>
+    <data>2016/03/02 16:21:29</data>
+    <cuantitat>50</cuantitat>
+</Vacuna>
+<Vacuna id="M3">
+    <nom>colera</nom>
+    <data>2016/03/02 16:21:29</data>
+    <cuantitat>50</cuantitat>
+</Vacuna>
+<Vacuna id="M3">
+    <nom>sifilis</nom>
+    <data>2016/03/02 16:21:29</data>
+    <cuantitat>50</cuantitat>
+</Vacuna>
 </Vacunes>

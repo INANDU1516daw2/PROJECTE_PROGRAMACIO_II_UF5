@@ -147,6 +147,10 @@ public class Encarregat extends Empleat implements Cuidador, Comparable <Encarre
                     Vacuna.appendChild(dataTag);
                     dataTag.appendChild(doc.createTextNode(data));
                     
+                     Element cuantitatTag = doc.createElement("cuantitat");
+                    Vacuna.appendChild(cuantitatTag);
+                    cuantitatTag.appendChild(doc.createTextNode("50"));
+                    
                     
 //                }
                 

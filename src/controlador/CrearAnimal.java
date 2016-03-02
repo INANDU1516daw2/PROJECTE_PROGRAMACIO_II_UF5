@@ -145,7 +145,7 @@ public class CrearAnimal {
             StreamResult result = new StreamResult(new File(filepath));
             transformer.transform(source, result);
             
-            System.out.println("Nou Mamifer["+id+"] creat ....... [OK]");
+            System.out.println("Nou Animal["+id+"] creat ....... [OK]");
  
 	  } catch (ParserConfigurationException | TransformerException pce) {
 	  } catch (SAXException | IOException ex) {

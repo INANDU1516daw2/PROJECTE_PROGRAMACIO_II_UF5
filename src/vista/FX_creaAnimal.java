@@ -51,6 +51,7 @@ import model.*;
 import vista.Principal;
 import controlador.CrearAnimal;
 import controlador.XML_a_ArrayList;
+import java.util.TreeSet;
 
 
 
@@ -92,13 +93,23 @@ public class  FX_creaAnimal extends Application {
         mLateral = new TabPane();
         dadesEditar = new GridPane();
         final ListView llista = new ListView(animals);
-        //final List <Animal> llistaMamifers = new ArrayList <>();
+        //List <Animal> llistaMamifers = new ArrayList <>();
         //XML_a_ArrayList.RecuperaDades("Mamifer", llistaMamifers);
         Group pSuperior = new Group();
         //Group pLateral = new Group();
-        
+        ArrayList <Animal> llistaMamifers = new ArrayList <>();
+
+            //Per vuere la llista de mamifers
+            //Creacio coleccio objectes mamifers a partir de la lectura Mamifers.xml
+            XML_a_ArrayList.RecuperaDades("Mamifer", llistaMamifers);
+            
+            final Encarregat encargat_1 = new Encarregat("Morote", "E1", 1, 1700);
+            
+             TreeSet <Vacuna> llistaVacunes = new TreeSet <>(new CuantitatVacunaComparator());
         ////////Crea l'escena, l'escena és tota la finestra menys la barra d títol
         Scene escena = new Scene(mSuperior,500,700);
+        final int fId = llistaMamifers.size();
+        final String fVacuna = "M"+fId;
         
         primaryStage.setTitle("Aplicació");
         primaryStage.setScene(escena); //associa el stage amb l'escena.
@@ -347,8 +358,19 @@ public class  FX_creaAnimal extends Application {
                         System.out.println("Párkinson: "+parkinson.isSelected());
                         //}
     //XML_a_ArrayList.RecuperaDades("Mamifer", llistaMamifers);
-                        CrearAnimal.CrearAnimal(node, fTipus, "09", fNom, fRaça, fEdat, fGenere, fPes, fEspVida, fVertebrat, fAlimentacio, fReproduccio, fEcosistema, "M09", fSeccio);
-                        
+                        CrearAnimal.CrearAnimal(node, fTipus, String.valueOf(fId), fNom, fRaça, fEdat, fGenere, fPes, fEspVida, fVertebrat, fAlimentacio, fReproduccio, fEcosistema, fVacuna, fSeccio);
+                        if(rabia.isSelected()){
+                            encargat_1.Vacunar("Vacunes", "Vacuna", fVacuna, "rabia");
+                        }
+                        if(colera.isSelected()){
+                            encargat_1.Vacunar("Vacunes", "Vacuna", fVacuna, "colera");
+                        }
+                        if(sifilis.isSelected()){
+                            encargat_1.Vacunar("Vacunes", "Vacuna", fVacuna, "sifilis");
+                        }
+                        if(parkinson.isSelected()){
+                            encargat_1.Vacunar("Vacunes", "Vacuna", fVacuna, "parkinson");
+                        }
                         
                         
                         
@@ -381,28 +403,11 @@ public class  FX_creaAnimal extends Application {
             //Inic contingut esquerra llista
             
             //Creacio ArrayList buit
-            ArrayList <Animal> llistaMamifers = new ArrayList <>();
-
-            //Per vuere la llista de mamifers
-            //Creacio coleccio objectes mamifers a partir de la lectura Mamifers.xml
-            XML_a_ArrayList.RecuperaDades("Mamifer", llistaMamifers);
-
-            //Iterador per poder recorrer l'ArrayList
-            Iterator <Animal> mamifer_iterador = llistaMamifers.iterator();
-            llista.setEditable(false);
-
+           
             
-            
-            while(mamifer_iterador.hasNext()){
-            animals.add("Mamifer"+mamifer_iterador.next().getId());
             
         }
-            llista.setItems(animals);
-//Final contingut esquerra llista
-
-            dadesVeure.setPadding(new Insets(10,10,10,10));
-            dadesVeure.setVgap(8); //Vertial spacing
-            dadesVeure.setHgap(10); //Horizontal spacing
+            
        
             //////////// crea els camps de Texts
             /*ID = new TextField("ID");
@@ -570,20 +575,10 @@ public class  FX_creaAnimal extends Application {
           //Final contingut dreta grid   
 //final contingut tab2
                 /*llista*/
-            sup2.setContent(pDividit); // contingut de la tab1
-            mSuperior.getTabs().add(sup2); //afegeix la tab1 al panell d tabs
             
-        // ocupa tot el espai disponible
-        mSuperior.prefHeightProperty().bind(escena.heightProperty());
-        mSuperior.prefWidthProperty().bind(escena.widthProperty());
-        
-        //borderPane.setCenter(tabPane);
-        //borderPane.getChildren().add(borderPane);
-        primaryStage.setScene(escena);
-        primaryStage.show();
 
     
     }
 
-}
+
 
