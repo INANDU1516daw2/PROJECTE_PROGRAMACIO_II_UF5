@@ -67,6 +67,12 @@ public class Login_Excepcions extends Application {
             throw new ExcepcioCampTextPassword();
         }
         
+        if(pass.equals("nolose")){
+            valid = true;
+        }else {
+            valid = false;
+        }
+        
         return valid;
     }
     
@@ -130,8 +136,9 @@ public class Login_Excepcions extends Application {
                     boolean loginValid = validacioLogin(campTextUsuari, campPassword);
                     if (loginValid){
                         System.out.println("Validacio correcte !");
-                        //textMissatge.setText("Validacio correcte !");
-                         stage.setScene(scene2);
+                        if(loginValid){
+                             stage.setScene(scene2);
+                        }
                        
                     }else{
                         System.out.println("Validacio incorrecte !");
