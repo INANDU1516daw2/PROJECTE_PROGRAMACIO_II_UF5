@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE Aus SYSTEM "Aus.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Aus SYSTEM "Aus.dtd">
 <Aus>
     <Au id="0">
         <nom>Eagle</nom>
@@ -29,4 +28,18 @@
         <vacuna-id>AU1</vacuna-id>
         <seccio>20</seccio>
     </Au>
+<Au id="2">
+    <nom>NouAnimal</nom>
+    <raça>Lloro</raça>
+    <edat>0</edat>
+    <sexe>M</sexe>
+    <pes>5</pes>
+    <esp_vida>14</esp_vida>
+    <vertebrat>SI</vertebrat>
+    <alimentacio>Carnívor</alimentacio>
+    <reproduccio>Ovípar</reproduccio>
+    <ecosistema>Aeri</ecosistema>
+    <vacuna_id>M2</vacuna_id>
+    <seccio>20</seccio>
+</Au>
 </Aus>

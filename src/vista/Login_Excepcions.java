@@ -5,6 +5,7 @@ import controlador.Lectura_per_ID;
 import controlador.XML_a_ArrayList;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.TreeSet;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -28,6 +29,8 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -151,12 +154,12 @@ StackPane fons = new StackPane();
 TabPane tabs = new TabPane();
 GridPane dadesEditar = new GridPane();
  
-ArrayList <Animal> llistaMamifers = new ArrayList <>();
-ArrayList <Animal> llistaArtropodes = new ArrayList <>();
-ArrayList <Animal> llistaAus = new ArrayList <>();
-ArrayList <Animal> llistaAmfibis = new ArrayList <>();
-ArrayList <Animal> llistaPeixos = new ArrayList <>();
-ArrayList <Animal> llistaReptils = new ArrayList <>();
+final ArrayList <Animal> llistaMamifers = new ArrayList <>();
+final ArrayList <Animal> llistaArtropodes = new ArrayList <>();
+final ArrayList <Animal> llistaAus = new ArrayList <>();
+final ArrayList <Animal> llistaAmfibis = new ArrayList <>();
+final ArrayList <Animal> llistaPeixos = new ArrayList <>();
+final ArrayList <Animal> llistaReptils = new ArrayList <>();
   
    
 //Per vuere la llista de mamifers
@@ -166,7 +169,7 @@ XML_a_ArrayList.RecuperaDades("Artropode", llistaArtropodes);
 XML_a_ArrayList.RecuperaDades("Au", llistaAus);
 XML_a_ArrayList.RecuperaDades("Amfibi", llistaAmfibis);
 XML_a_ArrayList.RecuperaDades("Reptil", llistaReptils);
-XML_a_ArrayList.RecuperaDades("Peix", llistaPeixos);
+XML_a_ArrayList.RecuperaDades("Peixo", llistaPeixos);
 
         final int fId = llistaMamifers.size();
         final String fVacuna = "M"+fId;
@@ -411,16 +414,16 @@ Button esborrar = new Button("Esborrar");
     //XML_a_ArrayList.RecuperaDades("Mamifer", llistaMamifers);
                         CrearAnimal.CrearAnimal(node, fTipus, String.valueOf(fId), fNom, fRaça, fEdat, fGenere, fPes, fEspVida, fVertebrat, fAlimentacio, fReproduccio, fEcosistema, fVacuna, fSeccio);
                         if(rabia.isSelected()){
-                            encargat_1.Vacunar("Vacunes", "Vacuna", fVacuna, "rabia");
+                            Encarregat.Vacunar("Vacunes", "Vacuna", fVacuna, "rabia");
                         }
                         if(colera.isSelected()){
-                            encargat_1.Vacunar("Vacunes", "Vacuna", fVacuna, "colera");
+                            Encarregat.Vacunar("Vacunes", "Vacuna", fVacuna, "colera");
                         }
                         if(sifilis.isSelected()){
-                            encargat_1.Vacunar("Vacunes", "Vacuna", fVacuna, "sifilis");
+                            Encarregat.Vacunar("Vacunes", "Vacuna", fVacuna, "sifilis");
                         }
                         if(parkinson.isSelected()){
-                            encargat_1.Vacunar("Vacunes", "Vacuna", fVacuna, "parkinson");
+                            Encarregat.Vacunar("Vacunes", "Vacuna", fVacuna, "parkinson");
                         }
                         
                         
@@ -441,7 +444,7 @@ tabs.getTabs().add(tab1); //afegeix la tab1 al panell d tabs
 // Se crea un panel dividido verticalmente
 GridPane cercaAnimal = new GridPane();
 final ListView llista = new ListView(animals);
-SplitPane pDividit = new SplitPane(llista,cercaAnimal);
+//SplitPane pDividit = new SplitPane(llista,cercaAnimal);
         
 //Inic contingut esquerra llista
             
@@ -510,9 +513,109 @@ cercaAnimal.getChildren().addAll(eCercaId,fCercaId,bCercaId);
 
 ///*****************************************************///
 //AFEGIR AQUI CODI DE LECTURA I ESCRIPTURA DE DADES ANIMALS
+Label tipus_label = new Label("Tipus: ");
+        final ChoiceBox <String> choiceBox = new ChoiceBox <>();
+        choiceBox.getItems().addAll("Mamifer","Reptil","Amfibi","Au","Artropode","Peix");
+        choiceBox.setValue("Mamifer");
+
+        Label id_label = new Label("ID animal");
+        final TextField id = new TextField();
+        
+        final Text nom_animal = new Text();
+        final Text raça_animal = new Text();
+        final Text edat_animal = new Text();
+        final Text sexe_animal = new Text();
+        final Text pes_animal = new Text();
+        final Text esp_vida_animal = new Text();
+        final Text vertebrat_animal = new Text();
+        final Text alimentacio_animal = new Text();
+        final Text reproduccio_animal = new Text();
+        final Text ecosistema_animal = new Text();
+        final Text vacuna_id_animal = new Text();
+        final Text seccio_animal = new Text();
+        
+        String img_path = null;
+        final Image img;
+        ImageView imgView;
+        
+        btn = new Button("Ok");
+        btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                
+                int ID = Integer.parseInt(id.getText());
+                
+                List <Animal> llista = null;
+                
+                String tipus = choiceBox.getValue();
+                
+        
+                switch (tipus) {
+                    case "Mamifer":
+//                        img_path = "file:images/mamifer/";
+                        llista = llistaMamifers;
+                        break;
+                    case "Reptil":
+//                        img_path = "file:images/reptil/";
+                        llista = llistaReptils;
+                        break;
+                    case "Amfibi":
+//                        img_path = "file:images/amfibi/";
+                        llista = llistaAmfibis;
+                        break;
+                    case "Au": 
+//                        img_path = "file:images/au/";
+                        llista = llistaAus;
+                        break;
+                    case "Artropode":
+//                        img_path = "file:images/artropode/";
+                        llista = llistaArtropodes;
+                        break;
+                    case "Peix":
+//                        img_path = "file:images/peix/";
+                        llista = llistaPeixos;
+                        break;
+                        
+                }
+//                    img = new Image("file:images/mamifer/" + id.getText() + ".jpg", 100, 100, true, true);
+                
+                nom_animal.setText("Nom:   " + llista.get(ID).getNom());
+                raça_animal.setText("Raça:     " + llista.get(ID).getRaça());
+                edat_animal.setText("Edat:     " + String.valueOf(llista.get(ID).getEdat()));
+                sexe_animal.setText("Sexe:     " + llista.get(ID).getFemeni());
+                pes_animal.setText("Pes    " + String.valueOf(llista.get(ID).getPes()));
+                esp_vida_animal.setText("Esp_vida:     " + String.valueOf(llista.get(ID).getEsp_vida()));
+                vertebrat_animal.setText("Vertebrat:   " + llista.get(ID).getVertebrat());
+                alimentacio_animal.setText("Alimentacio:   " + llista.get(ID).getAlimentacio());
+                reproduccio_animal.setText("Reproduccio:   " + llista.get(ID).getReproduccio());
+                ecosistema_animal.setText("Ecosistema  " + llista.get(ID).getEcosistema());
+                vacuna_id_animal.setText("Vacuna-Id:   " + llista.get(ID).getVacuna_id());
+                seccio_animal.setText("Seccio:     " + String.valueOf(llista.get(ID).getSeccio()));
+            }
+
+        });
+        
+//        img_path = "file:images/mamifer/";
+                
+        img = new Image("file:images/mamifer/2.jpg", 100, 100, true, true);
+        imgView = new ImageView(img);
+        
+        //Layout
+        VBox layout = new VBox(10);
+        layout.setPadding(new Insets(20, 20, 20, 20));
+        layout.getChildren().addAll(
+                tipus_label, choiceBox, id_label, imgView, id, btn, nom_animal, raça_animal, edat_animal,
+                sexe_animal, pes_animal, 
+                esp_vida_animal, vertebrat_animal, alimentacio_animal, reproduccio_animal,
+                vacuna_id_animal, seccio_animal
+        );
+        
+
 ///*****************************************************///
-Tab tab2 = new Tab("Cercar Animals");
-tab2.setContent(pDividit); // contingut de la tab1
+
+
+Tab tab2 = new Tab("Mostra Animals");
+tab2.setContent(layout); // contingut de la tab1
 tabs.getTabs().add(tab2); //afegeix la tab1 al panell d tabs
 
 fons.getChildren().add(tabs);

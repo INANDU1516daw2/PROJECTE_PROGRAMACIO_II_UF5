@@ -398,7 +398,7 @@ public class  FX_creaAnimal extends Application {
             dadesVeure = new GridPane();
             
             // Se crea un panel dividido verticalmente
-            pDividit = new SplitPane(llista,dadesVeure);
+//            pDividit = new SplitPane(llista,dadesVeure);
         
             //Inic contingut esquerra llista
             
