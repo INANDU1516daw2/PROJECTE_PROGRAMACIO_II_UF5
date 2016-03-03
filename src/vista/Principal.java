@@ -1,6 +1,5 @@
 package vista;
 
-import controlador.Lectura_per_ID;
 import controlador.NodeContent;
 import controlador.XML_a_ArrayList;
 import controlador.XML_a_Objeto_TreeSet;
@@ -62,7 +61,6 @@ public class Principal {
         /*
          * Podem llegir del XML un animal en concret segons la seva id
          */
-        Lectura_per_ID.Lectura("Mamifers", 2);
         
         /*
          * Per modificar el campt d'un objecte hem d'usar aquest metode per a fer la modificació

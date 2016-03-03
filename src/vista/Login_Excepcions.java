@@ -1,7 +1,6 @@
 package vista;
 
 import controlador.CrearAnimal;
-import controlador.Lectura_per_ID;
 import controlador.XML_a_ArrayList;
 import java.util.ArrayList;
 import java.util.Iterator;

@@ -19,8 +19,25 @@ import org.xml.sax.SAXException;
 
 public class CrearAnimal {
     
-    //MIRAR DE LLEGIR TOTS ARGUMENTS PASSATS, GUARDARLOS EN ARRAY I AMB BUCLE CRAR ELS NODES
-    
+    /**
+     * @param fitxer
+     * @param NodeAnimal
+     * @param id
+     * @param nom
+     * @param raça
+     * @param edat
+     * @param sexe
+     * @param pes
+     * @param esp_vida
+     * @param vertebrat
+     * @param alimentacio
+     * @param reproduccio
+     * @param ecosistema
+     * @param vacuna_id
+     * @param seccio 
+     * 
+     * Crea un nou animal dins del XML a partir dels parametres donats. Es generen els nodes amb el valor corresponent.
+     */
     public static void CrearAnimal(String fitxer, String NodeAnimal, String id, String nom, String raça, String edat,
             String sexe, String pes, String esp_vida, String vertebrat, String alimentacio, 
             String reproduccio, String ecosistema, String vacuna_id, String seccio) {
@@ -43,17 +60,6 @@ public class CrearAnimal {
 
                 Element docRoot = doc.getDocumentElement();
                 
-                //COMPROVEM MAMIFER AM MATEIX ID NO EXISTEIX ABANS CREARLO
-                
-//                try {
-//                    Element mamifer = doc.getElementById(id);
-//                    String existeix = mamifer.getNodeValue();
-//                    System.err.println("\nJa existeix Animal amb ID = " + id + "\ncreació cancelada ... tria altra ID!\n");
-//                
-//                }catch(NullPointerException e){
-                    
-//                    Element mamifer = doc.getElementById(id);
-//                    String existeix = mamifer.getNodeValue();
                 
                     System.out.println("Efectuant creació ....");
                     
@@ -111,7 +117,8 @@ public class CrearAnimal {
                     
 //                }
                 
-            // write the content into xml file
+            
+            // Escriure contingut dins del XML
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             

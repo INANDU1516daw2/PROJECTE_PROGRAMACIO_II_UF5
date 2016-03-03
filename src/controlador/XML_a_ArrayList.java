@@ -25,6 +25,11 @@ import org.xml.sax.SAXException;
 
 public class XML_a_ArrayList {
     
+    /**
+     * Llegeix les dades del corresponent XML i les guarda dins d'un ArrayList depenent el tipus d'animal(mamifer, reptil...)
+     * @param animal
+     * @param llista 
+     */
     public static void RecuperaDades(String animal, List <Animal> llista){
         
         String animals = animal + "s";
@@ -69,7 +74,7 @@ public class XML_a_ArrayList {
                         if(node.getNodeType() == Node.ELEMENT_NODE){
                             String camp = node.getNodeName();
                             String camp_valor = node.getFirstChild().getTextContent();
-                            valors.add(camp_valor); //afegim el TextContent al array
+                            valors.add(camp_valor); 
                         }
                     }
  
@@ -77,7 +82,7 @@ public class XML_a_ArrayList {
                         case "Mamifers" : 
                             llista.add(
                                 new Mamifer (
-                                    valAttr,   //ID
+                                    valAttr,   
                                     valors.get(0), valors.get(1), valors.get(2), valors.get(3),
                                     valors.get(4), valors.get(5), valors.get(6), valors.get(7), 
                                     valors.get(8), valors.get(9), valors.get(10), valors.get(11)
@@ -89,7 +94,7 @@ public class XML_a_ArrayList {
                         case "Aus" : 
                             llista.add(
                                 new Au (
-                                    valAttr,   //ID
+                                    valAttr,   
                                     valors.get(0), valors.get(1), valors.get(2), valors.get(3),
                                     valors.get(4), valors.get(5), valors.get(6), valors.get(7), 
                                     valors.get(8), valors.get(9), valors.get(10), valors.get(11)

@@ -25,7 +25,7 @@ import controlador.CrearAnimal;
 import static controlador.CrearAnimal.CrearAnimal;
 import java.util.Comparator;
 /**
- * Creció de la classe Encarregat que hereta de Empleat i implementa les interfícies Cuidador i Veterinari
+ * Creció de la classe Encarregat que hereta de Empleat i implementa la interfície Cuidador
  */
 
 public class Encarregat extends Empleat implements Cuidador, Comparable <Encarregat> {
@@ -60,19 +60,21 @@ public class Encarregat extends Empleat implements Cuidador, Comparable <Encarre
     }
     
     
-    
+    /**
+     * Comprovació de la igualtat de dos objectes a aprtir de la ID
+     * 
+     * @param obj
+     * 
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
         }
-        //son de la mateixa classe els 2 objectes ?
         if (getClass() != obj.getClass()) {
             return false;
         }
-        //LOWCASTING
         final Encarregat other = (Encarregat) obj;
-        //tenen el mateix nom ?
         if(ID == null ? other.ID == null : ID.equals(other.ID)) {
             return true;
         }else{
@@ -112,6 +114,13 @@ public class Encarregat extends Empleat implements Cuidador, Comparable <Encarre
         this.sou = sou;
     }
 
+    /**
+     * Vacunació d'un animal. Es crean els nodes al XML. Una ID d'un animal pot tenir diverses vacunes.
+     * @param fitxer
+     * @param NodeVacuna
+     * @param vacuna_id
+     * @param nom 
+     */
     public static void Vacunar(String fitxer, String NodeVacuna, String vacuna_id, String nom) {
  
 	  try {
@@ -141,7 +150,7 @@ public class Encarregat extends Empleat implements Cuidador, Comparable <Encarre
                     
                     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                     Calendar cal = Calendar.getInstance();
-                    String data = dateFormat.format(cal.getTime()); //2014/08/06 16:00:22
+                    String data = dateFormat.format(cal.getTime()); 
 
                     Element dataTag = doc.createElement("data");
                     Vacuna.appendChild(dataTag);
@@ -151,17 +160,11 @@ public class Encarregat extends Empleat implements Cuidador, Comparable <Encarre
                     Vacuna.appendChild(cuantitatTag);
                     cuantitatTag.appendChild(doc.createTextNode("50"));
                     
-                    
-//                }
-                
-            // write the content into xml file
+                                    
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             
-            /* Afegim el DTD extern per usar les ID:
-             * Mirem de quin tipus animal es el fitxer XML i afegim el DTD de la seva especie
-             * Documentacio: http://stackoverflow.com/questions/6637076/parsing-xml-with-dom-doctype-gets-erased
-            */
+           
             
       
             transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "Vacunes.dtd");
@@ -178,8 +181,18 @@ public class Encarregat extends Empleat implements Cuidador, Comparable <Encarre
 	  } catch (SAXException | IOException ex) {
             Logger.getLogger(CrearAnimal.class.getName()).log(Level.SEVERE, null, ex);
         }
-	}
+    }
 
+    /**
+     * Es reproduiexen dos animals i es crea un nou. Aquest nou animal hereda quasi totes 
+     * les propietats de la mare. El nom es defineix un nou, la ID s'autoincrementa, el pes 
+     * i el genere es generen aleaòriament. Si els dos animals tenen el mateix sexe, no es poden reproduir.
+     * @param animal
+     * @param pare
+     * @param mare
+     * @param llista
+     * @param nouNom 
+     */
     public void reproduir(String animal, Animal pare, Animal mare, ArrayList <Animal> llista, String nouNom){
         
          String Tag = animal;

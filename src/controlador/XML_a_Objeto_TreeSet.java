@@ -19,6 +19,11 @@ import org.xml.sax.SAXException;
 
 public class XML_a_Objeto_TreeSet {
     
+    /**
+     * Llegeix les dades de Vacuna XML i les guarda dins d'un TreeSet
+     * @param vacuna
+     * @param llista 
+     */
     public static void XML_a_Objeto_TreeSet(String vacuna, TreeSet <Vacuna> llista){
 
         String valAttr = null;
