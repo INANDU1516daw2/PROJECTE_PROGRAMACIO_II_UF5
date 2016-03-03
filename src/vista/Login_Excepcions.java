@@ -765,7 +765,4 @@ scene2 = new Scene(fons, 700,700);
         stage.setScene(escena);
         stage.show();
     }
-   
-
-    
 }

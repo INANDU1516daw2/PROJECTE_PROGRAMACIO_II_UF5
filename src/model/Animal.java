@@ -21,8 +21,6 @@ public abstract class Animal {
     protected String vacuna_id;
     protected int seccio;
     
-    public abstract void reproduir(Animal pare, Animal mare, ArrayList <Animal> llista);
-
     public String getNom() {
         return nom;
     }
