@@ -5,7 +5,10 @@ import java.util.Random;
 import static controlador.CrearAnimal.CrearAnimal;
 
 
-
+/**
+ * Creacio de la classe Mamifer que hereta de Animal
+ * 
+ */
 public class Mamifer extends Animal {
     
     public Mamifer(

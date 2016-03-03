@@ -20,6 +20,7 @@ import org.xml.sax.SAXException;
 public class CrearAnimal {
     
     /**
+     * Crea un nou animal dins del XML a partir dels parametres donats. Es generen els nodes amb el valor corresponent.
      * @param fitxer
      * @param NodeAnimal
      * @param id
@@ -36,7 +37,6 @@ public class CrearAnimal {
      * @param vacuna_id
      * @param seccio 
      * 
-     * Crea un nou animal dins del XML a partir dels parametres donats. Es generen els nodes amb el valor corresponent.
      */
     public static void CrearAnimal(String fitxer, String NodeAnimal, String id, String nom, String raça, String edat,
             String sexe, String pes, String esp_vida, String vertebrat, String alimentacio, 
@@ -114,9 +114,7 @@ public class CrearAnimal {
                     Element seccioTag = doc.createElement("seccio");
                     Animal.appendChild(seccioTag);
                     seccioTag.appendChild(doc.createTextNode(seccio));
-                    
-//                }
-                
+                                    
             
             // Escriure contingut dins del XML
             TransformerFactory transformerFactory = TransformerFactory.newInstance();

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Random;
 import static controlador.CrearAnimal.CrearAnimal;
 
+/**
+ * Creacio de la classe Artropode que hereta de Animal
+ * 
+ */
 public class Artropode extends Animal {
     
     public Artropode(

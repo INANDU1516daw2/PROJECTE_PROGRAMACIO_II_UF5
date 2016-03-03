@@ -3,7 +3,10 @@ package model;
 import java.util.ArrayList;
 import java.util.Random;
 import static controlador.CrearAnimal.CrearAnimal;
-
+/**
+ * Creacio de la classe Amfibi que hereta de Animal
+ * 
+ */
 public class Amfibi extends Animal {
     
     public Amfibi(

@@ -58,9 +58,7 @@ public class Principal {
         */
 //        System.out.println("\n\nllistaReptils["+ 1 +"]: " + llistaReptils.get(1).toString());
         
-        /*
-         * Podem llegir del XML un animal en concret segons la seva id
-         */
+
         
         /*
          * Per modificar el campt d'un objecte hem d'usar aquest metode per a fer la modificació

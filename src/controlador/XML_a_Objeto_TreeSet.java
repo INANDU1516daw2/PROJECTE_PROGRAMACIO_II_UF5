@@ -39,11 +39,8 @@ public class XML_a_Objeto_TreeSet {
 
             DocumentBuilder dBuilder;
             
-            //ParserConfigurationException
             dBuilder = dbFactory.newDocumentBuilder();
             
-            //SAXException
-            //IOException
             Document doc = dBuilder.parse(xml);
             
             doc.getDocumentElement().normalize();

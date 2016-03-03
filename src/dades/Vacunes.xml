@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE Vacunes SYSTEM "Vacunes.dtd">
 <Vacunes>
     <Vacuna id="M0">
-        <nom>barkinson</nom>
+        <nom>parkinson</nom>
         <data>2016/02/05 20:00:56</data>
         <cuantitat>60</cuantitat>
     </Vacuna>
     <Vacuna id="M1">
-        <nom>abia</nom>
+        <nom>rabia</nom>
         <data>2016/05/18 19:55:04</data>
         <cuantitat>30</cuantitat>
     </Vacuna>
-    <Vacuna id="M7">
-        <nom>parkinson</nom>
+    <Vacuna id="M0">
+        <nom>sifilis</nom>
         <data>2016/02/10 15:55:04</data>
         <cuantitat>90</cuantitat>
     </Vacuna>

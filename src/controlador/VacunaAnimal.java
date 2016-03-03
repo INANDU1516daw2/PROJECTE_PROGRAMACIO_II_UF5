@@ -22,6 +22,13 @@ import org.xml.sax.SAXException;
 
 public class VacunaAnimal {
     
+    /**
+     * Vacunació d'un animal. Es crean els nodes al XML. Una ID d'un animal pot tenir diverses vacunes.
+     * @param fitxer
+     * @param NodeVacuna
+     * @param vacuna_id
+     * @param nom 
+     */
     public static void Vacunar(String fitxer, String NodeVacuna, String vacuna_id, String nom) {
  
 	  try {
@@ -37,17 +44,7 @@ public class VacunaAnimal {
                 docFactory.setValidating(true);
 
                 Element docRoot = doc.getDocumentElement();
-                
-                
-                //COMPROVEM MAMIFER AM MATEIX ID NO EXISTEIX ABANS CREARLO
-                
-//            try {
-//                Element vacuna = doc.getElementById(vacuna_id);
-////                String existeix = vacuna.getNodeValue();
-////                System.err.println("\nJa existeix Vacuna amb ID = " + vacuna_id + "\ncreació cancelada ... tria altra ID!\n");
-//
-//                }catch(NullPointerException e){
-                    
+                                    
                     System.out.println("Efectuant creació vacuna ...\n");
                     
                     Element Vacuna = doc.createElement(NodeVacuna);

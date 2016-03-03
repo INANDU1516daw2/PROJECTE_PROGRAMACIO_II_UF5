@@ -28,18 +28,4 @@
         <vacuna-id>AU1</vacuna-id>
         <seccio>20</seccio>
     </Au>
-<Au id="2">
-    <nom>NouAnimal</nom>
-    <raça>Lloro</raça>
-    <edat>0</edat>
-    <sexe>M</sexe>
-    <pes>5</pes>
-    <esp_vida>14</esp_vida>
-    <vertebrat>SI</vertebrat>
-    <alimentacio>Carnívor</alimentacio>
-    <reproduccio>Ovípar</reproduccio>
-    <ecosistema>Aeri</ecosistema>
-    <vacuna_id>M2</vacuna_id>
-    <seccio>20</seccio>
-</Au>
-<Au id="3"><nom>mama</nom><raça>Àguila</raça><edat>0</edat><sexe>F</sexe><pes>4</pes><esp_vida>10</esp_vida><vertebrat>SI</vertebrat><alimentacio>Herbívor</alimentacio><reproduccio>Ovípar</reproduccio><ecosistema>Aeri</ecosistema><vacuna_id>M3</vacuna_id><seccio>19</seccio></Au></Aus>
+</Aus>

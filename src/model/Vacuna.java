@@ -6,7 +6,12 @@ public class Vacuna {
     protected String data;
     protected String cuantitat;
     
-
+    /**
+     * Constructor amb paràmetres
+     * @param nom
+     * @param data
+     * @param cuantitat 
+     */
     public Vacuna(String nom, String data, String cuantitat) {
         this.nom = nom;
         this.data = data;

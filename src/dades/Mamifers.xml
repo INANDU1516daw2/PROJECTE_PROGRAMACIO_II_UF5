@@ -30,7 +30,7 @@
     </Mamifer>
     <Mamifer id="2">
         <nom>Pepe</nom>
-        <raça>Cani</raça>
+        <raça>Primat</raça>
         <edat>666</edat>
         <sexe>M</sexe>
         <pes>20</pes>
@@ -42,5 +42,4 @@
         <vacuna-id>M2</vacuna-id>
         <seccio>5</seccio>
     </Mamifer>
-
 </Mamifers>

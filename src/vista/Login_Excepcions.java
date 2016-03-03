@@ -44,7 +44,9 @@ import model.Animal;
 import model.Encarregat;
 import model.Vacuna;
 
-
+/**
+ * Classe principal sobre la qual gira tot el nostre JavaFX.
+ */
 public class Login_Excepcions extends Application {
     public static final ObservableList animals = FXCollections.observableArrayList();
     Scene scene2;
@@ -53,7 +55,14 @@ public class Login_Excepcions extends Application {
     }
 
     //******************* Clases Excepcions Personalitzades ******************/
-    
+    /**
+     * Validació de les dades introduides al Login.
+     * @param user
+     * @param password
+     * @return
+     * @throws vista.Login_Excepcions.ExcepcioCampTextUsuari
+     * @throws vista.Login_Excepcions.ExcepcioCampTextPassword 
+     */
     public static boolean validacioLogin(TextField user, PasswordField password) throws ExcepcioCampTextUsuari, ExcepcioCampTextPassword {
         boolean valid = true;
         String nom = user.getText();
@@ -68,7 +77,7 @@ public class Login_Excepcions extends Application {
             throw new ExcepcioCampTextPassword();
         }
         
-        if(pass.equals("nolose")){
+        if(pass.equals("admin")){
             valid = true;
         }else {
             valid = false;
@@ -94,6 +103,13 @@ public class Login_Excepcions extends Application {
      
     //********************************* FX *************************************/
 
+    /**
+     * Pantalla on es mostra un Login. Les dades d'accés són:
+     * User: encarregat
+     * Password: admin
+     * Si la validació és correcte, et porta a un altre Stage.
+     * @param stage 
+     */
     @Override
     public void start(final Stage stage) {
         
@@ -171,7 +187,6 @@ public class Login_Excepcions extends Application {
             }
 
         });
-//
 StackPane fons = new StackPane();
 TabPane tabs = new TabPane();
 GridPane dadesEditar = new GridPane();
@@ -183,9 +198,7 @@ final ArrayList <Animal> llistaAmfibis = new ArrayList <>();
 final ArrayList <Animal> llistaPeixos = new ArrayList <>();
 final ArrayList <Animal> llistaReptils = new ArrayList <>();
   
-   
-//Per vuere la llista de mamifers
-//Creacio coleccio objectes mamifers a partir de la lectura Mamifers.xml
+
 XML_a_ArrayList.RecuperaDades("Mamifer", llistaMamifers);
 XML_a_ArrayList.RecuperaDades("Artropode", llistaArtropodes);
 XML_a_ArrayList.RecuperaDades("Au", llistaAus);
@@ -200,14 +213,15 @@ XML_a_ArrayList.RecuperaDades("Peixo", llistaPeixos);
 TreeSet <Vacuna> llistaVacunes = new TreeSet <>(new CuantitatVacunaComparator());
 
 dadesEditar.setPadding(new Insets(10,10,10,10));
-dadesEditar.setVgap(8); //Vertial spacing
-dadesEditar.setHgap(10); //Horizontal spacing
+dadesEditar.setVgap(8); 
+dadesEditar.setHgap(10); 
+////////////////////////////////////////////////////////////////
+//Pantalla de creació d'un animal nou//////////////////////////
+//////////////////////////////////////////////////////////////
 
-//////////// crea els camps de Texts
 final ChoiceBox tipus = new ChoiceBox<>();
 Label etiquetaTipus = new Label("Tipus");
 
-//getItems returns the Observable object wich u can add items to
 tipus.getItems().add("Amfibi");
                 tipus.getItems().add("Artropode");
                 tipus.getItems().add("Au");
@@ -231,7 +245,7 @@ tipus.getItems().add("Amfibi");
 
 
                 final TextField raça = new TextField();
-                raça.setAlignment(Pos.CENTER_RIGHT); //alinea el text a la dreta dins del TextField
+                raça.setAlignment(Pos.CENTER_RIGHT); 
                 Label etiquetaRaça = new Label("Raça");
                 raça.setEditable(true);
                 GridPane.setConstraints(etiquetaRaça, 0, 3);
@@ -256,7 +270,6 @@ tipus.getItems().add("Amfibi");
                 GridPane.setConstraints(pes, 1, 5);
                 dadesEditar.getChildren().addAll(etiquetaPes, pes);
                 
-                 //////////// radiobutton sexe
                 final ToggleGroup tipusVertebrat = new ToggleGroup();
                 Label etiquetaVertebrat = new Label("Es vertebrat?");
 
@@ -289,7 +302,6 @@ tipus.getItems().add("Amfibi");
                 GridPane.setConstraints(seccio, 1, 8);
                 dadesEditar.getChildren().addAll(etiquetaSeccio, seccio);
 
-                //////////// radiobutton sexe
                 final ToggleGroup genere = new ToggleGroup();
                 Label etiquetaGenere = new Label("Genere");
 
@@ -308,60 +320,48 @@ tipus.getItems().add("Amfibi");
                 dadesEditar.getChildren().addAll(etiquetaGenere,femeni,masculi);
 
                   
-                //////////// crea desplegable i etiqueta
                 final ChoiceBox alimentacio = new ChoiceBox<>();
                 Label etiquetaAlimentacio = new Label("Alimentacio");
 
-                //getItems returns the Observable object wich u can add items to
                 alimentacio.getItems().add("Herbívor");
                 alimentacio.getItems().add("Carnívor");
                 alimentacio.getItems().add("Omnívor");
 
-                //Set default value
                 alimentacio.setValue("Omnívor");
 
                 GridPane.setConstraints(etiquetaAlimentacio, 0, 10);
                 GridPane.setConstraints(alimentacio, 1, 10);
                 dadesEditar.getChildren().addAll(etiquetaAlimentacio,alimentacio);
                 
-               //////////// crea desplegable i etiqueta
                 final ChoiceBox  ecosistema = new ChoiceBox<>();
                 Label etiquetaEcosistema = new Label("Ecosistema");
 
-                //getItems returns the Observable object wich u can add items to
                 ecosistema.getItems().add("Terrestre");
                 ecosistema.getItems().add("Aeri");
                 ecosistema.getItems().add("Aquàtic");
 
-                //Set default value
                 ecosistema.setValue("Terrestre");
 
                 GridPane.setConstraints(etiquetaEcosistema, 0, 11);
                 GridPane.setConstraints(ecosistema, 1, 11);
                 dadesEditar.getChildren().addAll(etiquetaEcosistema,ecosistema);
 
-                //////////// crea desplegable i etiqueta
                 final ChoiceBox  reproduccio = new ChoiceBox<>();
                 Label etiquetaReproduccio = new Label("Reproducció");
 
-                //getItems returns the Observable object wich u can add items to
                 reproduccio.getItems().add("Ovíper");
                 reproduccio.getItems().add("Vivíper");
 
-                //Set default value
                 reproduccio.setValue("Vivíper");
 
                 GridPane.setConstraints(etiquetaReproduccio, 0, 12);
                 GridPane.setConstraints(reproduccio, 1, 12);
                 dadesEditar.getChildren().addAll(etiquetaReproduccio,reproduccio);
                 
-               ////////////radiobutton vacuna
-                //vacunacio = new Check<>();
                 Label etiquetaVacunacio = new Label("Vacunes");
 
                 final CheckBox rabia = new CheckBox("Rabia");
                 final CheckBox colera = new CheckBox("Colera");
-                //colera.setSelected(true); //per defecte aquesta apareix marcada
                 final CheckBox sifilis = new CheckBox("Sifilis");
                 final CheckBox parkinson = new CheckBox("Parkinson");
 
@@ -372,13 +372,8 @@ tipus.getItems().add("Amfibi");
                 GridPane.setConstraints(parkinson, 1, 16);
                 dadesEditar.getChildren().addAll(etiquetaVacunacio,rabia,colera,sifilis,parkinson);
 
-//////////// Crea botons i els hi aplica el seu símbol
  Button guardar= new Button("Guardar");
 
-            //Per vuere la llista de mamifers
-            //Creacio coleccio objectes mamifers a partir de la lectura Mamifers.xml
-            //XML_a_ArrayList.RecuperaDades("Mamifer", llistaMamifers);
-                
                 guardar.setOnAction(new EventHandler<ActionEvent>() {
                     
     
@@ -398,22 +393,7 @@ tipus.getItems().add("Amfibi");
                         String fAlimentacio=String.valueOf(alimentacio.getSelectionModel().selectedItemProperty().getValue());
                         String fEcosistema=String.valueOf(ecosistema.getSelectionModel().selectedItemProperty().getValue());
                         String fReproduccio=String.valueOf(reproduccio.getSelectionModel().selectedItemProperty().getValue());
-                        
-                        /*if (String.valueOf(tipus.getSelectionModel().selectedItemProperty().getValue())==null ||
-                                String.valueOf(tipus.getSelectionModel().selectedItemProperty().getValue())+"s"==null ||
-                                String.valueOf(nom.getCharacters())==null ||
-                                String.valueOf(edat.getCharacters())==null ||
-                                String.valueOf(raça.getCharacters())==null ||
-                                String.valueOf(pes.getCharacters())==null ||
-                                tipusVertebrat.getSelectedToggle().getUserData().toString()==null ||
-                                String.valueOf(esp_vida.getCharacters())==null||
-                                String.valueOf(seccio.getCharacters())==null ||
-                                genere.getSelectedToggle().getUserData().toString()==null ||
-                                String.valueOf(alimentacio.getSelectionModel().selectedItemProperty().getValue())==null ||
-                                String.valueOf(ecosistema.getSelectionModel().selectedItemProperty().getValue()) == null ||
-                                String.valueOf(reproduccio.getSelectionModel().selectedItemProperty().getValue())==null) {
-                            System.out.println("Falten dades");
-                    }else{*/
+                      
                         System.out.println(fTipus);
                         System.out.println(fRaça);
                         System.out.println(fEdat);
@@ -430,8 +410,8 @@ tipus.getItems().add("Amfibi");
                         System.out.println("Coelra: "+colera.isSelected());
                         System.out.println("Sífilis: "+sifilis.isSelected());
                         System.out.println("Párkinson: "+parkinson.isSelected());
-                        //}
-    //XML_a_ArrayList.RecuperaDades("Mamifer", llistaMamifers);
+
+                        
                         CrearAnimal.CrearAnimal(node, fTipus, String.valueOf(fId), fNom, fRaça, fEdat, fGenere, fPes, fEspVida, fVertebrat, fAlimentacio, fReproduccio, fEcosistema, fVacuna, fSeccio);
                         if(rabia.isSelected()){
                             Encarregat.Vacunar("Vacunes", "Vacuna", fVacuna, "rabia");
@@ -445,10 +425,7 @@ tipus.getItems().add("Amfibi");
                         if(parkinson.isSelected()){
                             Encarregat.Vacunar("Vacunes", "Vacuna", fVacuna, "parkinson");
                         }
-                        
-                        
-                        
-    }
+                    }
 });
                 
 
@@ -457,16 +434,18 @@ dadesEditar.getChildren().addAll(guardar);
 
 
 Tab tab1 = new Tab("Crear Animal");
-tab1.setContent(dadesEditar); // contingut de la tab1
-tabs.getTabs().add(tab1); //afegeix la tab1 al panell d tabs
+tab1.setContent(dadesEditar); 
+tabs.getTabs().add(tab1); 
 
-// Se crea un panel dividido verticalmente
+
 GridPane cercaAnimal = new GridPane();
 final ListView llista = new ListView(animals);
 SplitPane pDividit = new SplitPane(llista,cercaAnimal);
         
-//Inic contingut esquerra llista
-            
+////////////////////////////////////////////////////////////////
+//Pantalla per visualitzar els animals existents///////////////
+//////////////////////////////////////////////////////////////
+
 //Iterador per poder recorrer l'ArrayList
 Iterator <Animal> mamifer_iterador = llistaMamifers.iterator();
 Iterator <Animal> artropode_iterador = llistaArtropodes.iterator();
@@ -478,47 +457,23 @@ llista.setEditable(false);
 
             
             while(mamifer_iterador.hasNext()){
-
             animals.add("Mamifer "+mamifer_iterador.next().getId());
-            //animals.add("Mamifer"+mamifer_iterador.next().getId());
-            //llista.setCellFactory(ComboBoxListCell.forListView(cursos));
         }
-                        while(artropode_iterador.hasNext()){
-
+            while(artropode_iterador.hasNext()){
             animals.add("Artropode "+artropode_iterador.next().getId());
-            //animals.add("Mamifer"+mamifer_iterador.next().getId());
-            //llista.setCellFactory(ComboBoxListCell.forListView(cursos));
-            
         }
             while(au_iterador.hasNext()){
-
             animals.add("Au "+au_iterador.next().getId());
-            //animals.add("Mamifer"+mamifer_iterador.next().getId());
-            //llista.setCellFactory(ComboBoxListCell.forListView(cursos));
-            
         }
             while(amfibi_iterador.hasNext()){
-
             animals.add("Amfibi "+amfibi_iterador.next().getId());
-            //animals.add("Mamifer"+mamifer_iterador.next().getId());
-            //llista.setCellFactory(ComboBoxListCell.forListView(cursos));
-            
         }
             while(peix_iterador.hasNext()){
-
             animals.add("Peix "+peix_iterador.next().getId());
-            //animals.add("Mamifer"+mamifer_iterador.next().getId());
-            //llista.setCellFactory(ComboBoxListCell.forListView(cursos));
-            
         }
             while(reptil_iterador.hasNext()){
-
-            animals.add("Reptil "+reptil_iterador.next().getId());
-            //animals.add("Mamifer"+mamifer_iterador.next().getId());
-            //llista.setCellFactory(ComboBoxListCell.forListView(cursos));
-            
+            animals.add("Reptil "+reptil_iterador.next().getId());            
         }
-
             llista.setItems(animals);
 
 ///*****************************************************///
@@ -625,15 +580,8 @@ cercaAnimal.getChildren().addAll(id_label,id,btn);
         img = new Image("file:images/mamifer/2.jpg", 100, 100, true, true);
         imgView = new ImageView(img);
         
-       /* //Layout
-        VBox layout = new VBox(10);
-        layout.setPadding(new Insets(20, 20, 20, 20));
-        layout.getChildren().addAll(
-                tipus_label, choiceBox, id_label, imgView, id, btn, nom_animal, raça_animal, edat_animal,
-                sexe_animal, pes_animal, 
-                esp_vida_animal, vertebrat_animal, alimentacio_animal, reproduccio_animal,
-                vacuna_id_animal, seccio_animal
-        );*/
+      
+    
         
 GridPane.setConstraints(nom_animal, 0, 3);
 GridPane.setConstraints(raça_animal, 0, 4);
@@ -652,11 +600,12 @@ cercaAnimal.getChildren().addAll(imgView,nom_animal, raça_animal, edat_animal,s
 
 ///*****************************************************///
 
-
+////////////////////////////////////////////////////////////////
+//Pantalla de reproducció de dos animals///////////////////////
+//////////////////////////////////////////////////////////////
 Tab tab2 = new Tab("Mostra Animals");
 tab2.setContent(pDividit);
-//tab2.setContent(layout); // contingut de la tab1
-tabs.getTabs().add(tab2); //afegeix la tab1 al panell d tabs
+tabs.getTabs().add(tab2); 
 
 
         Label tipus_label3 = new Label("Tipus: ");
@@ -742,7 +691,7 @@ tabs.getTabs().add(tab2); //afegeix la tab1 al panell d tabs
             }
 
         });
-//Layout
+
         VBox reproduir = new VBox(10);
         reproduir.setPadding(new Insets(20, 20, 20, 20));
         reproduir.getChildren().addAll(
@@ -754,8 +703,8 @@ tabs.getTabs().add(tab2); //afegeix la tab1 al panell d tabs
 
 
 Tab tab3 = new Tab("Crear Animal");
-tab3.setContent(reproduir); // contingut de la tab1
-tabs.getTabs().add(tab3); //afegeix la tab1 al panell d tabs
+tab3.setContent(reproduir); 
+tabs.getTabs().add(tab3); 
 
 
 fons.getChildren().add(tabs);

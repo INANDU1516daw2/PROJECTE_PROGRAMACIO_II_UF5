@@ -45,6 +45,10 @@ public class Encarregat extends Empleat implements Cuidador, Comparable <Encarre
     }
     
     
+    /**
+     * Compara el sou del objecte Encarregat
+     * @param e
+     */
     @Override
     public int compareTo(Encarregat e) {
         int compare = (int) (this.sou - e.getSou());

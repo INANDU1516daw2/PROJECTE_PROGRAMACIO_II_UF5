@@ -28,18 +28,4 @@
         <vacuna-id>R1</vacuna-id>
         <seccio>12</seccio>
     </Reptil>
-<Reptil id="2">
-    <nom>NouAnimal</nom>
-    <raça>Serpiente</raça>
-    <edat>0</edat>
-    <sexe>M</sexe>
-    <pes>16</pes>
-    <esp_vida>18</esp_vida>
-    <vertebrat>SI</vertebrat>
-    <alimentacio>Omnívor</alimentacio>
-    <reproduccio>Ovípar</reproduccio>
-    <ecosistema>Terrestre</ecosistema>
-    <vacuna_id>M2</vacuna_id>
-    <seccio>12</seccio>
-</Reptil>
 </Reptils>
