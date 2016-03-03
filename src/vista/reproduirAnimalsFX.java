@@ -1,61 +1,25 @@
 package vista;
 
-import controlador.CrearAnimal;
 import model.Animal;
-import controlador.XML_a_ArrayList;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.geometry.Side;
-import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.SplitPane;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Toggle;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.control.cell.ComboBoxListCell;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Callback;
-import model.Mamifer;
 import model.*;
-import vista.Principal;
-import controlador.CrearAnimal;
 import controlador.XML_a_ArrayList;
 import java.util.LinkedList;
-import java.util.TreeSet;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import static org.omg.IOP.CodecPackage.InvalidTypeForEncodingHelper.id;
 
 
 
@@ -174,7 +138,7 @@ public class  reproduirAnimalsFX extends Application {
                 System.out.println("tipus: "+tipus+"\nID_p: "+ID_p+" \nID_m: "+ID_m);
                 System.out.println("nou animal id: " + (llista.size()-1) );
                 
-//                    img = new Image("file:images/mamifer/" + id.getText() + ".jpg", 100, 100, true, true);
+//              img = new Image("file:images/mamifer/" + id.getText() + ".jpg", 100, 100, true, true);
                 
                 nom.setText("Nom:   " + llista.get(llista.size()-1).getNom());
                 raça.setText("Raça:     " + llista.get(llista.size()-1).getRaça());
@@ -198,9 +162,9 @@ public class  reproduirAnimalsFX extends Application {
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20, 20, 20, 20));
         layout.getChildren().addAll(
-                tipus_label, choiceBox, id_pare, id_p, id_mare, id_m, btn
-//                id_label, imgView, id, btn, nom, raça, edat, sexe, pes, 
-//                esp_vida, vertebrat, alimentacio, reproduccio, vacuna_id, seccio
+                tipus_label, choiceBox, id_pare, id_p, id_mare, id_m, btn,
+                nom, raça, edat, sexe, pes,  esp_vida, vertebrat, alimentacio,
+                reproduccio, vacuna_id, seccio
         );
         
         scene = new Scene(layout, 250, 550);
