@@ -16,7 +16,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -30,8 +29,6 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -476,15 +473,14 @@ llista.setEditable(false);
         }
             llista.setItems(animals);
 
-///*****************************************************///
-//AFEGIR AQUI CODI DE LECTURA I ESCRIPTURA DE DADES ANIMALS
-Label tipus_label = new Label("Tipus: ");
-final ChoiceBox <String> choiceBox = new ChoiceBox <>();
-choiceBox.getItems().addAll("Mamifer","Reptil","Amfibi","Au","Artropode","Peix");
-choiceBox.setValue("Mamifer");
-GridPane.setConstraints(tipus_label, 0, 1);
-GridPane.setConstraints(choiceBox, 1, 1);
-cercaAnimal.getChildren().addAll(tipus_label,choiceBox);
+Label tipus_label2 = new Label("Tipus: ");
+final ChoiceBox <String> choiceBox2 = new ChoiceBox <>();
+choiceBox2.getItems().addAll("Mamifer","Reptil","Amfibi","Au","Artropode","Peix");
+choiceBox2.setValue("Mamifer");
+
+GridPane.setConstraints(tipus_label2, 0, 1);
+GridPane.setConstraints(choiceBox2, 1, 1);
+cercaAnimal.getChildren().addAll(tipus_label2,choiceBox2);
 
 Label id_label = new Label("ID animal");
 final TextField id = new TextField();
@@ -501,12 +497,6 @@ final TextField id = new TextField();
         final Text ecosistema_animal = new Text();
         final Text vacuna_id_animal = new Text();
         final Text seccio_animal = new Text();
-        
-  
-
-        String img_path = null;
-        final Image img;
-        ImageView imgView;
         
 GridPane.setConstraints(id_label, 0, 2);
 GridPane.setConstraints(id, 1, 2);
@@ -525,7 +515,7 @@ cercaAnimal.getChildren().addAll(id_label,id,btn);
                 
                 List <Animal> llista = null;
                 
-                String tipus = choiceBox.getValue();
+                String tipus = choiceBox2.getValue();
                 
         
                 switch (tipus) {
@@ -555,10 +545,7 @@ cercaAnimal.getChildren().addAll(id_label,id,btn);
                         break;
                         
                 }
-              
-
-//                    img = new Image("file:images/mamifer/" + id.getText() + ".jpg", 100, 100, true, true);
-                
+                            
                 nom_animal.setText("Nom:   " + llista.get(ID).getNom());
                 raça_animal.setText("Raça:     " + llista.get(ID).getRaça());
                 edat_animal.setText("Edat:     " + String.valueOf(llista.get(ID).getEdat()));
@@ -574,15 +561,8 @@ cercaAnimal.getChildren().addAll(id_label,id,btn);
             }
 
         });
-        
-//        img_path = "file:images/mamifer/";
-                
-        img = new Image("file:images/mamifer/2.jpg", 100, 100, true, true);
-        imgView = new ImageView(img);
-        
-      
-    
-        
+  
+       
 GridPane.setConstraints(nom_animal, 0, 3);
 GridPane.setConstraints(raça_animal, 0, 4);
 GridPane.setConstraints(edat_animal, 0, 5);
@@ -594,11 +574,9 @@ GridPane.setConstraints(alimentacio_animal, 0, 10);
 GridPane.setConstraints(reproduccio_animal, 0, 11);  
 GridPane.setConstraints(vacuna_id_animal, 0, 12);
 GridPane.setConstraints(seccio_animal, 0, 13);
-GridPane.setConstraints(imgView, 0, 14);
 
-cercaAnimal.getChildren().addAll(imgView,nom_animal, raça_animal, edat_animal,sexe_animal, pes_animal, esp_vida_animal, vertebrat_animal, alimentacio_animal, reproduccio_animal,vacuna_id_animal, seccio_animal);
+cercaAnimal.getChildren().addAll(nom_animal, raça_animal, edat_animal,sexe_animal, pes_animal, esp_vida_animal, vertebrat_animal, alimentacio_animal, reproduccio_animal,vacuna_id_animal, seccio_animal);
 
-///*****************************************************///
 
 ////////////////////////////////////////////////////////////////
 //Pantalla de reproducció de dos animals///////////////////////
@@ -645,7 +623,7 @@ tabs.getTabs().add(tab2);
                 
                 List <Animal> llista = null;
                 
-                String tipus = choiceBox.getValue();
+                String tipus = choiceBox3.getValue();
                 
         
                 switch (tipus) {
@@ -695,7 +673,7 @@ tabs.getTabs().add(tab2);
         VBox reproduir = new VBox(10);
         reproduir.setPadding(new Insets(20, 20, 20, 20));
         reproduir.getChildren().addAll(
-                tipus_label3, choiceBox, id_pare3, id_p, id_mare3, id_m, nouNom_label3, nouNom, btn,
+                tipus_label3, choiceBox3, id_pare3, id_p, id_mare3, id_m, nouNom_label3, nouNom, btn,
                 nom3, raça3, edat3, sexe3, pes3,  esp_vida3, vertebrat3, alimentacio3,
                 reproduccio3, vacuna_id3, seccio3
         );
